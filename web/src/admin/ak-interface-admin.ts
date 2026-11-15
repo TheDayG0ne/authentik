@@ -276,7 +276,7 @@ export class AdminInterface extends WithLicenseSummary(
                             aria-expanded=${this.sidebarOpen ? "true" : "false"}
                         >
                             <i aria-hidden="true" class="fas fa-bars"></i>
-                            <span>${msg("TDG.id Admin")}</span>
+                            <span>TDG.id Admin</span>
                         </button>
                         ${this.renderCommandPaletteButton()}
                     </div>

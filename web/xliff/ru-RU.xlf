@@ -616,6 +616,7 @@
 </trans-unit>
 <trans-unit id="s7225aacf0eee94d2">
   <source>Authenticated as <x id="0" equiv-text="${renderUsername(event.user.authenticated_as)}"/></source>
+  <target>Аутентифицирован как <x id="0" equiv-text="${renderUsername(event.user.authenticated_as)}"/></target>
 </trans-unit>
 <trans-unit id="s2152f3482784705f">
   <source>Recent events</source>
@@ -647,6 +648,7 @@
 </trans-unit>
 <trans-unit id="sd2fa988f1774cfde">
   <source>System Status</source>
+  <target>Состояние системы</target>
 </trans-unit>
 <trans-unit id="s113c05ef9996ca4b">
   <source>Embedded outpost is not configured correctly.</source>
@@ -704,6 +706,7 @@
 </trans-unit>
 <trans-unit id="s82cced87e15e0665">
   <source>Worker with incorrect version connected.</source>
+  <target>Подключён рабочий процесс с неподходящей версией.</target>
 </trans-unit>
 <trans-unit id="s98327528f00365a7">
   <source>Failed to fetch data.</source>
@@ -711,9 +714,11 @@
 </trans-unit>
 <trans-unit id="s66f26fdcbe2101eb">
   <source>Chart</source>
+  <target>Диаграмма</target>
 </trans-unit>
 <trans-unit id="s7b58d033cc5112ab">
   <source>Event volume chart</source>
+  <target>Диаграмма количества событий</target>
 </trans-unit>
 <trans-unit id="s11bc220e8fa9d797">
   <source>Authorizations</source>
@@ -733,6 +738,7 @@
 </trans-unit>
 <trans-unit id="s0914f91b3f985f0f">
   <source>Synchronization status chart</source>
+  <target>Диаграмма состояния синхронизации</target>
 </trans-unit>
 <trans-unit id="s477de089b505a6ea">
   <source>SCIM Provider</source>
@@ -752,6 +758,7 @@
 </trans-unit>
 <trans-unit id="s334b3924d2bd5d55">
   <source>Kerberos Source</source>
+  <target>Источник Kerberos</target>
 </trans-unit>
 <trans-unit id="s8a75e83497a183a2">
   <source>Healthy</source>
@@ -767,6 +774,7 @@
 </trans-unit>
 <trans-unit id="s3f01dbc864d2a8b9">
   <source>Outpost status chart</source>
+  <target>Диаграмма состояния внешних компонентов</target>
 </trans-unit>
 <trans-unit id="sfeb82261bcf99edd">
   <source>Healthy outposts</source>
@@ -803,6 +811,7 @@
 </trans-unit>
 <trans-unit id="sd5e9b70ffb7a8b46">
   <source>Skip to content</source>
+  <target>Перейти к содержимому</target>
 </trans-unit>
 <trans-unit id="sfd13ca8ebd857c2e">
   <source>Create a new application</source>
@@ -846,9 +855,11 @@
 </trans-unit>
 <trans-unit id="s85a488cacb57688b">
   <source>Welcome, <x id="0" equiv-text="${displayName}"/></source>
+  <target>Добро пожаловать, <x id="0" equiv-text="${displayName}"/></target>
 </trans-unit>
 <trans-unit id="scdb1bac161852c73">
   <source>Welcome</source>
+  <target>Добро пожаловать</target>
 </trans-unit>
 <trans-unit id="s41e035c4bb8d15f2">
   <source>General system status</source>
@@ -959,24 +970,31 @@
 </trans-unit>
 <trans-unit id="s7f073c746d0f6324">
   <source>Form actions</source>
+  <target>Действия формы</target>
 </trans-unit>
 <trans-unit id="sfd81bd296e2f7585">
   <source>Submit action</source>
+  <target>Действие отправки</target>
 </trans-unit>
 <trans-unit id="s5baec8151f4a4433">
   <source>Cancel action</source>
+  <target>Действие отмены</target>
 </trans-unit>
 <trans-unit id="sbcdf61483337948a">
   <source>Successfully updated schedule.</source>
+  <target>Расписание успешно обновлено.</target>
 </trans-unit>
 <trans-unit id="sd372fe5b712f6b30">
   <source>Crontab</source>
+  <target>Расписание Cron</target>
 </trans-unit>
 <trans-unit id="s95bc8722b2708f8b">
   <source>Paused</source>
+  <target>Приостановлено</target>
 </trans-unit>
 <trans-unit id="se41af830054194bc">
   <source>Pause this schedule</source>
+  <target>Приостановить это расписание</target>
 </trans-unit>
 <trans-unit id="sc0448bc8a76227cb">
   <source>Failed to fetch objects: </source>
@@ -1032,6 +1050,7 @@
 </trans-unit>
 <trans-unit id="s7753c012594cc69e">
   <source>Assigned to role</source>
+  <target>Назначено роли</target>
 </trans-unit>
 <trans-unit id="s67e136af8fc1107b">
   <source>Assign permission</source>
@@ -1067,18 +1086,23 @@
 </trans-unit>
 <trans-unit id="sd091e43d5e99dea4">
   <source>Waiting to run</source>
+  <target>Ожидает запуска</target>
 </trans-unit>
 <trans-unit id="s2f06038e5cfd09df">
   <source>Consumed</source>
+  <target>Использовано</target>
 </trans-unit>
 <trans-unit id="s556a7cc7c0c9f032">
   <source>Pre-processing</source>
+  <target>Предварительная обработка</target>
 </trans-unit>
 <trans-unit id="s85994a70cd39166c">
   <source>Running</source>
+  <target>Выполняется</target>
 </trans-unit>
 <trans-unit id="sb37a630168e1e0e5">
   <source>Post-processing</source>
+  <target>Постобработка</target>
 </trans-unit>
 <trans-unit id="sbe9a51f29a4a2c5b">
   <source>Successful</source>
@@ -1094,30 +1118,39 @@
 </trans-unit>
 <trans-unit id="s94f08f46277af7d6">
   <source>Running tasks</source>
+  <target>Выполняемые задачи</target>
 </trans-unit>
 <trans-unit id="s8b551364b894d1ee">
   <source>Queued tasks</source>
+  <target>Задачи в очереди</target>
 </trans-unit>
 <trans-unit id="s2139d19009989a19">
   <source>Successful tasks</source>
+  <target>Успешные задачи</target>
 </trans-unit>
 <trans-unit id="s0787cd9eab5aa6e3">
   <source>Error tasks</source>
+  <target>Задачи с ошибками</target>
 </trans-unit>
 <trans-unit id="s03ee3cfb0919c62c">
   <source>Task</source>
+  <target>Задача</target>
 </trans-unit>
 <trans-unit id="sc7637275f670c938">
   <source>Queue</source>
+  <target>Очередь</target>
 </trans-unit>
 <trans-unit id="s84fb675fb17d4455">
   <source>Retries</source>
+  <target>Повторные попытки</target>
 </trans-unit>
 <trans-unit id="s1d300a2f13c19ab4">
   <source>Planned execution time</source>
+  <target>Запланированное время выполнения</target>
 </trans-unit>
 <trans-unit id="sb91d1be10eb2c7da">
   <source>Last updated</source>
+  <target>Последнее обновление</target>
 </trans-unit>
 <trans-unit id="sad3e3c8146fc920f">
   <source>Status</source>
@@ -1129,39 +1162,51 @@
 </trans-unit>
 <trans-unit id="sa3242c7021e01280">
   <source>Row Actions</source>
+  <target>Действия со строкой</target>
 </trans-unit>
 <trans-unit id="s911c2c952e64b223">
   <source>Show only standalone tasks</source>
+  <target>Показывать только автономные задачи</target>
 </trans-unit>
 <trans-unit id="s14053a4609676b8b">
   <source>Exclude successful tasks</source>
+  <target>Исключить успешные задачи</target>
 </trans-unit>
 <trans-unit id="s8ff646d0515aab2a">
   <source>Retry task</source>
+  <target>Повторить задачу</target>
 </trans-unit>
 <trans-unit id="sac44b0f4dc14c227">
   <source>Current execution logs</source>
+  <target>Журналы текущего выполнения</target>
 </trans-unit>
 <trans-unit id="s5e13dff03b580216">
   <source>Previous executions logs</source>
+  <target>Журналы предыдущих выполнений</target>
 </trans-unit>
 <trans-unit id="s9b8dccb514a0e34c">
   <source>Schedule</source>
+  <target>Расписание</target>
 </trans-unit>
 <trans-unit id="sf92789320708efed">
   <source>Next run</source>
+  <target>Следующий запуск</target>
 </trans-unit>
 <trans-unit id="s1aecc6c0d6cbf4ed">
   <source>Last status</source>
+  <target>Последний статус</target>
 </trans-unit>
 <trans-unit id="s6089c283e28012fb">
   <source>Show only standalone schedules</source>
+  <target>Показывать только автономные расписания</target>
 </trans-unit>
 <trans-unit id="s48006fb6e0b1860a">
   <source>Run scheduled task now</source>
+  <target>Запустить задачу по расписанию сейчас</target>
 </trans-unit>
 <trans-unit id="s6492593d534108e1">
   <source>Update Schedule</source>
+  <target>Обновить расписание</target>
 </trans-unit>
 <trans-unit id="s64ef2a6c2dd1d3d1">
   <source>Edit</source>
@@ -1169,9 +1214,11 @@
 </trans-unit>
 <trans-unit id="sc797fd9076cc136d">
   <source>Tasks</source>
+  <target>Задачи</target>
 </trans-unit>
 <trans-unit id="sf2d616b20d62240d">
   <source>Schedules</source>
+  <target>Расписания</target>
 </trans-unit>
 <trans-unit id="s3b34d9930e33bd46">
   <source>System Tasks</source>
@@ -1191,9 +1238,11 @@
 </trans-unit>
 <trans-unit id="s56e7ff6cc2abeb0d">
   <source>Wizard steps</source>
+  <target>Шаги мастера</target>
 </trans-unit>
 <trans-unit id="s04e09c193d15e4b4">
   <source>Wizard navigation</source>
+  <target>Навигация мастера</target>
 </trans-unit>
 <trans-unit id="s0c9670f429e74283">
   <source>New application</source>
@@ -1201,6 +1250,7 @@
 </trans-unit>
 <trans-unit id="s140111d464591e6b">
   <source>Create a new application and configure a provider for it.</source>
+  <target>Создайте новое приложение и настройте для него провайдера.</target>
 </trans-unit>
 <trans-unit id="s1a0e95458b44d7f8">
   <source>Any policy must match to grant access</source>
@@ -1212,6 +1262,7 @@
 </trans-unit>
 <trans-unit id="sb80507bed88545a6">
   <source>An application name is required</source>
+  <target>Необходимо указать имя приложения</target>
 </trans-unit>
 <trans-unit id="s39c052006b2b141a">
   <source>Not a valid URL</source>
@@ -1219,15 +1270,19 @@
 </trans-unit>
 <trans-unit id="s317f3ab0da3d068a">
   <source>Not a valid slug</source>
+  <target>Недопустимый идентификатор</target>
 </trans-unit>
 <trans-unit id="s0268ce9f2abb84de">
   <source>Configure the Application</source>
+  <target>Настройте приложение</target>
 </trans-unit>
 <trans-unit id="s07b0bf005510fe29">
   <source>Type an application name...</source>
+  <target>Введите имя приложения...</target>
 </trans-unit>
 <trans-unit id="s972540f502b0f4dc">
   <source>Application Name</source>
+  <target>Имя приложения</target>
 </trans-unit>
 <trans-unit id="s91f70424f5d5d23e">
   <source>Slug</source>
@@ -1243,6 +1298,7 @@
 </trans-unit>
 <trans-unit id="sc22c7703fd074f5f">
   <source>e.g. Collaboration, Communication, Internal, etc.</source>
+  <target>например: Совместная работа, Связь, Внутреннее и т. д.</target>
 </trans-unit>
 <trans-unit id="sdae55084f6cb2662">
   <source>Optionally enter a group name. Applications with identical groups are shown grouped together.</source>
@@ -1262,6 +1318,7 @@
 </trans-unit>
 <trans-unit id="s71e967b36e080e3c">
   <source>https://...</source>
+  <target>https://...</target>
 </trans-unit>
 <trans-unit id="s992f8d1a776e763c">
   <source>If left empty, authentik will try to extract the launch URL based on the selected provider.</source>
@@ -1293,6 +1350,7 @@
 </trans-unit>
 <trans-unit id="s030ed8a3f12c23ff">
   <source>Configure Bindings</source>
+  <target>Настройте привязки</target>
 </trans-unit>
 <trans-unit id="s030ac0829bb50a49">
   <source>Policy <x id="0" equiv-text="${item.policyObj?.name}"/></source>
@@ -1311,6 +1369,7 @@
 </trans-unit>
 <trans-unit id="sc387b20e6d629087">
   <source>Configure Policy/User/Group Bindings</source>
+  <target>Настройте привязки политик, пользователей и групп</target>
 </trans-unit>
 <trans-unit id="s473f0143efa3f706">
   <source>These policies control which users can access this application.</source>
@@ -1318,6 +1377,7 @@
 </trans-unit>
 <trans-unit id="s71c3ec95efe723ca">
   <source>No bound policies.</source>
+  <target>Нет связанных политик.</target>
 </trans-unit>
 <trans-unit id="sc15d60377cc8aaac">
   <source>No policies are currently bound to this object.</source>
@@ -1337,6 +1397,7 @@
 </trans-unit>
 <trans-unit id="sac315d5bd28d4efa">
   <source>Don't Pass</source>
+  <target>Не пройдено</target>
 </trans-unit>
 <trans-unit id="s40b80eb4cc1f0e0c">
   <source>Edit Binding</source>
@@ -1344,9 +1405,11 @@
 </trans-unit>
 <trans-unit id="s54a37223ce938349">
   <source>Save Binding</source>
+  <target>Сохранить привязку</target>
 </trans-unit>
 <trans-unit id="s931754aabd4a6a47">
   <source>Create a Policy/User/Group Binding</source>
+  <target>Создать привязку политики, пользователя или группы</target>
 </trans-unit>
 <trans-unit id="s042baf59902a711f">
   <source>Policy</source>
@@ -1362,6 +1425,7 @@
 </trans-unit>
 <trans-unit id="s5eba8fa19126f70a">
   <source>Learn more about the enterprise license.</source>
+  <target>Подробнее о лицензии Enterprise.</target>
 </trans-unit>
 <trans-unit id="s7181a5504472e856">
   <source>Apply changes</source>
@@ -1369,9 +1433,11 @@
 </trans-unit>
 <trans-unit id="s498d08fb8f63727f">
   <source>UNNAMED</source>
+  <target>БЕЗ НАЗВАНИЯ</target>
 </trans-unit>
 <trans-unit id="s74b47e964bb82e5f">
   <source>Wizard content</source>
+  <target>Содержимое мастера</target>
 </trans-unit>
 <trans-unit id="sad59707375956ad2">
   <source>Finish</source>
@@ -1383,6 +1449,7 @@
 </trans-unit>
 <trans-unit id="s7d4ec232535a36f0">
   <source>Choose a Provider</source>
+  <target>Выберите провайдера</target>
 </trans-unit>
 <trans-unit id="sb7be945aa799b8d7">
   <source>Please choose a provider type before proceeding.</source>
@@ -1398,6 +1465,7 @@
 </trans-unit>
 <trans-unit id="s9bcd7cad5f5e2b15">
   <source>Select a certificate...</source>
+  <target>Выберите сертификат...</target>
 </trans-unit>
 <trans-unit id="sc25edca57df81461">
   <source>Authentication</source>
@@ -1453,6 +1521,7 @@
 </trans-unit>
 <trans-unit id="sd939185840181160">
   <source>Select a flow...</source>
+  <target>Выберите поток...</target>
 </trans-unit>
 <trans-unit id="s0db494ff61b48438">
   <source>Add All Available</source>
@@ -1484,12 +1553,15 @@
 </trans-unit>
 <trans-unit id="s4127b943d6826b8b">
   <source>Search <x id="0" equiv-text="${this.availableLabel}"/>...</source>
+  <target>Поиск <x id="0" equiv-text="${this.availableLabel}"/>...</target>
 </trans-unit>
 <trans-unit id="ha8e91858b300a3b7">
   <source>(Format: <x id="0" equiv-text="&lt;code&gt;"/>hours=-1;minutes=-2;seconds=-3)<x id="1" equiv-text="&lt;/code&gt;"/>.</source>
+  <target>(Формат: <x id="0" equiv-text="&lt;code&gt;"/>hours=-1;minutes=-2;seconds=-3)<x id="1" equiv-text="&lt;/code&gt;"/>.</target>
 </trans-unit>
 <trans-unit id="hbe8e6353371ecb22">
   <source>(Format: <x id="0" equiv-text="&lt;code&gt;"/>hours=1;minutes=2;seconds=3).<x id="1" equiv-text="&lt;/code&gt;"/></source>
+  <target>(Формат: <x id="0" equiv-text="&lt;code&gt;"/>hours=1;minutes=2;seconds=3).<x id="1" equiv-text="&lt;/code&gt;"/></target>
 </trans-unit>
 <trans-unit id="sbb8ad22c83d375b1">
   <source>The following keywords are supported:</source>
@@ -1549,9 +1621,11 @@
 </trans-unit>
 <trans-unit id="sdb16a3d366135cef">
   <source>Provider Name</source>
+  <target>Имя провайдера</target>
 </trans-unit>
 <trans-unit id="s96dc816b1d1c3be0">
   <source>Type a provider name...</source>
+  <target>Введите имя провайдера...</target>
 </trans-unit>
 <trans-unit id="scef3f4ad80abbd22">
   <source>Configure how the outpost authenticates requests.</source>
@@ -1575,6 +1649,7 @@
 </trans-unit>
 <trans-unit id="s6773ec2a233bbf41">
   <source>Flow used for unbinding users.</source>
+  <target>Поток, используемый для отвязки пользователей.</target>
 </trans-unit>
 <trans-unit id="sfe388f0313f52da2">
   <source>Protocol settings</source>
@@ -1594,9 +1669,11 @@
 </trans-unit>
 <trans-unit id="sf9686d31d28fcf7d">
   <source>Show field content</source>
+  <target>Показать содержимое поля</target>
 </trans-unit>
 <trans-unit id="sb1b05a7573ab618c">
   <source>Hide field content</source>
+  <target>Скрыть содержимое поля</target>
 </trans-unit>
 <trans-unit id="s6cee92a3b310e650">
   <source>Add entry</source>
@@ -1604,9 +1681,11 @@
 </trans-unit>
 <trans-unit id="s58bec0ecd4f3ccd4">
   <source>Strict</source>
+  <target>Строгий</target>
 </trans-unit>
 <trans-unit id="sd27a8f54aca5d278">
   <source>Regex</source>
+  <target>Регулярное выражение</target>
 </trans-unit>
 <trans-unit id="s61eacb19db252f5e">
   <source>URL</source>
@@ -1630,15 +1709,19 @@
 </trans-unit>
 <trans-unit id="sa3056b3252b4b52c">
   <source>Back-channel</source>
+  <target>Обратный канал</target>
 </trans-unit>
 <trans-unit id="saa3d821fc889a636">
   <source>Server-to-server logout notifications</source>
+  <target>Серверные уведомления о выходе</target>
 </trans-unit>
 <trans-unit id="s9f448d01a0354e8e">
   <source>Front-channel</source>
+  <target>Фронтальный канал</target>
 </trans-unit>
 <trans-unit id="s83ba71823baf9a51">
   <source>Browser iframe logout notifications</source>
+  <target>Уведомления о выходе через iframe браузера</target>
 </trans-unit>
 <trans-unit id="sccc47f82044453f9">
   <source>Based on the User's hashed ID</source>
@@ -1682,6 +1765,7 @@
 </trans-unit>
 <trans-unit id="s4c49d27de60a532b">
   <source>To allow any redirect URI, set the mode to Regex and the value to ".*". Be aware of the possible security implications this can have.</source>
+  <target>Чтобы разрешить любой URI перенаправления, выберите режим регулярного выражения и значение ".*". Учитывайте возможные последствия для безопасности.</target>
 </trans-unit>
 <trans-unit id="s62f7c59b0606a8d6">
   <source>Authorization flow</source>
@@ -1689,6 +1773,7 @@
 </trans-unit>
 <trans-unit id="s69d33a50b908b96f">
   <source>Select an authorization flow...</source>
+  <target>Выберите поток авторизации...</target>
 </trans-unit>
 <trans-unit id="sfbaeb0de54fbfdbb">
   <source>Flow used when authorizing this provider.</source>
@@ -1708,15 +1793,19 @@
 </trans-unit>
 <trans-unit id="s145480489b87a109">
   <source>Logout URI</source>
+  <target>URI выхода</target>
 </trans-unit>
 <trans-unit id="s37018999e29f65b3">
   <source>URI to send logout notifications to when users log out. Required for OpenID Connect Logout functionality.</source>
+  <target>URI для отправки уведомлений при выходе пользователя. Необходим для функции выхода OpenID Connect.</target>
 </trans-unit>
 <trans-unit id="s2dcb6d1fd145b834">
   <source>Logout Method</source>
+  <target>Метод выхода</target>
 </trans-unit>
 <trans-unit id="s2e527acc2a73da87">
   <source>The logout method determines how the logout URI is called — back-channel (server-to-server) or front-channel (browser iframe).</source>
+  <target>Метод выхода определяет, как вызывается URI выхода: через обратный канал (сервер-сервер) или фронтальный канал (iframe браузера).</target>
 </trans-unit>
 <trans-unit id="s55787f4dfcdce52b">
   <source>Signing Key</source>
@@ -1724,6 +1813,7 @@
 </trans-unit>
 <trans-unit id="s9139b576e9944704">
   <source>Select a signing key...</source>
+  <target>Выберите ключ подписи...</target>
 </trans-unit>
 <trans-unit id="sc6c57419ad3a01a8">
   <source>Key used to sign the tokens.</source>
@@ -1731,9 +1821,11 @@
 </trans-unit>
 <trans-unit id="s4347135696fc7cde">
   <source>Advanced flow settings</source>
+  <target>Расширенные настройки потока</target>
 </trans-unit>
 <trans-unit id="s91675ea72a0ebe3e">
   <source>Select an authentication flow...</source>
+  <target>Выберите поток аутентификации...</target>
 </trans-unit>
 <trans-unit id="sa72a3bd1e7e89926">
   <source>Flow used when a user access this provider and is not authenticated.</source>
@@ -1741,9 +1833,11 @@
 </trans-unit>
 <trans-unit id="s19714b5520312d9a">
   <source>Select an invalidation flow...</source>
+  <target>Выберите поток аннулирования...</target>
 </trans-unit>
 <trans-unit id="s0159c800f16ee1a5">
   <source>Flow used when logging out of this provider.</source>
+  <target>Поток, используемый при выходе из этого провайдера.</target>
 </trans-unit>
 <trans-unit id="s124f93a61ee772d6">
   <source>Advanced protocol settings</source>
@@ -1763,6 +1857,7 @@
 </trans-unit>
 <trans-unit id="sdff424992223a264">
   <source>When renewing a refresh token, if the existing refresh token's expiry is within this threshold, the refresh token will be renewed. Set to seconds=0 to always renew the refresh token.</source>
+  <target>При обновлении refresh-токена он будет обновлён, если срок его действия попадает в этот порог. Укажите seconds=0, чтобы обновлять refresh-токен всегда.</target>
 </trans-unit>
 <trans-unit id="s2e3ef41a0edd8608">
   <source>Scopes</source>
@@ -1786,12 +1881,15 @@
 </trans-unit>
 <trans-unit id="sb52c56e87be6cd0c">
   <source>Select an encryption key...</source>
+  <target>Выберите ключ шифрования...</target>
 </trans-unit>
 <trans-unit id="sbdab4eb1812adc78">
   <source>Key used to encrypt the tokens. Only enable this if the application using this provider supports JWE tokens.</source>
+  <target>Ключ для шифрования токенов. Включайте только если приложение, использующее этого провайдера, поддерживает JWE-токены.</target>
 </trans-unit>
 <trans-unit id="s998fea0fa7bb4188">
   <source>authentik only supports RSA-OAEP-256 for encryption.</source>
+  <target>authentik поддерживает для шифрования только RSA-OAEP-256.</target>
 </trans-unit>
 <trans-unit id="s9f23ed1799b4d49a">
   <source>Configure what data should be used as unique User Identifier. For most cases, the default should be fine.</source>
@@ -1819,9 +1917,11 @@
 </trans-unit>
 <trans-unit id="sa52bf79fe1ccb13e">
   <source>Federated OIDC Sources</source>
+  <target>Федеративные источники OIDC</target>
 </trans-unit>
 <trans-unit id="sa42be520242dec2a">
   <source>Available Sources</source>
+  <target>Доступные источники</target>
 </trans-unit>
 <trans-unit id="s876e75cf2c07b38e">
   <source>Selected Sources</source>
@@ -1841,6 +1941,7 @@
 </trans-unit>
 <trans-unit id="s4f8a3f7792e6b940">
   <source>JWTs signed by the selected providers can be used to authenticate to this provider.</source>
+  <target>JWT, подписанные выбранными провайдерами, можно использовать для аутентификации у этого провайдера.</target>
 </trans-unit>
 <trans-unit id="s89ae85c3a9df8a6f">
   <source>Configure OAuth2 Provider</source>
@@ -1856,9 +1957,11 @@
 </trans-unit>
 <trans-unit id="sfc238215103c6162">
   <source>An error occurred while updating the provider.</source>
+  <target>При обновлении провайдера произошла ошибка.</target>
 </trans-unit>
 <trans-unit id="sc055fffc26e97237">
   <source>An error occurred while creating the provider.</source>
+  <target>При создании провайдера произошла ошибка.</target>
 </trans-unit>
 <trans-unit id="s072c6d12d3d37501">
   <source>HTTP-Basic Username Key</source>
@@ -1906,6 +2009,7 @@
 </trans-unit>
 <trans-unit id="sd144a9315e8f87c1">
   <source>http(s)://...</source>
+  <target>http(s)://...</target>
 </trans-unit>
 <trans-unit id="sf05e384059a0a7c1">
   <source>Upstream host that the requests are forwarded to.</source>
@@ -1957,6 +2061,7 @@
 </trans-unit>
 <trans-unit id="sf8633bb541bfb123">
   <source>domain.tld</source>
+  <target>домен.tld</target>
 </trans-unit>
 <trans-unit id="s211b75e868072162">
   <source>Set this to the domain you wish the authentication to be valid for. Must be a parent domain of the URL above. If you're running applications as app1.domain.tld, app2.domain.tld, set this to 'domain.tld'.</source>
@@ -2020,6 +2125,7 @@
 </trans-unit>
 <trans-unit id="s881271a499c9db98">
   <source>Configure Remote Access Provider</source>
+  <target>Настройте провайдера удалённого доступа</target>
 </trans-unit>
 <trans-unit id="sa2ea0fcd3ffa80e0">
   <source>Connection expiry</source>
@@ -2043,6 +2149,7 @@
 </trans-unit>
 <trans-unit id="s9b6bf63fddc7362f">
   <source>List of CIDRs (comma-seperated) that clients can connect from. A more specific CIDR will match before a looser one. Clients connecting from a non-specified CIDR will be dropped.</source>
+  <target>Список CIDR, разделённых запятыми, из которых могут подключаться клиенты. Более конкретный CIDR имеет приоритет над менее конкретным. Клиенты из неуказанных CIDR будут отклонены.</target>
 </trans-unit>
 <trans-unit id="sb95baab425322600">
   <source>Shared secret</source>
@@ -2054,6 +2161,7 @@
 </trans-unit>
 <trans-unit id="sd5746b2550ac4852">
   <source>Certificate used for EAP-TLS. Requires Mutual TLS Stage in authentication flow.</source>
+  <target>Сертификат, используемый для EAP-TLS. Требует этап Mutual TLS в потоке аутентификации.</target>
 </trans-unit>
 <trans-unit id="s2c8c6f89089b31d4">
   <source>Configure Radius Provider</source>
@@ -2069,39 +2177,51 @@
 </trans-unit>
 <trans-unit id="s5aebe06e3ddf6ca9">
   <source>Sign assertions</source>
+  <target>Подписывать утверждения</target>
 </trans-unit>
 <trans-unit id="s4e2329ffa0ef6b74">
   <source>When enabled, the assertion element of the SAML response will be signed.</source>
+  <target>Если включено, элемент утверждения в ответе SAML будет подписан.</target>
 </trans-unit>
 <trans-unit id="s2ad1b968b37ded68">
   <source>Sign responses</source>
+  <target>Подписывать ответы</target>
 </trans-unit>
 <trans-unit id="sa30ba280de276758">
   <source>When enabled, the SAML response will be signed.</source>
+  <target>Если включено, ответ SAML будет подписан.</target>
 </trans-unit>
 <trans-unit id="sa4bd902fbc432ab8">
   <source>Sign logout requests</source>
+  <target>Подписывать запросы выхода</target>
 </trans-unit>
 <trans-unit id="sb1e6dc6d91ce352e">
   <source>When enabled, SAML logout requests will be signed.</source>
+  <target>Если включено, запросы выхода SAML будут подписаны.</target>
 </trans-unit>
 <trans-unit id="sd1ab93a011b2f1f5">
   <source>Front-channel (Iframe)</source>
+  <target>Фронтальный канал (iframe)</target>
 </trans-unit>
 <trans-unit id="s885ea9abccda30d8">
   <source>Front-channel (Native)</source>
+  <target>Фронтальный канал (нативный)</target>
 </trans-unit>
 <trans-unit id="s34cd8ae3ee828045">
   <source>Back-channel (POST)</source>
+  <target>Обратный канал (POST)</target>
 </trans-unit>
 <trans-unit id="s7f7be294b1bef506">
   <source>SLS Binding</source>
+  <target>Привязка SLS</target>
 </trans-unit>
 <trans-unit id="s9104cd1063aa6a4a">
   <source>Determines how authentik sends the logout response back to the Service Provider.</source>
+  <target>Определяет, как authentik отправляет ответ о выходе обратно поставщику услуг.</target>
 </trans-unit>
 <trans-unit id="sd1fba3c745c016a8">
   <source>Method to use for logout when SLS URL is configured.</source>
+  <target>Метод выхода при настройке URL SLS.</target>
 </trans-unit>
 <trans-unit id="s11204eeb1e27ea8f">
   <source>ACS URL</source>
@@ -2125,9 +2245,11 @@
 </trans-unit>
 <trans-unit id="sc71892084574cf32">
   <source>SLS URL</source>
+  <target>URL SLS</target>
 </trans-unit>
 <trans-unit id="s21658078c6fdf964">
   <source>Optional Single Logout Service URL to send logout responses to. If not set, no logout response will be sent.</source>
+  <target>Необязательный URL службы единого выхода для отправки ответов о выходе. Если не указан, ответ о выходе не отправляется.</target>
 </trans-unit>
 <trans-unit id="sc741d9ebe07ad103">
   <source>Signing Certificate</source>
@@ -2151,6 +2273,7 @@
 </trans-unit>
 <trans-unit id="sb416d07987093cd5">
   <source>When selected, assertions will be encrypted using this keypair.</source>
+  <target>При выборе утверждения будут зашифрованы с помощью этой пары ключей.</target>
 </trans-unit>
 <trans-unit id="s0619413371f33083">
   <source>Available User Property Mappings</source>
@@ -2170,9 +2293,11 @@
 </trans-unit>
 <trans-unit id="sc838e297aa5e58ba">
   <source>AuthnContextClassRef Property Mapping</source>
+  <target>Сопоставление свойства AuthnContextClassRef</target>
 </trans-unit>
 <trans-unit id="sd7ba1793c3abf4fe">
   <source>Configure how the AuthnContextClassRef value will be created. When left empty, the AuthnContextClassRef will be set based on which authentication methods the user used to authenticate.</source>
+  <target>Настройте создание значения AuthnContextClassRef. Если оставить пустым, оно будет задано по методам аутентификации, которые использовал пользователь.</target>
 </trans-unit>
 <trans-unit id="s9f91cc8bcfabb40f">
   <source>Assertion valid not before</source>
@@ -2208,6 +2333,7 @@
 </trans-unit>
 <trans-unit id="s9839619155ed2cf6">
   <source>Default NameID Policy</source>
+  <target>Политика NameID по умолчанию</target>
 </trans-unit>
 <trans-unit id="s004e9a2c90f23900">
   <source>Persistent</source>
@@ -2231,6 +2357,7 @@
 </trans-unit>
 <trans-unit id="s0c48c5f754275796">
   <source>Configure the default NameID Policy used by IDP-initiated logins and when an incoming assertion doesn't specify a NameID Policy (also applies when using a custom NameID Mapping).</source>
+  <target>Настройте политику NameID по умолчанию для входов, инициированных IDP, и случаев, когда входящее утверждение не задаёт NameID Policy; также применяется при пользовательском сопоставлении NameID.</target>
 </trans-unit>
 <trans-unit id="s2a0f60e74b478804">
   <source>Digest algorithm</source>
@@ -2250,18 +2377,23 @@
 </trans-unit>
 <trans-unit id="seb250c3885733522">
   <source>Token to authenticate with.</source>
+  <target>Токен для аутентификации.</target>
 </trans-unit>
 <trans-unit id="scdafec223d3840e9">
   <source>OAuth Source</source>
+  <target>Источник OAuth</target>
 </trans-unit>
 <trans-unit id="s2111b3384e12349c">
   <source>Specify OAuth source used for authentication.</source>
+  <target>Укажите источник OAuth, используемый для аутентификации.</target>
 </trans-unit>
 <trans-unit id="s1876401267e31dd0">
   <source>OAuth Parameters</source>
+  <target>Параметры OAuth</target>
 </trans-unit>
 <trans-unit id="sc5ca1b55a5391535">
   <source>Additional OAuth parameters, such as grant_type.</source>
+  <target>Дополнительные параметры OAuth, например grant_type.</target>
 </trans-unit>
 <trans-unit id="sb21f33b039c86322">
   <source>SCIM base url, usually ends in /v2.</source>
@@ -2269,18 +2401,23 @@
 </trans-unit>
 <trans-unit id="s99060120f626df5b">
   <source>Verify SCIM server's certificates</source>
+  <target>Проверять сертификаты сервера SCIM</target>
 </trans-unit>
 <trans-unit id="s6e4af789dec357dc">
   <source>Authentication Mode</source>
+  <target>Режим аутентификации</target>
 </trans-unit>
 <trans-unit id="s24d7ac2fc280ca5e">
   <source>Authenticate SCIM requests using a static token.</source>
+  <target>Аутентифицировать запросы SCIM с помощью статического токена.</target>
 </trans-unit>
 <trans-unit id="s1c34cb0a4cccc041">
   <source>Authenticate SCIM requests using OAuth.</source>
+  <target>Аутентифицировать запросы SCIM с помощью OAuth.</target>
 </trans-unit>
 <trans-unit id="s3483d693c72e412e">
   <source>Compatibility Mode</source>
+  <target>Режим совместимости</target>
 </trans-unit>
 <trans-unit id="s11326fd2590f4e5e">
   <source>Default</source>
@@ -2288,6 +2425,7 @@
 </trans-unit>
 <trans-unit id="se7195530fa981896">
   <source>Default behavior.</source>
+  <target>Поведение по умолчанию.</target>
 </trans-unit>
 <trans-unit id="sfa5ba219a0991116">
   <source>AWS</source>
@@ -2295,6 +2433,7 @@
 </trans-unit>
 <trans-unit id="s44e80dc905ab2ecc">
   <source>Altered behavior for usage with Amazon Web Services.</source>
+  <target>Изменённое поведение для использования с Amazon Web Services.</target>
 </trans-unit>
 <trans-unit id="s2f5e2bcd583fbc27">
   <source>Slack</source>
@@ -2302,21 +2441,27 @@
 </trans-unit>
 <trans-unit id="s7f40ef46b7f213ea">
   <source>Altered behavior for usage with Slack.</source>
+  <target>Изменённое поведение для использования со Slack.</target>
 </trans-unit>
 <trans-unit id="s2ce58eab7841b342">
   <source>Salesforce</source>
+  <target>Salesforce</target>
 </trans-unit>
 <trans-unit id="s7392b5925a4803af">
   <source>Altered behavior for usage with Salesforce.</source>
+  <target>Изменённое поведение для использования с Salesforce.</target>
 </trans-unit>
 <trans-unit id="s054cb3c0a84eefe5">
   <source>Alter authentik's behavior for vendor-specific SCIM implementations.</source>
+  <target>Изменить поведение authentik для специфичных реализаций SCIM от поставщиков.</target>
 </trans-unit>
 <trans-unit id="s4d3933feb8dc7cee">
   <source>Enable dry-run mode</source>
+  <target>Включить режим пробного запуска</target>
 </trans-unit>
 <trans-unit id="s8c9ca09b5eeb5ae9">
   <source>When enabled, mutating requests will be dropped and logged instead.</source>
+  <target>Если включено, изменяющие запросы будут отклоняться и записываться в журнал.</target>
 </trans-unit>
 <trans-unit id="sfc8bb104e2c05af8">
   <source>User filtering</source>
@@ -2360,12 +2505,15 @@
 </trans-unit>
 <trans-unit id="s25afe36fa73d2e5b">
   <source>Sync settings</source>
+  <target>Настройки синхронизации</target>
 </trans-unit>
 <trans-unit id="s2c859e13e182be6b">
   <source>Page size</source>
+  <target>Размер страницы</target>
 </trans-unit>
 <trans-unit id="sb984354bb46c8bed">
   <source>Controls the number of objects synced in a single task.</source>
+  <target>Определяет число объектов, синхронизируемых в рамках одной задачи.</target>
 </trans-unit>
 <trans-unit id="sc24408fbc7ff26b5">
   <source>Page timeout</source>
@@ -8753,9 +8901,11 @@ Bindings to groups/users are checked against the user of the event.</source>
 </trans-unit>
 <trans-unit id="s382600808211cf23">
   <source>Close sidebar</source>
+  <target>Закрыть боковую панель</target>
 </trans-unit>
 <trans-unit id="sce4fb29c933410a5">
   <source>Open sidebar</source>
+  <target>Открыть боковую панель</target>
 </trans-unit>
 <trans-unit id="s180feee6454499fa">
   <source>Certificate-Key Pair</source>
