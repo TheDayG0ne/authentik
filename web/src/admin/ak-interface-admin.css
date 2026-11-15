@@ -65,6 +65,23 @@ ak-sidebar-item:active ak-sidebar-item::part(list-item) {
     color: #d3afff;
 }
 
+ak-sidebar-item::part(list-item) {
+    transition: background-color var(--tdgid-motion-fast), color var(--tdgid-motion-fast), transform var(--tdgid-motion-fast), border-color var(--tdgid-motion-fast);
+}
+
+ak-sidebar-item:hover::part(list-item) {
+    transform: translateX(3px);
+}
+
+.admin-status-strip > * {
+    animation: tdgid-status-in var(--tdgid-motion-spring) both;
+}
+
+@keyframes tdgid-status-in {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .admin-status-strip {
     display: flex;
     flex-wrap: wrap;
