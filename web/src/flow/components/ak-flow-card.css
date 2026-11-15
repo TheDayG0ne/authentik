@@ -4,3 +4,15 @@
     margin-block-start: 1.25rem;
     margin-block-end: calc(-0.75 * var(--pf-c-login__main-footer--PaddingBottom));
 }
+
+:host {
+    display: block;
+}
+
+.pf-c-login__main-header {
+    padding-block: 0.5rem 1.25rem;
+}
+
+.pf-c-login__main-body {
+    position: relative;
+}

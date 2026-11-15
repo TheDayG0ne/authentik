@@ -1,6 +1,9 @@
 :host {
     z-index: 100;
     --pf-c-page__sidebar--Transition: 0 !important;
+    background: linear-gradient(180deg, #100a18f5, #08060cf8);
+    border-inline-end: 1px solid #b780e933;
+    backdrop-filter: blur(20px);
 }
 
 .pf-c-nav {
@@ -26,6 +29,11 @@
     flex-direction: column;
     height: 100%;
     overflow-y: hidden;
+    padding-block: 0.75rem;
+}
+
+.sidebar-tools {
+    flex: 0 0 auto;
 }
 
 .pf-c-nav__section + .pf-c-nav__section {

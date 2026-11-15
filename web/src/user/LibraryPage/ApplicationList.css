@@ -39,10 +39,15 @@
 [part="card"] {
     transition: box-shadow 150ms ease-in-out;
     border: 0.5px solid var(--pf-global--BorderColor--100);
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #1b1226, #0c0911);
+    box-shadow: 0 12px 30px #0005;
     height: 100%;
 
     &:hover {
         --pf-c-card--m-hoverable--hover--BoxShadow: var(--pf-global--BoxShadow--xl-bottom);
+        transform: translateY(-3px);
     }
 }
 

@@ -7,6 +7,7 @@
         "build": "wireit",
         "build:sfe": "pnpm --filter @goauthentik/web-sfe run build",
         "build-locales": "node scripts/build-locales.mjs",
+        "check-russian-catalog": "node scripts/check-russian-catalog.mjs",
         "build-proxy": "wireit",
         "bundler:watch": "node scripts/build-web.mjs --watch",
         "extract-locales": "lit-localize extract",

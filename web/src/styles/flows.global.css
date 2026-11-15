@@ -37,3 +37,4 @@
 @import "#styles/authentik/login.css" layer(components);
 @import "#styles/authentik/components/Login/login-tokens.css" layer(components);
 @import "#styles/authentik/components/Login/flow-loading.css" layer(components);
+@import "#styles/tdgid.global.css" layer(brand);

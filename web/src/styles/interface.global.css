@@ -35,3 +35,4 @@
 @import "#styles/global/locales/ja/globals.css" layer(components);
 @import "#styles/global/locales/ko/globals.css" layer(components);
 @import "#styles/global/locales/zh/globals.css" layer(components);
+@import "#styles/tdgid.global.css" layer(brand);

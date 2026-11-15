@@ -1,6 +1,7 @@
 :host {
     display: block;
     padding: 3% 5%;
+    color: var(--pf-global--Color--100);
 }
 
 .pf-c-page {
@@ -17,6 +18,7 @@
     align-items: center;
     gap: var(--pf-global--spacer--xs);
     container-type: inline-size;
+    padding-block: 0.75rem 1.5rem;
 
     @media (width < 800px) {
         row-gap: var(--pf-global--spacer--md);
@@ -25,6 +27,7 @@
     .pf-c-page__title {
         margin: 0;
         flex: 1 1 auto;
+        letter-spacing: -0.04em;
     }
 
     .library-view-toggle {
@@ -77,9 +80,12 @@ input[name="application-search"] {
     display: block;
     width: 100%;
     font-size: var(--pf-global--FontSize--xl);
+    border-radius: 12px;
+    padding-inline: 1rem;
+    background: #0d0913 !important;
+    border: 1px solid #b780e940 !important;
 
-    border-inline: none;
-    border-block-start: none;
+    border-block-start: 1px solid #b780e940;
 
     &:focus,
     &:hover {
@@ -99,4 +105,8 @@ input[name="application-search"] {
     @media not (prefers-contrast: more) {
         outline: none;
     }
+}
+
+.pf-c-page__main-section {
+    padding-block: 0.5rem 2rem;
 }

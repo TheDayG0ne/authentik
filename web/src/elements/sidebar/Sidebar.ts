@@ -24,6 +24,9 @@ export class Sidebar extends AKElement {
 
     render(): TemplateResult {
         return html`<div part="nav" class="pf-c-nav" role="presentation">
+            <div class="sidebar-tools" part="tools">
+                <slot name="tools"></slot>
+            </div>
             <ul
                 id="global-nav"
                 ?hidden=${this.hidden}

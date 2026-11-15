@@ -264,35 +264,45 @@ export class AdminInterface extends WithLicenseSummary(
         };
 
         return html`<div class="pf-c-page">
-                <ak-page-navbar>
-                    <button
-                        slot="toggle"
-                        aria-controls="global-nav"
-                        class="pf-c-button pf-m-plain"
-                        @click=${this.toggleSidebar}
-                        aria-label=${this.sidebarOpen
-                            ? msg("Collapse navigation")
-                            : msg("Expand navigation")}
-                        aria-expanded=${this.sidebarOpen ? "true" : "false"}
-                    >
-                        <i aria-hidden="true" class="fas fa-bars"></i>
-                    </button>
-
-                    ${this.renderCommandPaletteButton()}
-                    <ak-version-banner></ak-version-banner>
-                    <ak-base-url-banner></ak-base-url-banner>
-                    <ak-enterprise-status interface="admin"></ak-enterprise-status>
-                </ak-page-navbar>
-
-                <ak-sidebar ?hidden=${!this.sidebarOpen} class="${classMap(sidebarClasses)}"
-                    >${renderSidebarItems(this.navigationEntries)}
+                <ak-sidebar ?hidden=${!this.sidebarOpen} class="${classMap(sidebarClasses)}">
+                    <div slot="tools" class="admin-sidebar-tools">
+                        <button
+                            aria-controls="global-nav"
+                            class="pf-c-button pf-m-plain sidebar-toggle"
+                            @click=${this.toggleSidebar}
+                            aria-label=${this.sidebarOpen
+                                ? msg("Collapse navigation")
+                                : msg("Expand navigation")}
+                            aria-expanded=${this.sidebarOpen ? "true" : "false"}
+                        >
+                            <i aria-hidden="true" class="fas fa-bars"></i>
+                            <span>${msg("TDG.id Admin")}</span>
+                        </button>
+                        ${this.renderCommandPaletteButton()}
+                    </div>
+                    ${renderSidebarItems(this.navigationEntries)}
                 </ak-sidebar>
+
+                <button
+                    class="admin-sidebar-open pf-c-button pf-m-primary"
+                    @click=${this.toggleSidebar}
+                    aria-controls="global-nav"
+                    aria-label=${msg("Open navigation")}
+                    aria-expanded=${this.sidebarOpen ? "true" : "false"}
+                >
+                    <i aria-hidden="true" class="fas fa-bars"></i>
+                </button>
 
                 <div class="pf-c-page__drawer">
                     <div class="pf-c-drawer ${classMap(drawerClasses)}">
                         <div class="pf-c-drawer__main">
                             <div class="pf-c-drawer__content">
                                 <div class="pf-c-drawer__body">
+                                    <div class="admin-status-strip" aria-label=${msg("System status")}>
+                                        <ak-version-banner></ak-version-banner>
+                                        <ak-base-url-banner></ak-base-url-banner>
+                                        <ak-enterprise-status interface="admin"></ak-enterprise-status>
+                                    </div>
                                     <ak-router-outlet
                                         role="presentation"
                                         class="pf-c-page__main"
@@ -328,7 +338,6 @@ export class AdminInterface extends WithLicenseSummary(
             const primaryModifierKey = macOS ? "⌘" : "Ctrl";
 
             return html`<button
-                slot="nav-buttons"
                 @click=${this.commandPalette.showListener}
                 class="pf-c-button pf-m-plain command-palette-trigger"
                 aria-label=${msg("Open Command Palette", {

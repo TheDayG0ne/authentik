@@ -1,0 +1,39 @@
+/* TDG.id is a first-party visual system.  It deliberately replaces the
+ * upstream visual vocabulary while retaining Authentik's accessible markup
+ * and interaction components. */
+@layer brand {
+    :root {
+        color-scheme: dark;
+        /* Use fonts shipped by the frontend; no runtime asset or CDN is required. */
+        --pf-global--FontFamily--text: "RedHatText", sans-serif;
+        --pf-global--FontFamily--heading: "RedHatDisplay", sans-serif;
+        --pf-global--FontFamily--monospace: "RedHatMono", monospace;
+        --ak-font-family-body: "RedHatText", sans-serif;
+        --ak-font-family-heading: "RedHatDisplay", sans-serif;
+        --pf-global--primary-color--100: #c99bff;
+        --pf-global--primary-color--200: #e4ceff;
+        --pf-global--BackgroundColor--100: #100b16;
+        --pf-global--BackgroundColor--200: #09060d;
+        --pf-global--BackgroundColor--300: #1a1122;
+        --pf-global--BackgroundColor--400: #251834;
+        --pf-global--Color--100: #f8f4ff;
+        --pf-global--Color--200: #b9afc5;
+        --pf-global--BorderColor--100: #b780e936;
+        --pf-global--BorderRadius--sm: 10px;
+        --pf-global--BorderRadius--lg: 20px;
+    }
+
+    html, body { background: #050408; color: #f8f4ff; font-family: "RedHatText", sans-serif; }
+    body { background: radial-gradient(ellipse at 74% 9%, #30124a 0, transparent 31%), radial-gradient(ellipse at 5% 45%, #160a24 0, transparent 26%), #050408; }
+    .pf-c-page, .pf-c-page__main, .pf-c-page__main-section { background: transparent !important; }
+    .pf-c-page__header, .pf-c-page__sidebar { background: #0d0913f5 !important; border-color: #ffffff18; }
+    .pf-c-card, .pf-c-panel, .pf-c-empty-state { background: linear-gradient(135deg, #1b1226e8, #0c0911f7) !important; border: 1px solid #b780e940; border-radius: 20px; box-shadow: inset 0 1px #ffffff0c; }
+    .pf-c-form-control { min-height: 48px; border: 1px solid #b780e94d !important; border-radius: 10px !important; background: #09060d !important; color: #f8f4ff !important; box-shadow: none; }
+    .pf-c-form-control:focus { border-color: #c99bff !important; box-shadow: 0 0 0 3px #c99bff20 !important; }
+    .pf-c-button { min-height: 42px; border-radius: 10px !important; font-weight: 700; }
+    .pf-c-button.pf-m-primary { background: #d3afff !important; color: #180c24 !important; }
+    .pf-c-button.pf-m-secondary { color: #d3afff !important; border-color: #b780e960 !important; background: #bd80f40d !important; }
+    .pf-c-login { min-height: 100dvh; background: transparent !important; }
+    .pf-c-login__main { background: linear-gradient(145deg, #20132ded, #0b0811fa 72%) !important; border: 1px solid #b780e955; border-radius: 28px; box-shadow: inset 0 1px #ffffff12, 0 28px 90px #0008 !important; }
+    .pf-c-login__main-header .pf-c-title, .pf-c-title { font-weight: 800; letter-spacing: -.055em; color: #f8f4ff; }
+}

@@ -9,6 +9,14 @@
     overflow: unset;
 }
 
+.pf-c-page__main-section {
+    padding-block: 1.5rem 3rem;
+}
+
+.pf-c-page__main-section > * {
+    border-radius: 20px;
+}
+
 @media screen and (min-width: 1200px) {
     :host {
         width: 90rem;

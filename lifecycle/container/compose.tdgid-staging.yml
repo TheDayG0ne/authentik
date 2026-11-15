@@ -1,0 +1,60 @@
+# Isolated TDG.id staging stack.
+# This file intentionally uses separate names, ports and volumes. It must not
+# be used with the production /opt/authentik data directory.
+services:
+  postgresql:
+    image: docker.io/library/postgres:16-alpine
+    env_file: .env.staging
+    environment:
+      POSTGRES_DB: ${PG_DB:-tdgid_staging}
+      POSTGRES_PASSWORD: ${PG_PASS:?database password required}
+      POSTGRES_USER: ${PG_USER:-tdgid_staging}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - tdgid-staging-database:/var/lib/postgresql/data
+
+  server:
+    image: ${AUTHENTIK_IMAGE:-tdgid:2026.8.5}
+    command: server
+    env_file: .env.staging
+    environment:
+      AUTHENTIK_POSTGRESQL__HOST: postgresql
+      AUTHENTIK_POSTGRESQL__NAME: ${PG_DB:-tdgid_staging}
+      AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS}
+      AUTHENTIK_POSTGRESQL__USER: ${PG_USER:-tdgid_staging}
+      AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY:?secret key required}
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    ports:
+      - "${TDGID_HTTP_PORT:-19000}:9000"
+      - "${TDGID_HTTPS_PORT:-19443}:9443"
+    volumes:
+      - tdgid-staging-data:/data
+      - ./staging-templates:/templates:ro
+
+  worker:
+    image: ${AUTHENTIK_IMAGE:-tdgid:2026.8.5}
+    command: worker
+    env_file: .env.staging
+    environment:
+      AUTHENTIK_POSTGRESQL__HOST: postgresql
+      AUTHENTIK_POSTGRESQL__NAME: ${PG_DB:-tdgid_staging}
+      AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS}
+      AUTHENTIK_POSTGRESQL__USER: ${PG_USER:-tdgid_staging}
+      AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY:?secret key required}
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    user: root
+    volumes:
+      - tdgid-staging-data:/data
+      - ./staging-templates:/templates:ro
+
+volumes:
+  tdgid-staging-database:
+  tdgid-staging-data:

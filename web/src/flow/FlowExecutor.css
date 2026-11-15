@@ -5,6 +5,38 @@
     display: flex;
     min-width: 100%;
     min-height: 100dvh;
+    position: relative;
+    isolation: isolate;
+    background:
+        radial-gradient(circle at 12% 18%, #6d2e9b33 0 0.2rem, transparent 0.25rem),
+        radial-gradient(ellipse at 78% 8%, #371052 0, transparent 34%),
+        linear-gradient(135deg, #050408 0%, #0e0715 52%, #050408 100%);
+}
+
+:host::before,
+:host::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    border: 1px solid #c99bff22;
+    border-radius: 999px;
+    transform: rotate(-24deg);
+}
+
+:host::before {
+    width: 42rem;
+    height: 16rem;
+    inset-inline-start: -12rem;
+    inset-block-end: 8rem;
+}
+
+:host::after {
+    width: 34rem;
+    height: 12rem;
+    inset-inline-end: -10rem;
+    inset-block-start: 9rem;
+    border-color: #d3afff15;
 }
 
 ak-flow-inspector-button {
@@ -74,6 +106,31 @@ ak-flow-inspector-button {
     @media (width <= 35rem) {
         grid-row: header;
     }
+}
+
+[part="login"] {
+    position: relative;
+    width: 100%;
+    padding: clamp(1rem, 4vw, 4rem);
+    gap: 1rem;
+}
+
+[part="main"] {
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(24px);
+}
+
+[part="main"]::after {
+    content: "TDG.id  /  SECURE ACCESS";
+    position: absolute;
+    inset-inline-end: 1.5rem;
+    inset-block-start: 1.25rem;
+    color: #d3afff66;
+    font-family: "RedHatMono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    pointer-events: none;
 }
 
 @media (min-width: 70rem) and (min-height: 17.5rem) {
