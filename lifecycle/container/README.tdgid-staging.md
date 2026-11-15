@@ -26,3 +26,24 @@ docker compose --env-file lifecycle/container/.env.staging `
 The default endpoints are `http://127.0.0.1:19000` and
 `https://127.0.0.1:19443`. Do not point a public reverse proxy at these ports
 until the complete regression checklist has passed.
+
+## One-command Windows start
+
+From the repository root, on a machine with Docker Desktop running:
+
+```powershell
+.\scripts\start-tdgid-staging.ps1 -Rebuild
+```
+
+The script creates `lifecycle/container/.env.staging` with random local-only
+credentials if it does not exist, builds the pinned TDG.id image, creates the
+isolated PostgreSQL/data volumes, and starts the server and worker. The file is
+ignored and must never be committed. Complete first-run setup at:
+
+`http://127.0.0.1:19000/if/flow/initial-setup/`
+
+Stop the isolated stack without touching production:
+
+```powershell
+.\scripts\start-tdgid-staging.ps1 -Down
+```

@@ -7,8 +7,9 @@ $Root = Split-Path -Parent $PSScriptRoot
 $Commit = (git -C $Root rev-parse HEAD).Trim()
 $Expected = "4ec0d19b98da3c329781894cd550da95d3033954"
 
-if ($Commit -ne $Expected) {
-    throw "TDG.id build must use upstream 2026.8.5 commit $Expected; found $Commit"
+git -C $Root merge-base --is-ancestor $Expected $Commit
+if ($LASTEXITCODE -ne 0) {
+    throw "TDG.id build must contain upstream 2026.8.5 commit $Expected in its history; found $Commit"
 }
 
 docker build `

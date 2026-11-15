@@ -16,6 +16,9 @@ media
 node_modules
 tsconfig.tsbuildinfo
 
+# Local isolated TDG.id staging secrets
+/lifecycle/container/.env.staging
+
 .cspellcache
 cspell-report.*
 
