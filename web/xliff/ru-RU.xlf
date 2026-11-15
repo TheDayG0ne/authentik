@@ -4732,9 +4732,11 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s64b935d223a99731">
   <source>Request access to send messages from your bot</source>
+  <target>Запросить доступ к отправке сообщений от имени бота</target>
 </trans-unit>
 <trans-unit id="s500a041b1fab7aac">
   <source>Telegram Attribute mapping</source>
+  <target>Сопоставление атрибутов Telegram</target>
 </trans-unit>
 <trans-unit id="sb1a4e9b288e2f005">
   <source>Federation and Social login</source>
@@ -4758,6 +4760,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="scc1a17d28912e974">
   <source>Kerberos Source is in preview.</source>
+  <target>Источник Kerberos находится в предварительном просмотре.</target>
 </trans-unit>
 <trans-unit id="s2c378e86e025fdb2">
   <source>Update Kerberos Source</source>
@@ -4836,9 +4839,11 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s463491b90193d86b">
   <source>Telegram bot</source>
+  <target>Telegram-бот</target>
 </trans-unit>
 <trans-unit id="s4014853299a8bb20">
   <source>Update Telegram Source</source>
+  <target>Обновить источник Telegram</target>
 </trans-unit>
 <trans-unit id="s643d8f2e5e5e930d">
   <source>Successfully updated mapping.</source>
@@ -5026,6 +5031,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s98d6b06b0fb7da64">
   <source>Logo shown in sidebar/header and flow executor.</source>
+  <target>Логотип, отображаемый в боковой панели, заголовке и исполнителе потоков.</target>
 </trans-unit>
 <trans-unit id="s3626433940124897">
   <source>Favicon</source>
@@ -5037,9 +5043,11 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s8e56764914a939d2">
   <source>Default flow background</source>
+  <target>Фон потока по умолчанию</target>
 </trans-unit>
 <trans-unit id="sea64900dbcf879c8">
   <source>Default background used during flow execution. Can be overridden per flow.</source>
+  <target>Фон по умолчанию во время выполнения потока. Можно переопределить для каждого потока.</target>
 </trans-unit>
 <trans-unit id="sf16aa54bf77362e1">
   <source>Custom CSS</source>
@@ -5047,6 +5055,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s6171ded034da4e96">
   <source>Custom CSS to apply to pages when this brand is active.</source>
+  <target>Пользовательский CSS для страниц при активном бренде.</target>
 </trans-unit>
 <trans-unit id="sd61a4f736ac0a98e">
   <source>External user settings</source>
@@ -5058,6 +5067,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s2643b2f95c0c38a0">
   <source>Select an application...</source>
+  <target>Выберите приложение...</target>
 </trans-unit>
 <trans-unit id="sac85801a25b7bb27">
   <source>When configured, external users will automatically be redirected to this application when not attempting to access a different application</source>
@@ -5081,6 +5091,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s5d4669050d36a5ab">
   <source>Select a recovery flow...</source>
+  <target>Выберите поток восстановления...</target>
 </trans-unit>
 <trans-unit id="s836aa192b30c21da">
   <source>Unenrollment flow</source>
@@ -5088,6 +5099,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s796ab9d9a9131241">
   <source>Select an unenrollment flow...</source>
+  <target>Выберите поток отмены регистрации...</target>
 </trans-unit>
 <trans-unit id="s081d3c4b47a6ff83">
   <source>If set, users are able to unenroll themselves using this flow. If no flow is set, option is not shown.</source>
@@ -5099,6 +5111,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s1fe26d2eb791caec">
   <source>Select a user settings flow...</source>
+  <target>Выберите поток пользовательских настроек...</target>
 </trans-unit>
 <trans-unit id="s523160b433311521">
   <source>If set, users are able to configure details of their profile.</source>
@@ -5110,6 +5123,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s70d02f31fd256eff">
   <source>Select a device code flow...</source>
+  <target>Выберите поток кода устройства...</target>
 </trans-unit>
 <trans-unit id="s7b298427bdea81ae">
   <source>If set, the OAuth Device Code profile can be used, and the selected flow will be used to enter the code.</source>
@@ -5125,12 +5139,15 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s2c42bb3c6f5420d2">
   <source>Client Certificates</source>
+  <target>Сертификаты клиентов</target>
 </trans-unit>
 <trans-unit id="s95901716c0629274">
   <source>Available Certificates</source>
+  <target>Доступные сертификаты</target>
 </trans-unit>
 <trans-unit id="sdbf6b484fa1436b0">
   <source>Selected Certificates</source>
+  <target>Выбранные сертификаты</target>
 </trans-unit>
 <trans-unit id="s17260b71484b307f">
   <source>Set custom attributes using YAML or JSON. Any attributes set here will be inherited by users, if the request is handled by this brand.</source>
@@ -5138,6 +5155,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s4270ebcf645b9df5">
   <source>Search by domain or brand name...</source>
+  <target>Поиск по домену или имени бренда...</target>
 </trans-unit>
 <trans-unit id="s79fc990a2b58f27f">
   <source>Brands</source>
@@ -5222,9 +5240,11 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="sf0d94539428a0900">
   <source>Search for a group by name…</source>
+  <target>Поиск группы по имени…</target>
 </trans-unit>
 <trans-unit id="s77ec9e27e9ae81b8">
   <source>Group Search</source>
+  <target>Поиск группы</target>
 </trans-unit>
 <trans-unit id="s9f26843287bb592d">
   <source>Groups</source>
