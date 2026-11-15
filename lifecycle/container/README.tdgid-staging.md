@@ -42,6 +42,14 @@ ignored and must never be committed. Complete first-run setup at:
 
 `http://127.0.0.1:19000/if/flow/initial-setup/`
 
+The startup script waits for the real Authentik initial-setup flow and fails
+with container log instructions if the server or database is not healthy.
+You can re-run the readiness check independently:
+
+```powershell
+.\scripts\check-tdgid-staging.ps1
+```
+
 Stop the isolated stack without touching production:
 
 ```powershell

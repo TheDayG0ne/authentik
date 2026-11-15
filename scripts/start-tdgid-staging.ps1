@@ -50,3 +50,4 @@ docker compose --env-file $EnvFile -f $ComposeFile up -d
 docker compose --env-file $EnvFile -f $ComposeFile ps
 Write-Host "TDG.id staging: http://127.0.0.1:19000/"
 Write-Host "First-run setup: http://127.0.0.1:19000/if/flow/initial-setup/"
+& (Join-Path $PSScriptRoot "check-tdgid-staging.ps1")
