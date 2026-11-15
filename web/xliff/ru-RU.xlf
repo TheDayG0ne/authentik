@@ -2517,9 +2517,11 @@
 </trans-unit>
 <trans-unit id="sc24408fbc7ff26b5">
   <source>Page timeout</source>
+  <target>Тайм-аут страницы</target>
 </trans-unit>
 <trans-unit id="s7faa17601278029a">
   <source>Timeout for synchronization of a single page.</source>
+  <target>Тайм-аут синхронизации одной страницы.</target>
 </trans-unit>
 <trans-unit id="s7ccce0ec8d228db6">
   <source>Configure SCIM Provider</source>
@@ -2535,12 +2537,15 @@
 </trans-unit>
 <trans-unit id="s669b18c6d2d9c95b">
   <source>None</source>
+  <target>Нет</target>
 </trans-unit>
 <trans-unit id="s7055edd8fab866f4">
   <source>strict</source>
+  <target>строгий</target>
 </trans-unit>
 <trans-unit id="s5e57ca23b946c1b8">
   <source>regexp</source>
+  <target>регулярное выражение</target>
 </trans-unit>
 <trans-unit id="sc6e8a34361c7c272">
   <source>Forward auth (domain-level)</source>
@@ -2576,6 +2581,7 @@
 </trans-unit>
 <trans-unit id="sd226dc54c414585a">
   <source>Review and Submit Application</source>
+  <target>Проверьте и создайте приложение</target>
 </trans-unit>
 <trans-unit id="scda8dc24b561e205">
   <source>There was an error in the application.</source>
@@ -2595,6 +2601,7 @@
 </trans-unit>
 <trans-unit id="s828ded9ade500ffc">
   <source>There was an error. Please go back and review the application.</source>
+  <target>Произошла ошибка. Вернитесь назад и проверьте приложение.</target>
 </trans-unit>
 <trans-unit id="s9fdda682893624a1">
   <source>There was an error:</source>
@@ -2602,6 +2609,7 @@
 </trans-unit>
 <trans-unit id="s201ee6bc6d9f97da">
   <source>Please go back and review the application.</source>
+  <target>Вернитесь назад и проверьте приложение.</target>
 </trans-unit>
 <trans-unit id="s7a6b3453209e1066">
   <source>There was an error creating the application, but no error message was sent. Please review the server logs.</source>
@@ -2609,6 +2617,7 @@
 </trans-unit>
 <trans-unit id="s9c09ef16900241fa">
   <source>Review the Application and Provider</source>
+  <target>Проверьте приложение и провайдера</target>
 </trans-unit>
 <trans-unit id="s7f5869b3d14d7cbc">
   <source>Provider</source>
@@ -2620,9 +2629,11 @@
 </trans-unit>
 <trans-unit id="s0a0a21f7bcf9d865">
   <source>Saving application...</source>
+  <target>Сохранение приложения...</target>
 </trans-unit>
 <trans-unit id="se669a4b939be0891">
   <source>authentik was unable to complete this process.</source>
+  <target>authentik не удалось завершить этот процесс.</target>
 </trans-unit>
 <trans-unit id="s71c5d51d5a357dbd">
   <source>Don't show this message again.</source>
@@ -2642,9 +2653,11 @@
 </trans-unit>
 <trans-unit id="sa9a4ce20b507b232">
   <source>New Provider</source>
+  <target>Новый провайдер</target>
 </trans-unit>
 <trans-unit id="sf397c39bda7abfc6">
   <source>Open the wizard to create a new provider.</source>
+  <target>Откройте мастер для создания нового провайдера.</target>
 </trans-unit>
 <trans-unit id="sa817aa9f6f88a991">
   <source>Credentials</source>
@@ -2744,12 +2757,15 @@
 </trans-unit>
 <trans-unit id="se8dd47dfaf01d6c9">
   <source>Key used to sign the events.</source>
+  <target>Ключ, используемый для подписи событий.</target>
 </trans-unit>
 <trans-unit id="sd1b31f8fba05d429">
   <source>Event Retention</source>
+  <target>Срок хранения событий</target>
 </trans-unit>
 <trans-unit id="sd760b123cced4675">
   <source>Determines how long events are stored for. If an event could not be sent correctly, its expiration is also increased by this duration.</source>
+  <target>Определяет срок хранения событий. Если событие не удалось корректно отправить, его срок хранения увеличивается на эту же продолжительность.</target>
 </trans-unit>
 <trans-unit id="sb0b86b8ca6ab13bd">
   <source>Providers</source>
@@ -2761,6 +2777,7 @@
 </trans-unit>
 <trans-unit id="s0c9d1c885a69abe8">
   <source>Provider Search</source>
+  <target>Поиск провайдера</target>
 </trans-unit>
 <trans-unit id="s10929ca568ae10bc">
   <source>Provider(s)</source>
@@ -2776,6 +2793,7 @@
 </trans-unit>
 <trans-unit id="s0fb31bb136cc353a">
   <source>Provider not assigned to any application.</source>
+  <target>Провайдер не назначен ни одному приложению.</target>
 </trans-unit>
 <trans-unit id="s3b579c4bb6b447ae">
   <source>Successfully triggered sync.</source>
@@ -2787,9 +2805,11 @@
 </trans-unit>
 <trans-unit id="sc4bf1a365af696eb">
   <source>Override dry-run mode</source>
+  <target>Переопределить режим пробного запуска</target>
 </trans-unit>
 <trans-unit id="s94a5233931be4110">
   <source>When enabled, this sync will still execute mutating requests regardless of the dry-run mode in the provider.</source>
+  <target>Если включено, эта синхронизация будет выполнять изменяющие запросы независимо от режима пробного запуска провайдера.</target>
 </trans-unit>
 <trans-unit id="s05073d2537b45d1a">
   <source>Sync</source>
@@ -2817,21 +2837,27 @@
 </trans-unit>
 <trans-unit id="s3f63421908094590">
   <source>Current status</source>
+  <target>Текущий статус</target>
 </trans-unit>
 <trans-unit id="s4412853e1655ebb3">
   <source>Sync is currently running.</source>
+  <target>Синхронизация выполняется.</target>
 </trans-unit>
 <trans-unit id="s08661004803c26b0">
   <source>Sync is not currently running.</source>
+  <target>Синхронизация сейчас не выполняется.</target>
 </trans-unit>
 <trans-unit id="s81d16aa9ec62262c">
   <source>Last successful sync</source>
+  <target>Последняя успешная синхронизация</target>
 </trans-unit>
 <trans-unit id="sd1eb8f8acdbcd1d3">
   <source>No successful sync found.</source>
+  <target>Успешная синхронизация не найдена.</target>
 </trans-unit>
 <trans-unit id="s6b0eeb3de1789c6e">
   <source>Last sync status</source>
+  <target>Статус последней синхронизации</target>
 </trans-unit>
 <trans-unit id="s6c3daaac4eed12f9">
   <source>Changelog</source>
@@ -2851,6 +2877,7 @@
 </trans-unit>
 <trans-unit id="sc2473aae093ce256">
   <source>Dry-run</source>
+  <target>Пробный запуск</target>
 </trans-unit>
 <trans-unit id="sd520a4089006ca93">
   <source>Update Google Workspace Provider</source>
@@ -2874,6 +2901,7 @@
 </trans-unit>
 <trans-unit id="s5e0c81c05565bf42">
   <source>Using this form will only create an Application. In order to authenticate with the application, you will have to manually pair it with a Provider.</source>
+  <target>Эта форма создаёт только приложение. Чтобы аутентифицироваться через него, вручную свяжите его с провайдером.</target>
 </trans-unit>
 <trans-unit id="s350a616ff5e145ec">
   <source>Select a provider that this application should use.</source>
@@ -3097,6 +3125,7 @@
 </trans-unit>
 <trans-unit id="s48a0d160d9e0a7be">
   <source>Hostname/IP to connect to. Optionally specify the port.</source>
+  <target>Имя хоста или IP-адрес для подключения. При необходимости укажите порт.</target>
 </trans-unit>
 <trans-unit id="sc39f6abf0daedb0f">
   <source>Maximum concurrent connections</source>
@@ -3112,12 +3141,15 @@
 </trans-unit>
 <trans-unit id="s1ec022562e3d515b">
   <source>Search for users by username or display name...</source>
+  <target>Поиск пользователей по имени пользователя или отображаемому имени...</target>
 </trans-unit>
 <trans-unit id="s65f6a2f5e2b848e1">
   <source>Search Users</source>
+  <target>Поиск пользователей</target>
 </trans-unit>
 <trans-unit id="sd416adae573583d5">
   <source>Select Users</source>
+  <target>Выберите пользователей</target>
 </trans-unit>
 <trans-unit id="sa45a194b58837e4f">
   <source>Active</source>
@@ -3129,9 +3161,11 @@
 </trans-unit>
 <trans-unit id="s93d69514c94ad635">
   <source>Select users</source>
+  <target>Выберите пользователей</target>
 </trans-unit>
 <trans-unit id="sb85774dc5d18ff0f">
   <source>Confirm</source>
+  <target>Подтвердить</target>
 </trans-unit>
 <trans-unit id="s75d5ff5dd8d3c6d2">
   <source>Successfully updated group.</source>
@@ -3143,15 +3177,19 @@
 </trans-unit>
 <trans-unit id="s9436f1bf4400f6a6">
   <source>Type a group name...</source>
+  <target>Введите имя группы...</target>
 </trans-unit>
 <trans-unit id="s2d9356347ff7c77f">
   <source>Group Name</source>
+  <target>Имя группы</target>
 </trans-unit>
 <trans-unit id="sf45dac7c571f18bd">
   <source>Superuser Privileges</source>
+  <target>Привилегии суперпользователя</target>
 </trans-unit>
 <trans-unit id="sbf8a7af4eafa87f8">
   <source>Whether users added to this group will have superuser privileges.</source>
+  <target>Определяет, получат ли пользователи, добавленные в эту группу, привилегии суперпользователя.</target>
 </trans-unit>
 <trans-unit id="s6b2beba7ab637e9e">
   <source>Roles</source>
@@ -3235,6 +3273,7 @@
 </trans-unit>
 <trans-unit id="sa82f8948649d0989">
   <source>Matches Event's Client IP (strict matching, for network matching use an Expression Policy).</source>
+  <target>Сопоставляет клиентский IP события при строгом сравнении; для сопоставления сети используйте политику выражения.</target>
 </trans-unit>
 <trans-unit id="s5a15a8f39c699273">
   <source>Match events created by selected application. When left empty, all applications are matched.</source>
@@ -3274,6 +3313,7 @@
 </trans-unit>
 <trans-unit id="s035bfd9c5f97e4d3">
   <source>Distance settings</source>
+  <target>Настройки расстояния</target>
 </trans-unit>
 <trans-unit id="s207e6f8a8b3515fd">
   <source>Check historical distance of logins</source>
