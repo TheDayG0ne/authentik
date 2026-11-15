@@ -3900,60 +3900,79 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="sd1dc37bdc04758eb">
   <source>Download the latest package from here:</source>
+  <target>Загрузите последнюю версию пакета отсюда:</target>
 </trans-unit>
 <trans-unit id="sf96a86df0756bc7b">
   <source>Afterwards, select the enrollment token you want to use:</source>
+  <target>Затем выберите токен регистрации, который хотите использовать:</target>
 </trans-unit>
 <trans-unit id="s12f523a52b843ea2">
   <source>macOS</source>
+  <target>macOS</target>
 </trans-unit>
 <trans-unit id="s7845e3b545ffe6bd">
   <source>Linux</source>
+  <target>Linux</target>
 </trans-unit>
 <trans-unit id="s50ad561b4139dc06">
   <source>Configured connector does not support setup.</source>
+  <target>Настроенный коннектор не поддерживает установку.</target>
 </trans-unit>
 <trans-unit id="s3624e780118ae113">
   <source>No connectors configured. Navigate to connectors in the sidebar and create a connector.</source>
+  <target>Коннекторы не настроены. Откройте «Коннекторы» в боковой панели и создайте коннектор.</target>
 </trans-unit>
 <trans-unit id="s8f26d4f086cc1323">
   <source>Unix</source>
+  <target>Unix</target>
 </trans-unit>
 <trans-unit id="s16125219b0c92b52">
   <source>BSD</source>
+  <target>BSD</target>
 </trans-unit>
 <trans-unit id="sefe707c1bfb1d3cc">
   <source>Android</source>
+  <target>Android</target>
 </trans-unit>
 <trans-unit id="s2c0fca192c3375e6">
   <source>iOS</source>
+  <target>iOS</target>
 </trans-unit>
 <trans-unit id="scfe39d24bc958960">
   <source>Devices</source>
+  <target>Устройства</target>
 </trans-unit>
 <trans-unit id="s091d3507b5b2f9d7">
   <source>OS</source>
+  <target>ОС</target>
 </trans-unit>
 <trans-unit id="s150cf10289852e4a">
   <source>Endpoint Devices are in preview.</source>
+  <target>Endpoint Devices находится в предварительном просмотре.</target>
 </trans-unit>
 <trans-unit id="s672b3d1982f585fa">
   <source>Total devices</source>
+  <target>Всего устройств</target>
 </trans-unit>
 <trans-unit id="sf3a81f931deb9f96">
   <source>Total count of devices across all groups</source>
+  <target>Общее число устройств во всех группах</target>
 </trans-unit>
 <trans-unit id="sd4566519aa4dbd8e">
   <source>Unreachable devices</source>
+  <target>Недоступные устройства</target>
 </trans-unit>
 <trans-unit id="sf1580fcb88cbcfd8">
   <source>Devices that authentik hasn't received information about in 24h.</source>
+  <target>Устройства, от которых authentik не получал данных более 24 часов.</target>
 </trans-unit>
 <trans-unit id="s303ef08d87cd21fd">
   <source>Outdated agents</source>
+  <target>Устаревшие агенты</target>
 </trans-unit>
 <trans-unit id="s0a5821461d41f627">
   <source>Devices running an outdated version of an agent</source>
+  <target>Устройства с устаревшей версией агента</target>
 </trans-unit>
 <trans-unit id="sabb56f74492e7e96">
   <source>Update Device</source>
@@ -3961,6 +3980,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="sf655f75d8e14d5fe">
   <source>Endpoint Device(s)</source>
+  <target>Устройство(а) endpoint</target>
 </trans-unit>
 <trans-unit id="sd667856c73082c35">
   <source>Device <x id="0" equiv-text="${this.device?.name}"/></source>
