@@ -4072,24 +4072,31 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s3f009bda38b93134">
   <source>Interval how frequently the agent tries to update its config.</source>
+  <target>Интервал, с которым агент пытается обновить свою конфигурацию.</target>
 </trans-unit>
 <trans-unit id="seb040746311faa64">
   <source>Unix settings</source>
+  <target>Настройки Unix</target>
 </trans-unit>
 <trans-unit id="s5758d1421a791cc6">
   <source>NSS User ID offset</source>
+  <target>Смещение NSS User ID</target>
 </trans-unit>
 <trans-unit id="sfb33118d419cd3c0">
   <source>NSS Group ID offset</source>
+  <target>Смещение NSS Group ID</target>
 </trans-unit>
 <trans-unit id="sffc7bf978a049970">
   <source>Connectors are required to create devices. Depending on connector type, agents either directly talk to them or they talk to and external API to create devices.</source>
+  <target>Коннекторы необходимы для создания устройств. В зависимости от типа коннектора агенты обращаются к нему напрямую или используют внешний API для создания устройств.</target>
 </trans-unit>
 <trans-unit id="s80b0feb2a6b98ef9">
   <source>Connectors</source>
+  <target>Коннекторы</target>
 </trans-unit>
 <trans-unit id="s06b8c7e7fb99c1d8">
   <source>Connector(s)</source>
+  <target>Коннектор(ы)</target>
 </trans-unit>
 <trans-unit id="s476ffc07e6d66f18">
   <source>Successfully updated token.</source>
@@ -4105,6 +4112,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s47be0f8c26355135">
   <source>Token name</source>
+  <target>Имя токена</target>
 </trans-unit>
 <trans-unit id="s1b14062c44e5ef45">
   <source>Expiring</source>
@@ -4120,6 +4128,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="se85e2f1923fd96ac">
   <source>Enrollment Token(s)</source>
+  <target>Токен(ы) регистрации</target>
 </trans-unit>
 <trans-unit id="scc3487e74c5a3e89">
   <source>Copy token</source>
@@ -4127,15 +4136,19 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="sfbf16ea8fef96f6d">
   <source>Enrollment Tokens</source>
+  <target>Токены регистрации</target>
 </trans-unit>
 <trans-unit id="s3a38fceae14534dd">
   <source>Device access groups</source>
+  <target>Группы доступа устройств</target>
 </trans-unit>
 <trans-unit id="sbe0fb540e9dee187">
   <source>Create groups of devices to manage access.</source>
+  <target>Создавайте группы устройств для управления доступом.</target>
 </trans-unit>
 <trans-unit id="s7924cdccf3592aa8">
   <source>Device Group(s)</source>
+  <target>Группа(ы) устройств</target>
 </trans-unit>
 <trans-unit id="s24875d5475e82526">
   <source>Successfully updated source.</source>
@@ -4179,9 +4192,11 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s8bf373b1a2bfefed">
   <source>Promoted</source>
+  <target>Выделенный</target>
 </trans-unit>
 <trans-unit id="s4a600d70e4348810">
   <source>When enabled, this source will be displayed as a prominent button on the login page, instead of a small icon.</source>
+  <target>Если включено, источник отображается на странице входа заметной кнопкой вместо небольшой иконки.</target>
 </trans-unit>
 <trans-unit id="s39d6971531a270b6">
   <source>Update internal password on login</source>
@@ -4201,6 +4216,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="sf52ff57fd136cc2f">
   <source>Enable this option to write password changes made in authentik back to Kerberos. Ignored if sync is disabled.</source>
+  <target>Включите, чтобы записывать изменения пароля из authentik обратно в Kerberos. При отключённой синхронизации параметр игнорируется.</target>
 </trans-unit>
 <trans-unit id="s14a16542f956e11d">
   <source>Realm settings</source>
@@ -4216,6 +4232,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="sbf50181022f47de3">
   <source>Kerberos 5 configuration. See man krb5.conf(5) for configuration format. If left empty, a default krb5.conf will be used.</source>
+  <target>Конфигурация Kerberos 5. Формат описан в man krb5.conf(5). Если поле пустое, используется krb5.conf по умолчанию.</target>
 </trans-unit>
 <trans-unit id="s81a87652ade099e4">
   <source>User matching mode</source>
@@ -4227,12 +4244,15 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s2386539a0bd62fab">
   <source>Sync connection settings</source>
+  <target>Настройки подключения синхронизации</target>
 </trans-unit>
 <trans-unit id="s3cc2b33d2a8000d3">
   <source>KAdmin type</source>
+  <target>Тип KAdmin</target>
 </trans-unit>
 <trans-unit id="s624e1c8739507529">
   <source>MIT krb5 kadmin</source>
+  <target>MIT krb5 kadmin</target>
 </trans-unit>
 <trans-unit id="s6d225d9e74dfff6f">
   <source>Heimdal kadmin</source>
