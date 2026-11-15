@@ -3317,39 +3317,51 @@
 </trans-unit>
 <trans-unit id="s207e6f8a8b3515fd">
   <source>Check historical distance of logins</source>
+  <target>Проверять историческое расстояние входов</target>
 </trans-unit>
 <trans-unit id="s8158f4b3e5c869be">
   <source>When this option enabled, the GeoIP data of the policy request is compared to the specified number of historical logins.</source>
+  <target>Если включено, данные GeoIP запроса политики сравниваются с указанным числом предыдущих входов.</target>
 </trans-unit>
 <trans-unit id="sb8b7450c8515894c">
   <source>Maximum distance</source>
+  <target>Максимальное расстояние</target>
 </trans-unit>
 <trans-unit id="s40cdbaa532bc9899">
   <source>Maximum distance a login attempt is allowed from in kilometers.</source>
+  <target>Максимальное расстояние в километрах, с которого разрешена попытка входа.</target>
 </trans-unit>
 <trans-unit id="seef852b5c0f8a529">
   <source>Distance tolerance</source>
+  <target>Допуск расстояния</target>
 </trans-unit>
 <trans-unit id="sce567ced300aeb8a">
   <source>Tolerance in checking for distances in kilometers.</source>
+  <target>Допуск при проверке расстояний в километрах.</target>
 </trans-unit>
 <trans-unit id="s9ea9cdabd74f8f97">
   <source>Historical Login Count</source>
+  <target>Количество предыдущих входов</target>
 </trans-unit>
 <trans-unit id="s27aec4c2de1ae777">
   <source>Amount of previous login events to check against.</source>
+  <target>Количество предыдущих событий входа для проверки.</target>
 </trans-unit>
 <trans-unit id="s48611ce6e85874dc">
   <source>Check impossible travel</source>
+  <target>Проверять невозможное перемещение</target>
 </trans-unit>
 <trans-unit id="s8cf926e8311f8065">
   <source>When this option enabled, the GeoIP data of the policy request is compared to the specified number of historical logins and if the travel would have been possible in the amount of time since the previous event.</source>
+  <target>Если включено, данные GeoIP запроса политики сравниваются с указанным числом предыдущих входов и проверяется, возможно ли было перемещение за время после предыдущего события.</target>
 </trans-unit>
 <trans-unit id="sa963d05af436770b">
   <source>Impossible travel tolerance</source>
+  <target>Допуск невозможного перемещения</target>
 </trans-unit>
 <trans-unit id="s5760cd97ca42a238">
   <source>Static rule settings</source>
+  <target>Настройки статического правила</target>
 </trans-unit>
 <trans-unit id="s26c2828bf8db525e">
   <source>ASNs</source>
@@ -3492,9 +3504,11 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s86cf007b861152ca">
   <source>Ensure that the user's new password is different from their previous passwords. The number of past passwords to check is configurable.</source>
+  <target>Проверяет, что новый пароль пользователя отличается от предыдущих. Количество проверяемых прошлых паролей настраивается.</target>
 </trans-unit>
 <trans-unit id="s79b3fcd40dd63921">
   <source>Number of previous passwords to check</source>
+  <target>Количество предыдущих паролей для проверки</target>
 </trans-unit>
 <trans-unit id="s5b1fb0d4c0daeba8">
   <source>Create Binding</source>
@@ -3510,12 +3524,15 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="sb3087c7347bed341">
   <source>Company employees with access to the full enterprise feature set.</source>
+  <target>Сотрудники компании с доступом ко всему набору корпоративных функций.</target>
 </trans-unit>
 <trans-unit id="sc7266f960c466de6">
   <source>External consultants or B2C customers without access to enterprise features.</source>
+  <target>Внешние консультанты или B2C-клиенты без доступа к корпоративным функциям.</target>
 </trans-unit>
 <trans-unit id="sf4ad4d9f8a5c868b">
   <source>Machine-to-machine authentication or other automations.</source>
+  <target>Аутентификация между системами или другие автоматизации.</target>
 </trans-unit>
 <trans-unit id="s3d2a8b86a4f5a810">
   <source>Successfully created user and added to group <x id="0" equiv-text="${this.targetGroup.name}"/></source>
@@ -3527,12 +3544,15 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s7819072445baceee">
   <source>The user's primary identifier used for authentication. 150 characters or fewer.</source>
+  <target>Основной идентификатор пользователя для аутентификации. Не более 150 символов.</target>
 </trans-unit>
 <trans-unit id="s11b2e9ecce28690c">
   <source>Display Name</source>
+  <target>Отображаемое имя</target>
 </trans-unit>
 <trans-unit id="s237e9858014b1205">
   <source>Type an optional display name...</source>
+  <target>Введите необязательное отображаемое имя...</target>
 </trans-unit>
 <trans-unit id="sc82cf82ad6cb26cc">
   <source>The user's display name.</source>
