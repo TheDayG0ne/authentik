@@ -3780,9 +3780,11 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s754153d9e524ffce">
   <source>Clear Application cache</source>
+  <target>Очистить кэш приложения</target>
 </trans-unit>
 <trans-unit id="sea5092df2c72b064">
   <source>Are you sure you want to clear the application cache? This will cause all policies to be re-evaluated on their next usage.</source>
+  <target>Очистить кэш приложения? При следующем использовании все политики будут вычислены заново.</target>
 </trans-unit>
 <trans-unit id="sd9b556a84ae25690">
   <source>Successfully sent test-request.</source>
@@ -3790,36 +3792,47 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="sa36117e97f49c86e">
   <source>Successfully updated entitlement.</source>
+  <target>Право доступа успешно обновлено.</target>
 </trans-unit>
 <trans-unit id="s86bee999b735111f">
   <source>Successfully created entitlement.</source>
+  <target>Право доступа успешно создано.</target>
 </trans-unit>
 <trans-unit id="s8a48455905fc14e6">
   <source>Application entitlement(s)</source>
+  <target>Право(а) доступа к приложению</target>
 </trans-unit>
 <trans-unit id="sae971cbff672090b">
   <source>Update Entitlement</source>
+  <target>Обновить право доступа</target>
 </trans-unit>
 <trans-unit id="s537a58ae0ff50f1c">
   <source>These bindings control which users have access to this entitlement.</source>
+  <target>Эти привязки определяют, какие пользователи имеют доступ к этому праву доступа.</target>
 </trans-unit>
 <trans-unit id="s05849efeac672dc7">
   <source>No app entitlements created.</source>
+  <target>Права доступа к приложению не созданы.</target>
 </trans-unit>
 <trans-unit id="sab4db6a3bd6abc1e">
   <source>This application does currently not have any application entitlements defined.</source>
+  <target>Для этого приложения пока не определено ни одного права доступа.</target>
 </trans-unit>
 <trans-unit id="sf0bd204ce3fea1de">
   <source>Create Entitlement</source>
+  <target>Создать право доступа</target>
 </trans-unit>
 <trans-unit id="s55d8e42d0a1c057e">
   <source>Create entitlement</source>
+  <target>Создать право доступа</target>
 </trans-unit>
 <trans-unit id="sb6fcdabf769208a1">
   <source>Failed to fetch application "<x id="0" equiv-text="${this.applicationSlug}"/>".</source>
+  <target>Не удалось получить приложение «<x id="0" equiv-text="${this.applicationSlug}"/>».</target>
 </trans-unit>
 <trans-unit id="application.outpost.missing.warning">
   <source>Warning: Application is not used by any Outpost.</source>
+  <target>Предупреждение: приложение не используется ни одним внешним компонентом.</target>
 </trans-unit>
 <trans-unit id="sb6cbd4f92ebaf5d8">
   <source>Related</source>
@@ -3847,9 +3860,11 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="sc6479479c936939f">
   <source>Application entitlements</source>
+  <target>Права доступа к приложению</target>
 </trans-unit>
 <trans-unit id="s8e1c375a007d1839">
   <source>These entitlements can be used to configure user access in this application.</source>
+  <target>Эти права доступа используются для настройки пользовательского доступа к приложению.</target>
 </trans-unit>
 <trans-unit id="s2b1bc31276c4c477">
   <source>Policy / Group / User Bindings</source>
@@ -3857,6 +3872,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s64330d6dc06337c9">
   <source>Loading application...</source>
+  <target>Загрузка приложения...</target>
 </trans-unit>
 <trans-unit id="sea2f00b34b385a43">
   <source>Successfully updated device.</source>
@@ -3864,15 +3880,19 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s2b8e875dc18e2690">
   <source>Device name...</source>
+  <target>Имя устройства...</target>
 </trans-unit>
 <trans-unit id="s81f57ffc163f9f82">
   <source>Device name</source>
+  <target>Имя устройства</target>
 </trans-unit>
 <trans-unit id="s0ae9fd7db25fa3e0">
   <source>Device Group</source>
+  <target>Группа устройств</target>
 </trans-unit>
 <trans-unit id="s335acddfb181e9ad">
   <source>Connector setup</source>
+  <target>Настройка коннектора</target>
 </trans-unit>
 <trans-unit id="s3687049d1af562c4">
   <source>Copy</source>
