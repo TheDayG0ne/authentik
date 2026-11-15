@@ -93,6 +93,17 @@ ak-sidebar-item:hover::part(list-item) {
     display: none;
 }
 
+.admin-sidebar-open,
+.admin-sidebar-tools button {
+    transition: transform var(--tdgid-motion-fast), background-color var(--tdgid-motion-fast), box-shadow var(--tdgid-motion-fast);
+}
+
+.admin-sidebar-open:hover,
+.admin-sidebar-tools button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px #0006;
+}
+
 @media (width <= 1210px) {
     .admin-sidebar-open {
         display: inline-flex;
@@ -107,6 +118,20 @@ ak-sidebar-item:hover::part(list-item) {
         justify-content: center;
         border-radius: 12px;
         box-shadow: 0 10px 28px #0007;
+    }
+}
+
+@media (width <= 720px) {
+    .pf-c-page__main-section {
+        padding-inline: 0.75rem;
+    }
+
+    .admin-status-strip {
+        padding-inline: 0.75rem;
+    }
+
+    .admin-sidebar-tools {
+        padding-inline: 0.65rem;
     }
 }
 

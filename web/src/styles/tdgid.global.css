@@ -38,6 +38,7 @@
     .pf-c-button { min-height: 42px; border-radius: 10px !important; font-weight: 700; transition: transform var(--tdgid-motion-fast), box-shadow var(--tdgid-motion-fast), background-color var(--tdgid-motion-fast); }
     .pf-c-button:hover { transform: translateY(-1px); box-shadow: 0 8px 24px #00000035; }
     .pf-c-button:active { transform: translateY(0) scale(0.985); }
+    :where(a, button, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid #e4ceff !important; outline-offset: 3px; box-shadow: 0 0 0 5px #c99bff24 !important; }
     .pf-c-button.pf-m-primary { background: #d3afff !important; color: #180c24 !important; }
     .pf-c-button.pf-m-secondary { color: #d3afff !important; border-color: #b780e960 !important; background: #bd80f40d !important; }
     .pf-c-login { min-height: 100dvh; background: transparent !important; }
@@ -45,6 +46,11 @@
     .pf-c-login__main-header .pf-c-title, .pf-c-title { font-weight: 800; letter-spacing: -.055em; color: #f8f4ff; }
     .ak-c-vector-icon, .pf-icon { transition: color var(--tdgid-motion-fast), transform var(--tdgid-motion-fast); }
     .pf-c-button:hover .ak-c-vector-icon, .pf-c-nav__link:hover .ak-c-vector-icon { transform: scale(1.08); }
+    .pf-c-page__main-section > * { animation: tdgid-content-in var(--tdgid-motion-spring) both; }
+    @keyframes tdgid-content-in {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
     @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
     }
