@@ -44,6 +44,9 @@ New-Item -ItemType Directory -Force (Join-Path $ContainerDir "staging-templates"
 
 if ($Rebuild -or -not (docker image inspect $Image 2>$null)) {
     & (Join-Path $PSScriptRoot "build-tdgid-staging.ps1") -Tag $Image
+    if ($LASTEXITCODE -ne 0) {
+        throw "TDG.id image build failed. Staging containers were not started."
+    }
 }
 
 docker compose --env-file $EnvFile -f $ComposeFile up -d

@@ -1,6 +1,6 @@
 param(
     [int]$HttpPort = 19000,
-    [int]$Attempts = 30
+    [int]$Attempts = 300
 )
 
 $ErrorActionPreference = "Stop"

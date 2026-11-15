@@ -7,3 +7,4 @@ website/vendored/* linguist-vendored
 website/docs/** linguist-documentation
 website/integrations/** linguist-documentation
 website/api/** linguist-documentation
+lifecycle/ak text eol=lf

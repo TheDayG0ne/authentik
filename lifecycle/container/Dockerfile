@@ -75,7 +75,7 @@ RUN --mount=type=bind,target=rust-toolchain.toml,src=rust-toolchain.toml \
     build-essential && \
     curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal --default-toolchain none && \
     rustup install && \
-    rustup default "$(sed -n 's/channel = "\(.*\)"/\1/p' rust-toolchain.toml)" && \
+    rustup default "$(awk -F '"' '/^[[:space:]]*channel[[:space:]]*=/ { print $2; exit }' rust-toolchain.toml)" && \
     rustc --version && \
     cargo --version
 
@@ -230,6 +230,7 @@ COPY ./tests /tests
 COPY ./manage.py /
 COPY ./blueprints /blueprints
 COPY ./lifecycle/ /lifecycle
+RUN sed -i 's/\r$//' /lifecycle/ak
 COPY ./authentik/sources/kerberos/krb5.conf /etc/krb5.conf
 COPY --from=rust-builder /bin/authentik /bin/authentik
 COPY ./packages/ /ak-root/packages

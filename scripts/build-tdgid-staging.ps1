@@ -19,4 +19,8 @@ docker build `
     --build-arg GIT_BUILD_HASH=$Commit `
     $Root
 
+if ($LASTEXITCODE -ne 0) {
+    throw "TDG.id image build failed with exit code $LASTEXITCODE."
+}
+
 Write-Host "Built isolated TDG.id image $Tag from $Commit"
