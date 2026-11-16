@@ -159,14 +159,14 @@ button[type="submit"] { width: 100%; }
 
 .tdg-button--primary,
 button[type="submit"] {
-    color: #180c24;
-    background: linear-gradient(105deg, #c99bff, #e0c5ff 52%, #b780e9);
+    color: #140a1d;
+    background: #d3afff;
     border-color: #ead8ff;
     box-shadow: 0 10px 28px #9e51ec35;
 }
 
 .tdg-button--primary:hover:not(:disabled),
-button[type="submit"]:hover:not(:disabled) { background: linear-gradient(105deg, #dfc4ff, #f2e8ff 52%, #c99bff); box-shadow: 0 14px 34px #9e51ec55; }
+button[type="submit"]:hover:not(:disabled) { background: #e4ceff; color: #140a1d; box-shadow: 0 14px 34px #9e51ec55; }
 
 .tdg-button--secondary,
 .tdg-button--control,

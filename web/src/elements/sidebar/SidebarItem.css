@@ -63,9 +63,9 @@ button.pf-c-nav__link {
 .pf-c-nav__link.pf-m-current,
 .pf-c-nav__link.pf-m-current:hover,
 .pf-c-nav__link.pf-m-current:focus-visible {
-    color: #180c24;
+    color: #140a1d;
     font-weight: 800;
-    background: linear-gradient(100deg, #d3afff, #b780e9);
+    background: #d3afff;
     border-color: #e4ceff;
     box-shadow: 0 8px 24px #a34bff35;
 }

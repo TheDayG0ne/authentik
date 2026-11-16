@@ -13,6 +13,10 @@
         --ak-font-family-monospace: "Space Mono", "RedHatMono", monospace;
         --pf-global--primary-color--100: #c99bff;
         --pf-global--primary-color--200: #e4ceff;
+        --pf-c-button--m-primary--Color: #140a1d;
+        --pf-c-button--m-primary--hover--Color: #140a1d;
+        --pf-c-button--m-primary--focus--Color: #140a1d;
+        --pf-c-button--m-primary--active--Color: #140a1d;
         --pf-global--BackgroundColor--100: #100b16;
         --pf-global--BackgroundColor--200: #09060d;
         --pf-global--BackgroundColor--300: #1a1122;
@@ -46,7 +50,8 @@
     .pf-c-button:hover { transform: translateY(-3px); box-shadow: 0 0 25px #a34bff55; }
     .pf-c-button:active { transform: translateY(0) scale(0.985); }
     :where(a, button, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid #e4ceff !important; outline-offset: 3px; box-shadow: 0 0 0 5px #c99bff24 !important; }
-    .pf-c-button.pf-m-primary { background: #d3afff !important; color: #180c24 !important; }
+    .pf-c-button.pf-m-primary:not(:disabled):not(.pf-m-disabled),
+    .pf-c-button.pf-m-primary:not(:disabled):not(.pf-m-disabled):is(:hover, :focus, :active) { background: #d3afff !important; color: #140a1d !important; }
     .pf-c-button.pf-m-secondary { color: #d3afff !important; border-color: #b780e960 !important; background: #bd80f40d !important; }
     .pf-c-login { min-height: 100dvh; background: transparent !important; }
     .pf-c-login__main { background: linear-gradient(145deg, #20132ded, #0b0811fa 72%) !important; border: 1px solid #b780e955; border-radius: 28px; box-shadow: inset 0 1px #ffffff12, 0 28px 90px #0008 !important; }

@@ -41,6 +41,11 @@ export class AboutModal extends WithLicenseSummary(WithBrandConfig(AKModal)) {
             .ak-c-dialog:has(ak-about-modal) {
                 --ak-c-dialog--BackgroundColor: transparent;
                 --ak-c-dialog--BorderColor: transparent;
+                --ak-c-dialog--BorderWidth: 0;
+                --ak-c-dialog--WidthBasis: min(56rem, 90vw);
+                --ak-c-dialog--MaxWidth: min(56rem, 90vw);
+                --ak-c-dialog--MaxHeight: 88vh;
+                padding: 0;
                 border-radius: 24px;
                 overflow: hidden;
             }
