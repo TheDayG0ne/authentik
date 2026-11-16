@@ -27,6 +27,9 @@ services:
       AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS}
       AUTHENTIK_POSTGRESQL__USER: ${PG_USER:-tdgid_staging}
       AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY:?secret key required}
+      AUTHENTIK_ERROR_REPORTING__ENABLED: "true"
+      AUTHENTIK_ERROR_REPORTING__SENTRY_DSN: "https://bf3a7fcb749b236933aa0fd4eb3c47fc@sentry.sculkmetrics.com/12"
+      AUTHENTIK_ERROR_REPORTING__ENVIRONMENT: staging
     depends_on:
       postgresql:
         condition: service_healthy
@@ -47,6 +50,9 @@ services:
       AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS}
       AUTHENTIK_POSTGRESQL__USER: ${PG_USER:-tdgid_staging}
       AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY:?secret key required}
+      AUTHENTIK_ERROR_REPORTING__ENABLED: "true"
+      AUTHENTIK_ERROR_REPORTING__SENTRY_DSN: "https://bf3a7fcb749b236933aa0fd4eb3c47fc@sentry.sculkmetrics.com/12"
+      AUTHENTIK_ERROR_REPORTING__ENVIRONMENT: staging
     depends_on:
       postgresql:
         condition: service_healthy

@@ -8,7 +8,7 @@ import { AKModal } from "#elements/dialogs/ak-modal";
 import { WithBrandConfig } from "#elements/mixins/branding";
 import { WithLicenseSummary } from "#elements/mixins/license";
 import { SlottedTemplateResult } from "#elements/types";
-import { DefaultFlowBackground, ThemedImage } from "#elements/utils/images";
+import { ThemedImage } from "#elements/utils/images";
 
 import {
     AdminApi,
@@ -21,11 +21,8 @@ import {
 import { msg } from "@lit/localize";
 import { css, html } from "lit";
 import { ref } from "lit-html/directives/ref.js";
-import { styleMap } from "lit-html/directives/style-map.js";
 import { until } from "lit-html/directives/until.js";
 import { customElement, state } from "lit/decorators.js";
-
-import PFAbout from "@patternfly/patternfly/components/AboutModalBox/about-modal-box.css";
 
 type AboutEntry = [label: string, content?: SlottedTemplateResult];
 
@@ -50,29 +47,19 @@ export class AboutModal extends WithLicenseSummary(WithBrandConfig(AKModal)) {
 
     public static styles = [
         ...AKModal.styles,
-        PFAbout,
         css`
-            .pf-c-about-modal-box {
-                --pf-c-about-modal-box--BackgroundColor: var(--ak-c-dialog--BackgroundColor);
-                width: unset;
-                height: 100%;
-                max-height: unset;
-                max-width: unset;
-                z-index: unset;
-                position: unset;
-                box-shadow: unset;
-            }
-
-            [part="brand"] {
-                position: relative;
-            }
-
-            [part="loading-bar"] {
-                position: absolute;
-                z-index: 1;
-                inset-block-start: 0;
-                inset-inline: 0;
-            }
+            .tdg-about { position: relative; overflow: auto; max-height: 90vh; padding: clamp(1.5rem, 5vw, 3rem); background: radial-gradient(circle at 90% 0%, #44215e 0, transparent 45%), #100b19; color: #f7f4ff; font-family: Manrope, sans-serif; }
+            .tdg-about__close { position: absolute; inset: 1rem 1rem auto auto; border: 1px solid #ac83ca55; border-radius: .75rem; color: inherit; background: #ffffff0a; font-size: 1.5rem; cursor: pointer; width: 2.75rem; height: 2.75rem; }
+            .tdg-about__close:focus-visible { outline: 2px solid #d7a9ff; outline-offset: 3px; }
+            .tdg-about__brand { display: flex; align-items: center; gap: 1rem; padding-right: 3rem; }
+            .tdg-about__brand img { width: 3rem; height: 3rem; object-fit: contain; }
+            .tdg-about__eyebrow { color: #cba2eb; font-family: 'Space Mono', monospace; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; }
+            h1 { margin: .2rem 0; font-size: clamp(1.5rem, 5vw, 2rem); }
+            .tdg-about__panel { margin-top: 1.5rem; border: 1px solid #c69bed33; border-radius: 1rem; background: #ffffff08; padding: 1.25rem; }
+            dl { display: grid; grid-template-columns: minmax(8rem, 1fr) minmax(0, 1.4fr); gap: .8rem 1rem; margin: 0; }
+            dt { color: #baaacb; } dd { margin: 0; overflow-wrap: anywhere; font-family: 'Space Mono', monospace; font-size: .85rem; }
+            details { margin-top: 1rem; } summary { cursor: pointer; color: #dfc4f5; } details dl { margin-top: 1rem; }
+            @media (max-width: 35rem) { dl { grid-template-columns: 1fr; gap: .3rem; } dd { margin-bottom: .7rem; } }
         `,
     ];
 
@@ -118,12 +105,7 @@ export class AboutModal extends WithLicenseSummary(WithBrandConfig(AKModal)) {
         if (this.canDebug) {
             build = msg("Development");
         } else if (version?.buildHash) {
-            build = html`<a
-                rel="noopener noreferrer"
-                href="https://github.com/goauthentik/authentik/commit/${version.buildHash}"
-                target="_blank"
-                >${version.buildHash}</a
-            >`;
+            build = version.buildHash;
         } else if (version) {
             build = msg("Release");
         }
@@ -180,56 +162,21 @@ export class AboutModal extends WithLicenseSummary(WithBrandConfig(AKModal)) {
             product += ` ${msg("Enterprise")}`;
         }
 
-        return html`<div
-            ${ref(this.scrollContainerRef)}
-            class="pf-c-about-modal-box"
-            style=${styleMap({
-                "--pf-c-about-modal-box__hero--sm--BackgroundImage": `url(${DefaultFlowBackground})`,
-            })}
-            part="box"
-        >
-            <div class="pf-c-about-modal-box__close">
-                <button
-                    class="pf-c-button pf-m-plain"
-                    type="button"
-                    @click=${this.closeListener}
-                    aria-label=${msg("Close dialog")}
-                >
-                    <i class="fas fa-times" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="pf-c-about-modal-box__brand" part="brand">
-                ${this.renderLoadingBar()}
+        return html`<div ${ref(this.scrollContainerRef)} class="tdg-about" part="box">
+            <button class="tdg-about__close" type="button" @click=${this.closeListener} aria-label=${msg("Close dialog")}>&times;</button>
+            ${this.renderLoadingBar()}
+            <div class="tdg-about__brand" part="brand">
                 ${ThemedImage({
                     src: this.brandingFavicon,
                     alt: msg("TDG.id Logo"),
-                    className: "pf-c-about-modal-box__brand-image",
                     theme: this.activeTheme,
                     themedUrls: this.brandingFaviconThemedUrls,
                 })}
+                <div><div class="tdg-about__eyebrow">${msg("About TDG.id")}</div><h1 id="modal-title" part="title">${product}</h1></div>
             </div>
-            <div class="pf-c-about-modal-box__header" part="header">
-                <h1 class="pf-c-title pf-m-4xl" id="modal-title" part="title">${product}</h1>
-            </div>
-            <div class="pf-c-about-modal-box__hero"></div>
-            <div class="pf-c-about-modal-box__content">
-                <div class="pf-c-about-modal-box__body">
-                    <div class="pf-c-content">
-                        <dl>
-                            <dt>${msg("UI Version")}</dt>
-                            <dd>${import.meta.env.AK_VERSION}</dd>
-                            ${until(
-                                this.refreshPromise?.then(this.renderVersionInfo),
-                                this.renderVersionInfo(),
-                            )}
-                            ${until(
-                                this.refreshPromise?.then(this.renderSystemInfo),
-                                this.renderSystemInfo(),
-                            )}
-                        </dl>
-                    </div>
-                </div>
-                <p class="pf-c-about-modal-box__strapline"></p>
+            <div class="tdg-about__panel">
+                <dl><dt>${msg("UI Version")}</dt><dd>${import.meta.env.AK_VERSION}</dd>${until(this.refreshPromise?.then(this.renderVersionInfo), this.renderVersionInfo())}</dl>
+                <details><summary>${msg("System information")}</summary><dl>${until(this.refreshPromise?.then(this.renderSystemInfo), this.renderSystemInfo())}</dl></details>
             </div>
         </div>`;
     }

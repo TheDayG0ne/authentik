@@ -3,7 +3,7 @@ import { type APIResult, isAPIResultReady } from "#common/api/responses";
 import { globalAK } from "#common/global";
 import { applyThemeChoice, formatColorScheme } from "#common/theme";
 import { createUIConfig, DefaultUIConfig } from "#common/ui/config";
-import { autoDetectLanguage } from "#common/ui/locale/utils";
+import { autoDetectLanguage, getSessionLocale } from "#common/ui/locale/utils";
 import { me } from "#common/users";
 
 import {
@@ -81,7 +81,7 @@ export class SessionContextController extends ReactiveContextController<APIResul
 
         const localeHint: string | undefined = session.user.settings.locale;
 
-        if (localeHint) {
+        if (localeHint && !getSessionLocale()) {
             const locale = autoDetectLanguage(localeHint);
             this.logger.info(`Activating user's configured locale '${locale}'`);
             this.host[kAKLocale]?.setLocale(locale);
