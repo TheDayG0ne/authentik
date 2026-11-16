@@ -172,10 +172,12 @@ export class LocaleContextController implements ReactiveController {
 
         this.#host[kAKLocale] = LocaleContextController.context;
 
-        const nextLocale = localeHint || autoDetectLanguage();
+        const nextLocale = autoDetectLanguage(localeHint);
 
         if (nextLocale !== sourceLocale) {
             this.#applyLocale(nextLocale);
+        } else {
+            document.documentElement.lang = sourceLocale;
         }
     }
 
