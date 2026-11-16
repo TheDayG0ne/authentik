@@ -54,12 +54,6 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { until } from "lit/directives/until.js";
 import { html as staticHTML, unsafeStatic } from "lit/static-html.js";
 
-import PFBackgroundImage from "@patternfly/patternfly/components/BackgroundImage/background-image.css";
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFDrawer from "@patternfly/patternfly/components/Drawer/drawer.css";
-import PFList from "@patternfly/patternfly/components/List/list.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 /// <reference types="../../types/lit.d.ts" />
 
@@ -89,12 +83,6 @@ export class FlowExecutor extends WithBrandConfig(Interface) implements StageHos
     //#region Styles
 
     static styles: CSSResult[] = [
-        PFLogin,
-        PFDrawer,
-        PFButton,
-        PFTitle,
-        PFList,
-        PFBackgroundImage,
         Styles,
     ];
 
@@ -415,9 +403,7 @@ export class FlowExecutor extends WithBrandConfig(Interface) implements StageHos
                 aria-label=${msg("Site footer")}
                 name="site-footer"
                 part="footer"
-                class="pf-c-login__footer ${this.layout === FlowLayoutEnum.Stacked
-                    ? "pf-m-dark"
-                    : ""}"
+                class="tdgid-auth-footer"
             >
                 <slot name="footer"></slot>
             </footer>`;
@@ -427,23 +413,24 @@ export class FlowExecutor extends WithBrandConfig(Interface) implements StageHos
     protected override render(): SlottedTemplateResult {
         const { challenge, loading } = this;
 
-        return html`<div class="pf-c-login" data-layout=${this.layout} part="login">
+        return html`<div class="tdgid-auth-layout" data-layout=${this.layout} part="login">
             <ak-locale-select
                 part="locale-select"
                 exportparts="label:locale-select-label,select:locale-select-select"
-                class="pf-m-dark"
+                class="tdgid-auth-locale"
             ></ak-locale-select>
             ${this.renderFrameBackground()}
-            <header class="pf-c-login__header">
+            <div class="tdgid-geometry" aria-hidden="true">
+                <span class="tdgid-geometry__shape tdgid-geometry__shape--ring"></span>
+                <span class="tdgid-geometry__shape tdgid-geometry__shape--diamond"></span>
+                <span class="tdgid-geometry__shape tdgid-geometry__shape--square"></span>
+                <span class="tdgid-geometry__shape tdgid-geometry__shape--triangle"></span>
+            </div>
+            <header class="tdgid-auth-layout__header">
                 <ak-flow-inspector-button></ak-flow-inspector-button>
             </header>
-            <main
-                data-layout=${this.layout}
-                class="pf-c-login__main"
-                aria-label=${msg("Authentication form")}
-                part="main"
-            >
-                <div class="pf-c-login__main-header pf-c-brand" part="branding">
+            <aside class="tdgid-auth-layout__brand-panel" aria-label=${msg("TDG.id Logo")}>
+                <div class="tdgid-auth-layout__branding" part="branding">
                     ${ThemedImage({
                         src: this.brandingLogo,
                         alt: msg("TDG.id Logo", { id: "tdgid.logo.alt" }),
@@ -452,6 +439,14 @@ export class FlowExecutor extends WithBrandConfig(Interface) implements StageHos
                         themedUrls: this.brandingLogoThemedUrls,
                     })}
                 </div>
+                <p class="tdgid-auth-layout__tagline">Один аккаунт - все сервисы.</p>
+            </aside>
+            <main
+                data-layout=${this.layout}
+                class="tdgid-auth-layout__main"
+                aria-label=${msg("Authentication form")}
+                part="main"
+            >
                 ${loading && challenge ? html`<ak-loading-overlay></ak-loading-overlay>` : nothing}
                 ${guard([challenge], () => {
                     return challenge?.component

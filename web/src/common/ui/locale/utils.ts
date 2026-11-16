@@ -1,11 +1,6 @@
-import { allLocales, sourceLocale as SourceLanguageTag } from "../../../locale-codes.js";
+import { sourceLocale as SourceLanguageTag } from "../../../locale-codes.js";
 
-import { resolveChineseScript, resolveChineseScriptLegacy } from "#common/ui/locale/cjk";
-import {
-    PseudoLanguageTag,
-    TargetLanguageTag,
-    TargetLanguageTags,
-} from "#common/ui/locale/definitions";
+import { TargetLanguageTag, TargetLanguageTags } from "#common/ui/locale/definitions";
 
 //#region Cache
 
@@ -34,70 +29,17 @@ export function safeParseLocale(candidate: string): Intl.Locale | null {
     return locale;
 }
 
-interface ParsedLocale {
-    tag: TargetLanguageTag;
-    language: string;
-    script?: string;
-    region?: string;
-}
-
-let parsedSupportedLocales: ParsedLocale[] | null = null;
-
-/**
- * Lazily parse and cache supported locales.
- */
-function getParsedSupportedLocales(): ParsedLocale[] {
-    if (!parsedSupportedLocales) {
-        parsedSupportedLocales = allLocales.map((tag) => {
-            const locale = safeParseLocale(tag);
-
-            return {
-                tag,
-                language: locale?.language ?? tag.split(/[-_]/)[0].toLowerCase(),
-                script: locale?.script,
-                region: locale?.region,
-            };
-        });
-    }
-
-    return parsedSupportedLocales;
-}
-
 /**
  * Find the best matching supported locale for a given locale string.
  */
 export function getBestMatchLocale(candidate: string): TargetLanguageTag | null {
-    // Normalize common variations
     const normalized = candidate.trim();
     if (!normalized) return null;
-
     const locale = safeParseLocale(normalized);
     const language = locale?.language ?? normalized.split(/[-_]/)[0].toLowerCase();
-
-    // Pseudo-locale
-    if (language === "en") {
-        const region = locale?.region ?? normalized.split(/[-_]/)[1]?.toUpperCase();
-
-        if (region === "XA") {
-            return PseudoLanguageTag;
-        }
-
-        return SourceLanguageTag;
-    }
-
-    // Chinese Han script
-    if (language === "zh") {
-        const script = locale
-            ? resolveChineseScript(locale)
-            : resolveChineseScriptLegacy(normalized);
-
-        return `${language}-${script}`;
-    }
-
-    const parsed = getParsedSupportedLocales();
-    const match = parsed.find((p) => p.language === language);
-
-    return match?.tag ?? null;
+    if (language === "ru") return "ru-RU";
+    if (language === "en") return SourceLanguageTag;
+    return null;
 }
 
 /**
@@ -130,7 +72,7 @@ const sessionLocaleKey = "authentik:locale";
  */
 export function setSessionLocale(languageTag: TargetLanguageTag | null): void {
     try {
-        if (!languageTag || languageTag === SourceLanguageTag) {
+        if (!languageTag) {
             sessionStorage?.removeItem?.(sessionLocaleKey);
             return;
         }
@@ -206,7 +148,6 @@ export function autoDetectLanguage(
         localeParam,
         sessionLocale,
         languageTagHint,
-        ...(self.navigator?.languages || []),
         fallbackLanguageTag,
     ].filter((item): item is string => !!item);
 
@@ -220,7 +161,7 @@ export function autoDetectLanguage(
             candidates,
         });
 
-        return SourceLanguageTag;
+        return "ru-RU";
     }
 
     return firstSupportedLocale;

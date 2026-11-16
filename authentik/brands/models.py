@@ -50,10 +50,10 @@ class Brand(SerializerModel):
         default=False,
     )
 
-    branding_title = models.TextField(default="authentik")
+    branding_title = models.TextField(default="TDG.id")
 
-    branding_logo = FileField(default="/static/dist/assets/icons/icon_left_brand.svg")
-    branding_favicon = FileField(default="/static/dist/assets/icons/icon.png")
+    branding_logo = FileField(default="/static/dist/assets/tdgid/logo.svg")
+    branding_favicon = FileField(default="/static/dist/assets/tdgid/logo.svg")
     branding_custom_css = models.TextField(default="", blank=True)
     branding_default_flow_background = FileField(
         default="/static/dist/assets/images/flow_background.jpg",

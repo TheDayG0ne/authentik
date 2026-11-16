@@ -123,7 +123,7 @@ export class AuthenticatorValidateStageWebAuthn extends BaseDeviceStage<
     };
 
     protected override render(): SlottedTemplateResult {
-        return html`<form class="pf-c-form">
+        return html`<form class="tdg-form">
             ${this.renderUserInfo()}
             <ak-empty-state ?loading="${this.authenticating}" icon="fa-times">
                 <span
@@ -133,11 +133,11 @@ export class AuthenticatorValidateStageWebAuthn extends BaseDeviceStage<
                 >
             </ak-empty-state>
             ${!this.authenticating || this.showBackButton
-                ? html`<fieldset class="ak-c-fieldset pf-c-form__group pf-m-action">
+                ? html`<fieldset class="ak-c-fieldset tdg-form__group tdg-form__actions">
                       <legend class="sr-only">${msg("Form actions")}</legend>
                       ${!this.authenticating
                           ? html`<button
-                                class="pf-c-button pf-m-primary pf-m-block"
+                                class="tdg-button tdg-button--primary tdg-button--block"
                                 @click=${this.tryAuthenticating}
                                 type="button"
                             >

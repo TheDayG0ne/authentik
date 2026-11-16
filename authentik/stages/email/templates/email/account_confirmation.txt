@@ -5,5 +5,5 @@
 {{ url }}
 
 -- 
-Powered by goauthentik.io.
+TDG.id (powered by authentik).
 {% endautoescape %}

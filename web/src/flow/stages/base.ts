@@ -147,17 +147,17 @@ export abstract class BaseStage<Tin extends StageChallengeLike | FlowErrorChalle
             return null;
         }
 
-        return html`<div class="pf-c-form__alert">
+        return html`<div class="tdg-alert">
             ${nonFieldErrors.map((err, idx) => {
                 return html`<div
                     role="alert"
                     aria-labelledby="error-message-${idx}"
-                    class="pf-c-alert pf-m-inline pf-m-danger"
+                    class="tdg-alert tdg-alert--inline tdg-alert--danger"
                 >
-                    <div class="pf-c-alert__icon">
+                    <div class="tdg-alert__icon">
                         <i aria-hidden="true" class="fas fa-exclamation-circle"></i>
                     </div>
-                    <p id="error-message-${idx}" class="pf-c-alert__title">
+                    <p id="error-message-${idx}" class="tdg-alert__title">
                         ${pluckErrorDetail(err)}
                     </p>
                 </div>`;

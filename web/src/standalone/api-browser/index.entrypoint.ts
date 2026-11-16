@@ -103,7 +103,7 @@ export class APIBrowser extends WithBrandConfig(Interface) {
                 <div slot="nav-logo">
                     ${ThemedImage({
                         src: this.brandingLogo,
-                        alt: msg("authentik Logo"),
+                        alt: msg("TDG.id Logo"),
                         className: "logo",
                         theme: this.activeTheme,
                         themedUrls: this.brandingLogoThemedUrls,

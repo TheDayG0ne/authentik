@@ -37,6 +37,7 @@ export class Sidebar extends AKElement {
             >
                 <slot></slot>
             </ul>
+            <slot name="account"></slot>
             <ak-sidebar-version
                 exportparts="trigger:about-dialog-trigger, button-content:about-dialog-button-content, product-name, product-version"
             ></ak-sidebar-version>

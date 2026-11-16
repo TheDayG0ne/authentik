@@ -1,11 +1,9 @@
-.ak-c-fieldset.ak-c-fieldset.pf-c-form__group.pf-m-action[name="device-challenges"] {
+.ak-c-fieldset.ak-c-fieldset.tdg-form__group.tdg-form__actions[name="device-challenges"] {
     --ak-c-fieldset--BorderWidth: thin;
-
-    --ak-c-fieldset__legend--MarginInlineBase: var(--pf-global--spacer--sm);
-    --ak-c-fieldset__legend--PaddingInlineBase: var(--pf-global--spacer--sm);
-
+    --ak-c-fieldset__legend--MarginInlineBase: 0.5rem;
+    --ak-c-fieldset__legend--PaddingInlineBase: 0.5rem;
     --ak-c-fieldset--RowGap: 0;
-    --ak-c-fieldset--ColumnGap: var(--pf-global--spacer--sm);
+    --ak-c-fieldset--ColumnGap: 0.75rem;
 }
 
 .authenticator-button,
@@ -14,18 +12,10 @@ ak-stage-authenticator-validate.style-scope .authenticator-button {
     width: 100%;
     display: grid;
     grid-template-columns: minmax(auto, 2rem) minmax(33%, max-content);
-    gap: var(--pf-global--spacer--lg);
-    padding-block: calc(var(--pf-global--spacer--form-element) * 2);
-
-    &:hover {
-        background-color: var(--pf-global--BackgroundColor--200);
-    }
-
-    i {
-        font-size: var(--pf-global--icon--FontSize--lg);
-    }
-
-    .content {
-        text-align: left;
-    }
+    gap: 1rem;
+    padding-block: 1rem;
 }
+
+.authenticator-button:hover { background-color: #342345; }
+.authenticator-button i { font-size: 1.25rem; }
+.authenticator-button .content { text-align: left; }

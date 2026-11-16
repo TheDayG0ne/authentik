@@ -5,11 +5,11 @@ import { CurrentBrand, UiThemeEnum } from "@goauthentik/api";
 import { deepmerge } from "deepmerge-ts";
 
 export const DefaultBrand = {
-    brandingLogo: "/static/dist/assets/icons/icon_left_brand.svg",
+    brandingLogo: "/static/dist/assets/tdgid/logo.svg",
     brandingLogoThemedUrls: null,
-    brandingFavicon: "/static/dist/assets/icons/icon.png",
+    brandingFavicon: "/static/dist/assets/tdgid/logo.svg",
     brandingFaviconThemedUrls: null,
-    brandingTitle: "authentik",
+    brandingTitle: "TDG.id",
     brandingCustomCss: "",
     // Empty string selects the bundled hexworld basemap (no tile server needed).
     brandingMapTiles: "",

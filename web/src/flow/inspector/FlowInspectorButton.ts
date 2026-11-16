@@ -8,13 +8,12 @@ import { msg } from "@lit/localize";
 import { html, nothing, PropertyValues } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
 
 // Custom implementation because there are rules for when to show this.
 
 @customElement("ak-flow-inspector-button")
 export class FlowInspectorButton extends WithCapabilitiesConfig(AKElement) {
-    public static readonly styles = [PFButton];
+    public static readonly styles = [];
 
     @property({ type: Boolean, reflect: true })
     public open = false;
@@ -47,7 +46,7 @@ export class FlowInspectorButton extends WithCapabilitiesConfig(AKElement) {
             : html`<button
                   aria-label=${this.open ? msg("Close flow inspector") : msg("Open flow inspector")}
                   aria-expanded=${this.open ? "true" : "false"}
-                  class="inspector-toggle pf-c-button pf-m-primary"
+                  class="inspector-toggle tdg-button tdg-button--primary"
                   aria-controls="flow-inspector"
                   @click=${this.toggle}
               >

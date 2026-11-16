@@ -34,10 +34,6 @@ import { CSSResult, html, nothing, PropertyValues } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { createRef, ref, type Ref } from "lit/directives/ref.js";
 
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 export type TokenListener = (token: string) => void;
 
@@ -70,10 +66,6 @@ export class CaptchaStage
 {
     public static readonly styles: CSSResult[] = [
         // ---
-        PFLogin,
-        PFForm,
-        PFFormControl,
-        PFTitle,
         Styles,
     ];
 
@@ -218,7 +210,7 @@ export class CaptchaStage
 
     protected renderMain() {
         return html`<ak-flow-card .challenge=${this.challenge}>
-            <form class="pf-c-form">
+            <form class="tdg-form">
                 ${FlowUserDetails({ challenge: this.challenge })} ${this.renderBody()}
             </form>
         </ak-flow-card>`;

@@ -9,5 +9,5 @@ If you did not request this code, please ignore this email. The code above is va
 {% endblocktrans %}
 
 -- 
-Powered by goauthentik.io.
+TDG.id (powered by authentik).
 {% endautoescape %}

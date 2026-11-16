@@ -12,7 +12,7 @@ import { map } from "lit/directives/map.js";
 
 /**
  * @part list - The list element containing the links
- * @part list-item - Each item in the list, including the "Powered by authentik" item
+ * @part list-item - Each item in the list, including the TDG.id attribution item
  * @part list-item-link - The link element for each item, if applicable
  */
 @customElement("ak-brand-links")
@@ -36,13 +36,13 @@ export class BrandLinks extends AKElement {
         const links = [
             ...this.links,
             {
-                name: msg("Powered by authentik"),
+                name: msg("TDG.id (powered by authentik)"),
                 href: null,
             },
         ];
         return html`<ul
             aria-label=${msg("Site links")}
-            class="pf-c-list pf-m-inline"
+            class="tdg-list tdg-alert--inline"
             part="list"
             data-count=${links.length}
         >

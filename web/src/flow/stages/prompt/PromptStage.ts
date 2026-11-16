@@ -9,6 +9,7 @@ import { AKLabel } from "#components/ak-label";
 
 import { BaseStage } from "#flow/stages/base";
 import { LocalePrompt } from "#flow/stages/prompt/components/locale";
+import TDGControls from "#flow/stages/tdg-controls.css";
 
 import {
     CapabilitiesEnum,
@@ -23,15 +24,6 @@ import { css, CSSResult, html } from "lit";
 import { customElement } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
-import PFAlert from "@patternfly/patternfly/components/Alert/alert.css";
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFCheck from "@patternfly/patternfly/components/Check/check.css";
-import PFContent from "@patternfly/patternfly/components/Content/content.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFInputGroup from "@patternfly/patternfly/components/InputGroup/input-group.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 // Fixes horizontal rule <hr> warning in select dropdowns.
 
@@ -46,15 +38,6 @@ export class PromptStage extends WithCapabilitiesConfig(
     static shadowRootOptions: ShadowRootInit = BaseStage.shadowRootOptions;
 
     static styles: CSSResult[] = [
-        PFLogin,
-        PFAlert,
-        PFContent,
-        PFForm,
-        PFFormControl,
-        PFInputGroup,
-        PFTitle,
-        PFButton,
-        PFCheck,
         css`
             textarea {
                 min-height: 4em;
@@ -62,6 +45,7 @@ export class PromptStage extends WithCapabilitiesConfig(
                 resize: vertical;
             }
         `,
+        TDGControls,
     ];
 
     protected isAlertPromptType(prompt: StagePrompt): boolean {
@@ -77,12 +61,12 @@ export class PromptStage extends WithCapabilitiesConfig(
         level: "info" | "warning" | "danger",
         icon: string,
     ): SlottedTemplateResult {
-        return html`<div class="pf-c-alert pf-m-${level} pf-m-inline">
-            <div class="pf-c-alert__icon">
+        return html`<div class="tdg-alert tdg-alert--${level} tdg-alert--inline">
+            <div class="tdg-alert__icon">
                 <i class="fas fa-fw ${icon}" aria-hidden="true"></i>
             </div>
-            ${prompt.label ? html`<h4 class="pf-c-alert__title">${prompt.label}</h4>` : null}
-            <div class="pf-c-alert__description pf-c-content">
+            ${prompt.label ? html`<h4 class="tdg-alert__title">${prompt.label}</h4>` : null}
+            <div class="tdg-alert__description tdg-content">
                 ${unsafeHTML(prompt.initialValue)}
             </div>
         </div>`;
@@ -99,7 +83,7 @@ export class PromptStage extends WithCapabilitiesConfig(
                     name="${prompt.fieldKey}"
                     placeholder="${prompt.placeholder}"
                     autocomplete="off"
-                    class="pf-c-form-control"
+                    class="tdg-control"
                     ?required=${prompt.required}
                     value="${prompt.initialValue}"
                 />`;
@@ -109,7 +93,7 @@ export class PromptStage extends WithCapabilitiesConfig(
                     name="${prompt.fieldKey}"
                     placeholder="${prompt.placeholder}"
                     autocomplete="off"
-                    class="pf-c-form-control"
+                    class="tdg-control"
                     ?required=${prompt.required}
                 >
 ${prompt.initialValue}</textarea
@@ -120,7 +104,7 @@ ${prompt.initialValue}</textarea
                     id=${fieldId}
                     name="${prompt.fieldKey}"
                     placeholder="${prompt.placeholder}"
-                    class="pf-c-form-control"
+                    class="tdg-control"
                     readonly
                     value="${prompt.initialValue}"
                 />`;
@@ -129,7 +113,7 @@ ${prompt.initialValue}</textarea
                     id=${fieldId}
                     name="${prompt.fieldKey}"
                     placeholder="${prompt.placeholder}"
-                    class="pf-c-form-control"
+                    class="tdg-control"
                     readonly
                 >
 ${prompt.initialValue}</textarea
@@ -142,7 +126,7 @@ ${prompt.initialValue}</textarea
                     placeholder="${prompt.placeholder}"
                     autocomplete="username"
                     spellcheck="false"
-                    class="pf-c-form-control"
+                    class="tdg-control"
                     ?required=${prompt.required}
                     value="${prompt.initialValue}"
                 />`;
@@ -153,7 +137,7 @@ ${prompt.initialValue}</textarea
                     autocomplete="email"
                     name="${prompt.fieldKey}"
                     placeholder="${prompt.placeholder}"
-                    class="pf-c-form-control"
+                    class="tdg-control"
                     ?required=${prompt.required}
                     value="${prompt.initialValue}"
                 />`;
@@ -164,7 +148,7 @@ ${prompt.initialValue}</textarea
                     name="${prompt.fieldKey}"
                     placeholder="${prompt.placeholder}"
                     autocomplete="new-password"
-                    class="pf-c-form-control"
+                    class="tdg-control"
                     ?required=${prompt.required}
                 />`;
             case PromptTypeEnum.Number:
@@ -173,7 +157,7 @@ ${prompt.initialValue}</textarea
                     id=${fieldId}
                     name="${prompt.fieldKey}"
                     placeholder="${prompt.placeholder}"
-                    class="pf-c-form-control"
+                    class="tdg-control"
                     ?required=${prompt.required}
                     value="${prompt.initialValue}"
                 />`;
@@ -183,7 +167,7 @@ ${prompt.initialValue}</textarea
                     id=${fieldId}
                     name="${prompt.fieldKey}"
                     placeholder="${prompt.placeholder}"
-                    class="pf-c-form-control"
+                    class="tdg-control"
                     ?required=${prompt.required}
                     value="${prompt.initialValue}"
                 />`;
@@ -193,7 +177,7 @@ ${prompt.initialValue}</textarea
                     id=${fieldId}
                     name="${prompt.fieldKey}"
                     placeholder="${prompt.placeholder}"
-                    class="pf-c-form-control"
+                    class="tdg-control"
                     ?required=${prompt.required}
                     value="${prompt.initialValue}"
                 />`;
@@ -203,7 +187,7 @@ ${prompt.initialValue}</textarea
                     id=${fieldId}
                     name="${prompt.fieldKey}"
                     placeholder="${prompt.placeholder}"
-                    class="pf-c-form-control"
+                    class="tdg-control"
                     ?required=${prompt.required}
                     value="${prompt.initialValue}"
                 />`;
@@ -215,7 +199,7 @@ ${prompt.initialValue}</textarea
                     id=${fieldId}
                     name="${prompt.fieldKey}"
                     value="${prompt.initialValue}"
-                    class="pf-c-form-control"
+                    class="tdg-control"
                     ?required=${prompt.required}
                 />`;
             case PromptTypeEnum.Static:
@@ -227,7 +211,7 @@ ${prompt.initialValue}</textarea
             case PromptTypeEnum.AlertDanger:
                 return this.renderPromptAlert(prompt, "danger", "fa-exclamation-circle");
             case PromptTypeEnum.Dropdown:
-                return html`<select class="pf-c-form-control" name="${prompt.fieldKey}">
+                return html`<select class="tdg-control" name="${prompt.fieldKey}">
                     ${prompt.choices?.map((choice) => {
                         return html`<option
                             value="${choice.value}"
@@ -240,17 +224,17 @@ ${prompt.initialValue}</textarea
             case PromptTypeEnum.RadioButtonGroup:
                 return html`${(prompt.choices || []).map((choice) => {
                     const id = `${prompt.fieldKey}-${choice.value}`;
-                    return html`<div class="pf-c-check">
+                    return html`<div class="tdg-check">
                         <input
                             type="radio"
-                            class="pf-c-check__input"
+                            class="tdg-check__input"
                             name="${prompt.fieldKey}"
                             id="${id}"
                             ?checked="${prompt.initialValue === choice.value}"
                             ?required="${prompt.required}"
                             value="${choice.value}"
                         />
-                        <label class="pf-c-check__label" for=${id}>${choice.label}</label>
+                        <label class="tdg-check__label" for=${id}>${choice.label}</label>
                     </div> `;
                 })}`;
             case PromptTypeEnum.AkLocale: {
@@ -271,7 +255,7 @@ ${prompt.initialValue}</textarea
             return null;
         }
 
-        return html`<p class="pf-c-form__helper-text">${unsafeHTML(prompt.subText)}</p>`;
+        return html`<p class="tdg-form__helper">${unsafeHTML(prompt.subText)}</p>`;
     }
 
     protected shouldRenderInWrapper(prompt: StagePrompt): boolean {
@@ -287,26 +271,26 @@ ${prompt.initialValue}</textarea
     protected renderField(prompt: StagePrompt): SlottedTemplateResult {
         // Checkbox is rendered differently
         if (prompt.type === PromptTypeEnum.Checkbox) {
-            return html`<div class="pf-c-check">
+            return html`<div class="tdg-check">
                 <input
                     type="checkbox"
-                    class="pf-c-check__input"
+                    class="tdg-check__input"
                     id="${prompt.fieldKey}"
                     name="${prompt.fieldKey}"
                     ?checked=${prompt.initialValue !== ""}
                     ?required=${prompt.required}
                 />
-                <label class="pf-c-check__label" for="${prompt.fieldKey}">${prompt.label}</label>
+                <label class="tdg-check__label" for="${prompt.fieldKey}">${prompt.label}</label>
                 ${prompt.required
-                    ? html`<p class="pf-c-form__helper-text">${msg("Required.")}</p>`
+                    ? html`<p class="tdg-form__helper">${msg("Required.")}</p>`
                     : null}
-                <p class="pf-c-form__helper-text">${unsafeHTML(prompt.subText)}</p>
+                <p class="tdg-form__helper">${unsafeHTML(prompt.subText)}</p>
             </div>`;
         }
         if (this.shouldRenderInWrapper(prompt)) {
             const errors = this.challenge?.responseErrors?.[prompt.fieldKey];
 
-            return html`<div class="pf-c-form__group">
+            return html`<div class="tdg-form__group">
                 ${AKLabel(
                     {
                         required: prompt.required,
@@ -322,9 +306,9 @@ ${prompt.initialValue}</textarea
     }
 
     protected renderContinue(): SlottedTemplateResult {
-        return html`<fieldset class="ak-c-fieldset pf-c-form__group pf-m-action">
+        return html`<fieldset class="ak-c-fieldset tdg-form__group tdg-form__actions">
             <legend class="sr-only">${msg("Form actions")}</legend>
-            <button name="continue" type="submit" class="pf-c-button pf-m-primary pf-m-block">
+            <button name="continue" type="submit" class="tdg-button tdg-button--primary tdg-button--block">
                 ${msg("Continue")}
             </button>
         </fieldset>`;
@@ -332,7 +316,7 @@ ${prompt.initialValue}</textarea
 
     protected override render(): SlottedTemplateResult {
         return html`<ak-flow-card .challenge=${this.challenge}>
-            <form class="pf-c-form" @submit=${this.submitForm}>
+            <form class="tdg-form" @submit=${this.submitForm}>
                 ${Array.from(this.challenge?.fields || [], (prompt) => {
                     return this.renderField(prompt);
                 })}

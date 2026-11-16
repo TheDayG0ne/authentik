@@ -3,6 +3,7 @@ import "#flow/components/ak-flow-card";
 import { SlottedTemplateResult } from "#elements/types";
 
 import { BaseStage } from "#flow/stages/base";
+import TDGControls from "#flow/stages/tdg-controls.css";
 import {
     multiTabOrchestrateLeave,
     multiTabOrchestrateResume,
@@ -15,11 +16,6 @@ import { msg } from "@lit/localize";
 import { css, CSSResult, html, nothing, PropertyValues, TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 @customElement("ak-stage-redirect")
 export class RedirectStage extends BaseStage<RedirectChallenge, FlowChallengeResponseRequest> {
@@ -29,16 +25,12 @@ export class RedirectStage extends BaseStage<RedirectChallenge, FlowChallengeRes
     #keydownController: AbortController | null = null;
 
     static styles: CSSResult[] = [
-        PFLogin,
-        PFForm,
-        PFButton,
-        PFFormControl,
-        PFTitle,
         css`
             code {
                 word-break: break-all;
             }
         `,
+        TDGControls,
     ];
 
     getURL(): string {
@@ -145,16 +137,16 @@ export class RedirectStage extends BaseStage<RedirectChallenge, FlowChallengeRes
 
         return html`<ak-flow-card .challenge=${this.challenge}>
             <span slot="title">${msg("Redirect")}</span>
-            <form class="pf-c-form">
-                <div class="pf-c-form__group">
+            <form class="tdg-form">
+                <div class="tdg-form__group">
                     <p>${msg("You're about to be redirected to the following URL.")}</p>
                     <code>${this.getURL()}</code>
                 </div>
-                <fieldset class="ak-c-fieldset pf-c-form__group pf-m-action">
+                <fieldset class="ak-c-fieldset tdg-form__group tdg-form__actions">
                     <legend class="sr-only">${msg("Form actions")}</legend>
                     <a
                         type="submit"
-                        class="pf-c-button pf-m-primary pf-m-block"
+                        class="tdg-button tdg-button--primary tdg-button--block"
                         href=${this.challenge.to}
                         @click=${(ev: Event) => {
                             ev.preventDefault();

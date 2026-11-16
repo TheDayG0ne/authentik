@@ -95,7 +95,7 @@ sessions:
 
 error_reporting:
   enabled: false
-  sentry_dsn: https://151ba72610234c4c97c5bcff4e1cffd8@authentik.error-reporting.a7k.io/4504163677503489
+  sentry_dsn: ""
   environment: customer
   send_pii: false
   sample_rate: 0.1
@@ -141,8 +141,8 @@ reputation:
   expiry: 86400
 
 cookie_domain: null
-disable_update_check: false
-disable_startup_analytics: false
+disable_update_check: true
+disable_startup_analytics: true
 events:
   context_processors:
     geoip: "/geoip/GeoLite2-City.mmdb"

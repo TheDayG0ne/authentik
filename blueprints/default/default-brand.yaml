@@ -31,6 +31,9 @@ entries:
         !Find [authentik_flows.flow, [slug, default-user-settings-flow]]
       flow_request:
         !Find [authentik_flows.flow, [slug, default-request]]
+      branding_title: TDG.id
+      branding_logo: /static/dist/assets/tdgid/logo.svg
+      branding_favicon: /static/dist/assets/tdgid/logo.svg
     identifiers:
       domain: authentik-default
       default: true

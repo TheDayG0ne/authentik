@@ -30,7 +30,7 @@ class TestEmailManagementCommands(TestCase):
             call_command("test_email", "test@example.com", stage="test-stage")
 
             self.assertEqual(len(mail.outbox), 1)
-            self.assertEqual(mail.outbox[0].subject, "authentik Test-Email")
+            self.assertEqual(mail.outbox[0].subject, "TDG.id Test Email")
             self.assertEqual(mail.outbox[0].to, ["test@example.com"])
 
     def test_test_email_command_with_global_settings(self):
@@ -40,7 +40,7 @@ class TestEmailManagementCommands(TestCase):
             call_command("test_email", "test@example.com")
 
             self.assertEqual(len(mail.outbox), 1)
-            self.assertEqual(mail.outbox[0].subject, "authentik Test-Email")
+            self.assertEqual(mail.outbox[0].subject, "TDG.id Test Email")
             self.assertEqual(mail.outbox[0].to, ["test@example.com"])
 
     def test_test_email_command_invalid_stage(self):

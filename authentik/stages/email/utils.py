@@ -15,14 +15,16 @@ from django.utils import translation
 @lru_cache
 def logo_data() -> MIMEImage:
     """Get logo as MIME Image for emails"""
-    path = Path("web/dist/assets/icons/icon_left_brand.png")
+    path = Path("web/dist/assets/tdgid/logo.svg")
     # When running tests, assets might not exist, so fallback to a different icon
+    subtype = "svg+xml"
     if settings.TEST:
         path = Path("web/authentik/sources/saml.png")
+        subtype = "png"
     with open(path, "rb") as _logo_file:
-        logo = MIMEImage(_logo_file.read())
+        logo = MIMEImage(_logo_file.read(), _subtype=subtype)
     logo.add_header("Content-ID", "<logo>")
-    logo.add_header("Content-Disposition", "inline", filename="logo.png")
+    logo.add_header("Content-Disposition", "inline", filename="logo.svg")
     return logo
 
 

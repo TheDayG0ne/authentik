@@ -151,10 +151,10 @@ export function createCommonCommands(): PaletteCommandDefinitionInit<unknown>[] 
             suffix: msg(str`New in ${import.meta.env.AK_VERSION}`, {
                 id: "command-palette.suffix.new-in",
             }),
-            group: msg("authentik"),
+            group: msg("TDG.id"),
         },
         {
-            label: msg("About authentik", {
+            label: msg("About TDG.id", {
                 id: "command-palette.about-authentik",
             }),
             action: () => {
@@ -162,7 +162,7 @@ export function createCommonCommands(): PaletteCommandDefinitionInit<unknown>[] 
                 AboutModal.open();
             },
             prefix: msg("View", { id: "command-palette.prefix.view" }),
-            group: msg("authentik"),
+            group: msg("TDG.id"),
         },
     ];
 }

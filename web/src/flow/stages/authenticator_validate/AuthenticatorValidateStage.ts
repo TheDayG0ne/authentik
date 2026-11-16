@@ -13,6 +13,7 @@ import { StrictUnsafe } from "#elements/utils/unsafe";
 import { shouldResetSelectedChallenge } from "#flow/stages/authenticator_validate/challenge-selection";
 import { BaseStage } from "#flow/stages/base";
 import { PasswordManagerPrefill } from "#flow/stages/identification/IdentificationStage";
+import TDGControls from "#flow/stages/tdg-controls.css";
 import type { StageHost, SubmitOptions } from "#flow/types";
 
 import {
@@ -30,11 +31,6 @@ import { CSSResult, html, nothing, PropertyValues, TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { repeat } from "lit/directives/repeat.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 interface DevicePickerProps {
     icon?: string;
@@ -109,12 +105,8 @@ export class AuthenticatorValidateStage
 {
     static styles: CSSResult[] = [
         // ---
-        PFLogin,
-        PFForm,
-        PFFormControl,
-        PFTitle,
-        PFButton,
         Styles,
+        TDGControls,
     ];
 
     #api = aki(FlowsApi);
@@ -251,7 +243,7 @@ export class AuthenticatorValidateStage
                         id=${buttonID}
                         aria-labelledby=${labelID}
                         aria-describedby=${descriptionID}
-                        class="pf-c-button authenticator-button"
+                        class="tdg-button authenticator-button"
                         type="button"
                         @click=${() => {
                             this.selectedDeviceChallenge = challenges;
@@ -259,8 +251,8 @@ export class AuthenticatorValidateStage
                     >
                         <i class="fas ${icon}" aria-hidden="true"></i>
                         <div class="content">
-                            <h1 class="pf-c-title pf-m-sm" id=${labelID}>${label}</h1>
-                            <p class="pf-c-form__helper-text" id=${descriptionID}>${description}</p>
+                            <h1 class="tdg-heading tdg-heading--sm" id=${labelID}>${label}</h1>
+                            <p class="tdg-form__helper" id=${descriptionID}>${description}</p>
                         </div>
                     </button>
                 `;
@@ -268,10 +260,10 @@ export class AuthenticatorValidateStage
         );
 
         return html`<fieldset
-            class="ak-c-fieldset pf-c-form__group pf-m-action"
+            class="ak-c-fieldset tdg-form__group tdg-form__actions"
             name="device-challenges"
         >
-            <legend class="pf-c-title">${msg("Select an authentication method")}</legend>
+            <legend class="tdg-heading">${msg("Select an authentication method")}</legend>
             ${deviceChallengeButtons}
         </fieldset>`;
     }
@@ -286,7 +278,7 @@ export class AuthenticatorValidateStage
             (stage) => stage.pk,
             (stage) => {
                 return html`<button
-                    class="pf-c-button authenticator-button"
+                    class="tdg-button authenticator-button"
                     type="button"
                     @click=${() => {
                         this.submit({
@@ -296,14 +288,14 @@ export class AuthenticatorValidateStage
                     }}
                 >
                     <div class="content">
-                        <h1 class="pf-c-title pf-m-sm">${stage.name}</h1>
-                        <p class="pf-c-form__helper-text">${stage.verboseName}</p>
+                        <h1 class="tdg-heading tdg-heading--sm">${stage.name}</h1>
+                        <p class="tdg-form__helper">${stage.verboseName}</p>
                     </div>
                 </button>`;
             },
         );
 
-        return html`<fieldset class="ak-c-fieldset pf-c-form__group pf-m-action" name="stages">
+        return html`<fieldset class="ak-c-fieldset tdg-form__group tdg-form__actions" name="stages">
             <legend class="sr-only">${msg("Select a configuration stage")}</legend>
             ${stageButtons}
         </fieldset>`;
@@ -328,7 +320,7 @@ export class AuthenticatorValidateStage
     }
 
     protected renderAuthenticatorSelection(): TemplateResult {
-        return html`<form class="pf-c-form">
+        return html`<form class="tdg-form">
             ${this.renderUserInfo()}${this.renderStagePicker()}${this.renderDevicePicker()}
         </form>`;
     }

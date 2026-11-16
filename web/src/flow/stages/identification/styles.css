@@ -17,11 +17,11 @@ fieldset[name="login-sources"] {
         gap: var(--pf-global--spacer--sm);
         flex: 0 1 auto;
 
-        &:not(.pf-m-primary):hover {
-            background-color: var(--pf-c-button--m-plain--hover--BackgroundColor);
+        &:not(.tdg-button--primary):hover {
+            background-color: var(--tdg-button--m-plain--hover--BackgroundColor);
         }
 
-        .pf-c-button__icon {
+        .tdg-button__icon {
             line-height: 1;
         }
     }
@@ -36,7 +36,7 @@ fieldset[name="login-sources"] {
         }
     }
 
-    .pf-c-button__icon img {
+    .tdg-button__icon img {
         height: var(--pf-global--FontSize--2xl);
         fill: var(--pf-global--icon--Color--light);
     }
@@ -60,9 +60,9 @@ fieldset[name="login-sources"] {
 
 :host([theme="dark"]),
 ak-stage-identification[theme="dark"].style-scope {
-    fieldset[name="login-sources"] .pf-c-button__icon {
+    fieldset[name="login-sources"] .tdg-button__icon {
         img,
-        .pf-c-button__icon .fas {
+        .tdg-button__icon .fas {
             filter: invert(1);
         }
     }

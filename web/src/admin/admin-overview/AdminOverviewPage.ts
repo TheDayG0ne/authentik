@@ -40,9 +40,38 @@ export class AdminOverviewPage extends AdminOverviewBase {
         PFPage,
         PFContent,
         css`
+            .pf-c-page__main-section {
+                background: transparent;
+                padding: clamp(1rem, 2.5vw, 2.5rem);
+            }
+            .overview-intro {
+                margin-bottom: 1.5rem;
+                padding: clamp(1.25rem, 3vw, 2.5rem);
+                border: 1px solid #c99bff40;
+                border-radius: 20px;
+                background: radial-gradient(ellipse at 90% 0%, #63329155, transparent 55%),
+                    linear-gradient(120deg, #1b1028, #0d0914);
+                color: #f8f4ff;
+            }
+            .overview-intro span {
+                color: #c99bff;
+                font: 700 0.7rem monospace;
+                letter-spacing: 0.16em;
+            }
+            .overview-intro h1 { margin: 0.65rem 0 0.35rem; font-size: clamp(1.5rem, 3vw, 2.2rem); }
+            .overview-intro p { color: #c3b7d0; }
             .pf-l-grid__item {
                 height: 100%;
             }
+            ak-aggregate-card::part(card) {
+                background: linear-gradient(145deg, #1c1329, #0e0a15);
+                border: 1px solid #bd83ee40;
+                border-radius: 18px;
+                color: #f8f4ff;
+                overflow: hidden;
+            }
+            ak-aggregate-card::part(card-title) { color: #f8f4ff; }
+            ak-aggregate-card::part(card-header) { border-bottom: 1px solid #ffffff12; }
             .pf-l-grid__item.big-graph-container {
                 height: 35em;
             }
@@ -69,6 +98,11 @@ export class AdminOverviewPage extends AdminOverviewBase {
 
     render(): TemplateResult {
         return html` <main class="pf-c-page__main-section" aria-label=${msg("Overview")}>
+            <section class="overview-intro" aria-label=${msg("Overview")}>
+                <span>TDG.ID / CONTROL CENTER</span>
+                <h1>${msg("Overview")}</h1>
+                <p>${msg("General system status")}</p>
+            </section>
             <div class="pf-l-grid pf-m-gutter">
                 <!-- row 1 -->
                 <div

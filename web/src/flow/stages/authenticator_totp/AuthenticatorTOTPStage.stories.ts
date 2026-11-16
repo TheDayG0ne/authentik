@@ -1,4 +1,3 @@
-import "@patternfly/patternfly/components/Login/login.css";
 import "./AuthenticatorTOTPStage.js";
 
 import { flowFactory } from "#stories/flow-interface";

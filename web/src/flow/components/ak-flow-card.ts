@@ -10,8 +10,7 @@ import { FormStaticChallenge } from "#flow/types";
 import { CSSResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
+
 
 /**
  * @element ak-flow-card
@@ -32,7 +31,7 @@ export class FlowCard extends AKElement {
     @property({ type: Boolean })
     public loading = false;
 
-    static styles: CSSResult[] = [PFLogin, PFTitle, Styles];
+    static styles: CSSResult[] = [Styles];
 
     render() {
         let inner = html`<slot></slot>`;
@@ -42,11 +41,11 @@ export class FlowCard extends AKElement {
         // No title if the challenge doesn't provide a title and no custom title is set
         let title: null | SlottedTemplateResult = null;
         if (this.findSlotted("title")) {
-            title = html`<h1 class="pf-c-title pf-m-3xl ak-m-clamped">
+            title = html`<h1 class="tdgid-flow-card__title">
                 <slot name="title"></slot>
             </h1>`;
         } else if (this.challenge?.flowInfo?.title) {
-            title = html`<h1 class="pf-c-title pf-m-3xl ak-m-clamped">
+            title = html`<h1 class="tdgid-flow-card__title">
                 ${this.challenge.flowInfo.title}
             </h1>`;
         }
@@ -55,10 +54,10 @@ export class FlowCard extends AKElement {
             ? html`<slot name="footer-band"></slot>`
             : null;
 
-        return html`${title ? html`<div class="pf-c-login__main-header">${title}</div>` : null}
-            <div class="pf-c-login__main-body">${inner}</div>
+        return html`${title ? html`<div class="tdgid-flow-card__header">${title}</div>` : null}
+            <div class="tdgid-flow-card__body">${inner}</div>
             ${footer || footerBand
-                ? html`<div class="pf-c-login__main-footer">${footer}${footerBand}</div>`
+                ? html`<div class="tdgid-flow-card__footer">${footer}${footerBand}</div>`
                 : null}`;
     }
 }

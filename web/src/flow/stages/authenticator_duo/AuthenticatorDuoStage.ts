@@ -7,6 +7,7 @@ import { SlottedTemplateResult } from "#elements/types";
 
 import { FlowUserDetails } from "#flow/FormStatic";
 import { BaseStage } from "#flow/stages/base";
+import TDGControls from "#flow/stages/tdg-controls.css";
 
 import {
     AuthenticatorDuoChallenge,
@@ -20,18 +21,15 @@ import { CSSResult, html, nothing, PropertyValues } from "lit";
 import { customElement } from "lit/decorators.js";
 import { guard } from "lit/directives/guard.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 @customElement("ak-stage-authenticator-duo")
 export class AuthenticatorDuoStage extends BaseStage<
     AuthenticatorDuoChallenge,
     AuthenticatorDuoChallengeResponseRequest
 > {
-    static styles: CSSResult[] = [PFLogin, PFForm, PFFormControl, PFTitle, PFButton];
+    static styles: CSSResult[] = [
+        TDGControls,
+    ];
 
     updated(changedProperties: PropertyValues<this>) {
         super.updated(changedProperties);
@@ -71,7 +69,7 @@ export class AuthenticatorDuoStage extends BaseStage<
             }
 
             return html`<ak-flow-card .challenge=${this.challenge}>
-                <form class="pf-c-form" @submit=${this.submitForm}>
+                <form class="tdg-form" @submit=${this.submitForm}>
                     ${FlowUserDetails({ challenge: this.challenge })}
 
                     <img
@@ -85,11 +83,11 @@ export class AuthenticatorDuoStage extends BaseStage<
                     </p>
                     <a href=${this.challenge.activationCode}>${msg("Duo activation")}</a>
 
-                    <fieldset class="ak-c-fieldset pf-c-form__group pf-m-action">
+                    <fieldset class="ak-c-fieldset tdg-form__group tdg-form__actions">
                         <legend class="sr-only">${msg("Form actions")}</legend>
                         <button
                             type="button"
-                            class="pf-c-button pf-m-primary pf-m-block"
+                            class="tdg-button tdg-button--primary tdg-button--block"
                             @click=${this.#checkEnrollStatus}
                         >
                             ${msg("Check status")}

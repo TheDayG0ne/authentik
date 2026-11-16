@@ -7,14 +7,14 @@ test.describe("Modals", () => {
         });
     });
 
-    test("About authentik modal", async ({ page }) => {
+    test("About TDG.id modal", async ({ page }) => {
         const aboutButton = page
-            .getByRole("contentinfo", { name: "authentik information" })
+            .getByRole("contentinfo", { name: "TDG.id information" })
             .getByRole("button", { name: "Open about dialog" });
 
         await expect(aboutButton, "About button is visible").toBeVisible();
 
-        const aboutDialog = page.getByRole("dialog", { name: "About authentik" });
+        const aboutDialog = page.getByRole("dialog", { name: "About TDG.id" });
 
         await expect(aboutDialog, "About dialog is initially closed").toBeHidden();
 

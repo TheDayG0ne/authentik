@@ -1,6 +1,8 @@
 /* Entrypoint file for styles used by the static Django templates */
 
 @import "#styles/layers.css";
+@import "#fonts/RedHat/faces.css" layer(vendor);
+@import "#styles/tdgid.global.css" layer(brand);
 
 /*
  * The `static` imports apply only to the handful of older Django templates that do *not* use the

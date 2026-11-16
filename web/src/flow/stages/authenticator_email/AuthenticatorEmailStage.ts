@@ -8,6 +8,7 @@ import { AKLabel } from "#components/ak-label";
 
 import { FlowUserDetails } from "#flow/FormStatic";
 import { BaseStage } from "#flow/stages/base";
+import TDGControls from "#flow/stages/tdg-controls.css";
 
 import {
     AuthenticatorEmailChallenge,
@@ -18,13 +19,6 @@ import { msg, str } from "@lit/localize";
 import { CSSResult, html, nothing, TemplateResult } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import PFAlert from "@patternfly/patternfly/components/Alert/alert.css";
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFInputGroup from "@patternfly/patternfly/components/InputGroup/input-group.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 @customElement("ak-stage-authenticator-email")
 export class AuthenticatorEmailStage extends BaseStage<
@@ -32,21 +26,15 @@ export class AuthenticatorEmailStage extends BaseStage<
     AuthenticatorEmailChallengeResponseRequest
 > {
     static styles: CSSResult[] = [
-        PFAlert,
-        PFLogin,
-        PFForm,
-        PFFormControl,
-        PFInputGroup,
-        PFTitle,
-        PFButton,
+        TDGControls,
     ];
 
     renderEmailInput(): TemplateResult {
         return html`<ak-flow-card .challenge=${this.challenge}>
-            <form class="pf-c-form" @submit=${this.submitForm}>
+            <form class="tdg-form" @submit=${this.submitForm}>
                 ${FlowUserDetails({ challenge: this.challenge })}
 
-                <div class="pf-c-form__group">
+                <div class="tdg-form__group">
                     ${AKLabel(
                         { required: true, htmlFor: "email-input" },
                         msg("Configure your email"),
@@ -58,18 +46,18 @@ export class AuthenticatorEmailStage extends BaseStage<
                         placeholder="${msg("Please enter your email address.")}"
                         autofocus
                         autocomplete="email"
-                        class="pf-c-form-control"
+                        class="tdg-control"
                         required
                     />
                     ${AKFormErrors({ errors: this.challenge?.responseErrors?.email })}
                 </div>
                 ${this.renderNonFieldErrors()}
-                <fieldset class="ak-c-fieldset pf-c-form__group pf-m-action">
+                <fieldset class="ak-c-fieldset tdg-form__group tdg-form__actions">
                     <legend class="sr-only">${msg("Form actions")}</legend>
                     <button
                         name="continue"
                         type="submit"
-                        class="pf-c-button pf-m-primary pf-m-block"
+                        class="tdg-button tdg-button--primary tdg-button--block"
                     >
                         ${msg("Continue")}
                     </button>
@@ -102,8 +90,8 @@ export class AuthenticatorEmailStage extends BaseStage<
                           desc: "Displayed when a verification token has been sent to the user's email address.",
                       })}
             </p>
-            <form class="pf-c-form" @submit=${this.submitForm}>
-                <div class="pf-c-form__group">
+            <form class="tdg-form" @submit=${this.submitForm}>
+                <div class="tdg-form__group">
                     ${AKLabel({ required: true, htmlFor: "code-input" }, msg("Code"))}
                     <input
                         id="code-input"
@@ -114,18 +102,18 @@ export class AuthenticatorEmailStage extends BaseStage<
                         placeholder="${msg("Please enter the code you received via email")}"
                         autofocus
                         autocomplete="one-time-code"
-                        class="pf-c-form-control pf-m-monospace"
+                        class="tdg-control tdg-control--mono"
                         required
                     />
                     ${AKFormErrors({ errors: this.challenge.responseErrors?.code })}
                 </div>
                 ${this.renderNonFieldErrors()}
-                <fieldset class="ak-c-fieldset pf-c-form__group pf-m-action">
+                <fieldset class="ak-c-fieldset tdg-form__group tdg-form__actions">
                     <legend class="sr-only">${msg("Form actions")}</legend>
                     <button
                         name="continue"
                         type="submit"
-                        class="pf-c-button pf-m-primary pf-m-block"
+                        class="tdg-button tdg-button--primary tdg-button--block"
                     >
                         ${msg("Continue")}
                     </button>

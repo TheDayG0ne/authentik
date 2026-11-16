@@ -1,3 +1,5 @@
+import TDGControls from "#flow/stages/tdg-controls.css";
+
 import { AKElement } from "#elements/Base";
 import { isActiveElement, isFocusable } from "#elements/utils/focus";
 
@@ -10,10 +12,6 @@ import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { createRef, ref, Ref } from "lit/directives/ref.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFInputGroup from "@patternfly/patternfly/components/InputGroup/input-group.css";
 
 /**
  * A configuration object for the visibility states of the password input.
@@ -39,7 +37,7 @@ const Visibility = {
 
 @customElement("ak-flow-input-password")
 export class InputPassword extends AKElement {
-    static styles = [PFForm, PFInputGroup, PFFormControl, PFButton];
+    static styles = [TDGControls];
 
     //#region Properties
 
@@ -291,7 +289,7 @@ export class InputPassword extends AKElement {
             ${ref(this.toggleVisibilityRef)}
             aria-label=${label}
             @click=${this.togglePasswordVisibility}
-            class="pf-c-button pf-m-control"
+            class="tdg-button tdg-button--control"
             type="button"
         >
             <i class="fas ${icon}" aria-hidden="true"></i>
@@ -302,17 +300,17 @@ export class InputPassword extends AKElement {
         if (!this.capsLock) return nothing;
 
         return html`<div
-            class="pf-c-form__helper-text"
+            class="tdg-form__helper"
             id="helper-text-form-caps-lock-helper"
             aria-live="polite"
         >
             <div class="pf-c-helper-text">
-                <div class="pf-c-helper-text__item pf-m-warning">
-                    <span class="pf-c-helper-text__item-icon">
+                <div class="tdg-helper__item pf-m-warning">
+                    <span class="tdg-helper__item-icon">
                         <i class="fas fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
                     </span>
 
-                    <span class="pf-c-helper-text__item-text">${msg("Caps Lock is enabled.")}</span>
+                    <span class="tdg-helper__item-text">${msg("Caps Lock is enabled.")}</span>
                 </div>
             </div>
         </div>`;
@@ -320,9 +318,9 @@ export class InputPassword extends AKElement {
 
     render() {
         return html`${AKLabel({ required: this.required, htmlFor: this.inputID }, this.label)}
-            <div class="pf-c-form__group">
-                <div class="pf-c-form__group-control">
-                    <div class="pf-c-input-group">
+            <div class="tdg-form__group">
+                <div class="tdg-form__group-control">
+                    <div class="tdg-input-group">
                         <input
                             type=${this.passwordVisible ? "text" : "password"}
                             id=${this.inputID}
@@ -330,9 +328,9 @@ export class InputPassword extends AKElement {
                             placeholder=${this.placeholder}
                             autocomplete="current-password"
                             class="${classMap({
-                                "pf-c-form-control": true,
-                                "pf-m-icon": true,
-                                "pf-m-caps-lock": this.capsLock,
+                                "tdg-control": true,
+                                "tdg-control--icon": true,
+                                "tdg-control--caps-lock": this.capsLock,
                             })}"
                             ?required=${this.required}
                             aria-invalid=${this.errors?.length ? "true" : "false"}

@@ -26,6 +26,7 @@ const assets = [
         path.dirname(EntryPoint.StandaloneLoading.out),
     ],
     [path.resolve(PackageRoot, "src", "assets", "images"), "./assets/images"],
+    [path.resolve(PackageRoot, "src", "assets", "tdgid"), "./assets/tdgid"],
     [require.resolve("@goauthentik/brand-assets/brand.png"), "./assets/icons/brand.png"],
     [require.resolve("@goauthentik/brand-assets/brand.svg"), "./assets/icons/brand.svg"],
     [require.resolve("@goauthentik/brand-assets/icon.png"), "./assets/icons/icon.png"],

@@ -1,9 +1,25 @@
 :host {
     z-index: 100;
     --pf-c-page__sidebar--Transition: 0 !important;
-    background: linear-gradient(180deg, #100a18f5, #08060cf8);
-    border-inline-end: 1px solid #b780e933;
+    --tdgid-sidebar-border: #b780e94d;
+    --tdgid-sidebar-surface: #0b0710f7;
+    background:
+        radial-gradient(circle at 0 0, #32134b 0, transparent 18rem),
+        linear-gradient(180deg, #100a18f5, var(--tdgid-sidebar-surface));
+    border-inline-end: 1px solid var(--tdgid-sidebar-border);
+    box-shadow: 14px 0 44px #0000002e;
     backdrop-filter: blur(20px);
+}
+
+:host::before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    opacity: 0.14;
+    background-image: radial-gradient(#d8b9ff 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(to bottom, #000, transparent 78%);
 }
 
 .pf-c-nav {

@@ -490,7 +490,7 @@ class AuthorizationFlowInitView(PolicyAccessView):
         if UI_LOCALES in self.request.GET:
             languages = str(self.request.GET[UI_LOCALES]).split(" ")
             for language in languages:
-                if translation.check_for_language(language):
+                if language.lower().replace("_", "-").split("-", 1)[0] in {"ru", "en"}:
                     selected_language = translation.get_supported_language_variant(language)
                     LOGGER.debug(
                         "Activating language from oidc ui_locales", locale=selected_language

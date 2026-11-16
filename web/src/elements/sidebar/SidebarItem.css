@@ -36,8 +36,44 @@ button.pf-c-nav__link {
 .pf-c-nav__item {
     user-select: none;
     --pf-c-nav__item--MarginTop: 0;
-    --pf-c-nav__link--m-current--after--BorderLeftWidth: 1px;
-    margin-inline-start: 0.2rem;
+    --pf-c-nav__link--m-current--after--BorderLeftWidth: 2px;
+    --pf-c-nav__link--PaddingRight: 0.9rem;
+    margin-inline: 0.35rem;
+}
+
+.pf-c-nav__link {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #c8bed1;
+    transition:
+        background-color 140ms cubic-bezier(0.22, 1, 0.36, 1),
+        color 140ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 140ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 140ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pf-c-nav__link:hover,
+.pf-c-nav__link:focus-visible {
+    color: #f7f4ff;
+    background: #b780e914;
+    border-color: #d3afff38;
+    transform: translateX(2px);
+}
+
+.pf-c-nav__link.pf-m-current,
+.pf-c-nav__link.pf-m-current:hover,
+.pf-c-nav__link.pf-m-current:focus-visible {
+    color: #180c24;
+    font-weight: 800;
+    background: linear-gradient(100deg, #d3afff, #b780e9);
+    border-color: #e4ceff;
+    box-shadow: 0 8px 24px #a34bff35;
+}
+
+.pf-c-nav__link.pf-m-current::after,
+.pf-c-nav__link.pf-m-current:hover::after,
+.pf-c-nav__item.pf-m-current:not(.pf-m-expanded) .pf-c-nav__link::after {
+    border-color: transparent;
 }
 
 .pf-c-nav__link::after {

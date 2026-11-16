@@ -167,6 +167,7 @@ export function formatLocaleDisplayNames(
 
     // Process all locales
     for (const tag of allLocales) {
+        if (tag !== "en" && tag !== "ru-RU") continue;
         // Skip pseudo unless debug
         if (tag === PseudoLanguageTag && !debug) {
             continue;

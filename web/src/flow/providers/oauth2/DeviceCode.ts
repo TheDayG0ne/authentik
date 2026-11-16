@@ -15,12 +15,6 @@ import { msg } from "@lit/localize";
 import { CSSResult, html, LitElement, TemplateResult } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFInputGroup from "@patternfly/patternfly/components/InputGroup/input-group.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 @customElement("ak-flow-provider-oauth2-code")
 export class OAuth2DeviceCode extends BaseStage<
@@ -29,12 +23,12 @@ export class OAuth2DeviceCode extends BaseStage<
 > {
     static shadowRootOptions = { ...LitElement.shadowRootOptions, delegatesFocus: true };
 
-    static styles: CSSResult[] = [PFLogin, PFForm, PFFormControl, PFTitle, PFButton, PFInputGroup];
+    static styles = [];
 
     render(): TemplateResult {
         return html`<ak-flow-card .challenge=${this.challenge}>
-            <form class="pf-c-form" @submit=${this.submitForm}>
-                <div class="pf-c-form__group">
+            <form class="tdg-form" @submit=${this.submitForm}>
+                <div class="tdg-form__group">
                     ${AKLabel({ required: true, htmlFor: "device-code-input" }, msg("Device Code"))}
 
                     <input
@@ -47,18 +41,18 @@ export class OAuth2DeviceCode extends BaseStage<
                         placeholder="${msg("Please enter your code")}"
                         autofocus
                         autocomplete="off"
-                        class="pf-c-form-control"
+                        class="tdg-control"
                         value=""
                         required
                     />
                     ${AKFormErrors({ errors: this.challenge?.responseErrors?.code })}
                 </div>
 
-                <div class="pf-c-form__group pf-m-action">
+                <div class="tdg-form__group tdg-form__actions">
                     <button
                         name="continue"
                         type="submit"
-                        class="pf-c-button pf-m-primary pf-m-block"
+                        class="tdg-button tdg-button--primary tdg-button--block"
                     >
                         ${msg("Continue")}
                     </button>

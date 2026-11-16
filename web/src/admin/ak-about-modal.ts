@@ -36,7 +36,7 @@ function renderEntry([label, content = null]: AboutEntry): SlottedTemplateResult
 
 @customElement("ak-about-modal")
 export class AboutModal extends WithLicenseSummary(WithBrandConfig(AKModal)) {
-    public override formatARIALabel = () => msg("About authentik");
+    public override formatARIALabel = () => msg("About TDG.id");
 
     public static hostStyles = [
         ...AKModal.hostStyles,
@@ -76,7 +76,7 @@ export class AboutModal extends WithLicenseSummary(WithBrandConfig(AKModal)) {
         `,
     ];
 
-    public static ariaLabel = msg("About authentik");
+    public static ariaLabel = msg("About TDG.id");
 
     public static open = asInvoker(AboutModal);
 
@@ -202,7 +202,7 @@ export class AboutModal extends WithLicenseSummary(WithBrandConfig(AKModal)) {
                 ${this.renderLoadingBar()}
                 ${ThemedImage({
                     src: this.brandingFavicon,
-                    alt: msg("authentik Logo"),
+                    alt: msg("TDG.id Logo"),
                     className: "pf-c-about-modal-box__brand-image",
                     theme: this.activeTheme,
                     themedUrls: this.brandingFaviconThemedUrls,

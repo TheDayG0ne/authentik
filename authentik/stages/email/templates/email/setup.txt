@@ -1,8 +1,8 @@
-{% load i18n %}{% autoescape off %}authentik Test-Email
+{% load i18n %}{% autoescape off %}TDG.id Test Email
 {% blocktrans %}
-This is a test email to inform you, that you've successfully configured authentik emails.
+This is a test email to inform you, that you've successfully configured TDG.id email delivery.
 {% endblocktrans %}
 
 -- 
-Powered by goauthentik.io.
+TDG.id (powered by authentik).
 {% endautoescape %}

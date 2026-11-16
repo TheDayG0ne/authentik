@@ -1,38 +1,32 @@
 :host,
 ak-stage-captcha.style-scope {
-    --captcha-background-to: var(--pf-global--BackgroundColor--light-100);
-    --captcha-background-from: var(--pf-global--BackgroundColor--light-300);
+    --captcha-background-to: #21162d;
+    --captcha-background-from: #120d1b;
 }
 
 :host([theme="dark"]),
 ak-stage-captcha[theme="dark"].style-scope {
-    --captcha-background-to: var(--ak-dark-background-light);
-    --captcha-background-from: var(--pf-global--BackgroundColor--300);
+    --captcha-background-to: #21162d;
+    --captcha-background-from: #0f0a16;
 }
 
 @keyframes captcha-background-animation {
-    0% {
-        background-color: var(--captcha-background-from);
-    }
-    50% {
-        background-color: var(--captcha-background-to);
-    }
-    100% {
-        background-color: var(--captcha-background-from);
-    }
+    0% { background-color: var(--captcha-background-from); }
+    50% { background-color: var(--captcha-background-to); }
+    100% { background-color: var(--captcha-background-from); }
 }
 
 .ak-interactive-challenge {
     width: 100%;
     min-height: 65px;
+}
 
-    &[data-ready="loading"] {
-        background-color: var(--captcha-background-from);
-        animation: captcha-background-animation 1s infinite var(--pf-global--TimingFunction);
-    }
+.ak-interactive-challenge[data-ready="loading"] {
+    background-color: var(--captcha-background-from);
+    animation: captcha-background-animation 1s infinite ease-in-out;
+}
 
-    &[data-transparent-loading="true"][data-ready="loading"] {
-        background-color: transparent;
-        animation: none;
-    }
+.ak-interactive-challenge[data-transparent-loading="true"][data-ready="loading"] {
+    background-color: transparent;
+    animation: none;
 }

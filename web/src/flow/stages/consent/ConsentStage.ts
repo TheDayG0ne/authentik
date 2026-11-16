@@ -5,6 +5,7 @@ import { SlottedTemplateResult } from "#elements/types";
 
 import { FlowUserDetails } from "#flow/FormStatic";
 import { BaseStage } from "#flow/stages/base";
+import TDGControls from "#flow/stages/tdg-controls.css";
 
 import {
     ConsentChallenge,
@@ -16,26 +17,11 @@ import { msg } from "@lit/localize";
 import { CSSResult, html, nothing, TemplateResult } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFList from "@patternfly/patternfly/components/List/list.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
-import PFSpacing from "@patternfly/patternfly/utilities/Spacing/spacing.css";
-import PFText from "@patternfly/patternfly/utilities/Text/text.css";
 
 @customElement("ak-stage-consent")
 export class ConsentStage extends BaseStage<ConsentChallenge, ConsentChallengeResponseRequest> {
     static styles: CSSResult[] = [
-        PFLogin,
-        PFList,
-        PFForm,
-        PFSpacing,
-        PFFormControl,
-        PFTitle,
-        PFButton,
-        PFText,
+        TDGControls,
     ];
 
     renderPermissions(perms: ConsentPermission[]): TemplateResult {
@@ -53,16 +39,16 @@ export class ConsentStage extends BaseStage<ConsentChallenge, ConsentChallengeRe
 
     renderNoPrevious(): TemplateResult {
         return html`
-            <div class="pf-c-form__group">
-                <h3 data-test-id="stage-heading" class="pf-c-title pf-m-xl pf-u-mb-md">
+            <div class="tdg-form__group">
+                <h3 data-test-id="stage-heading" class="tdg-heading tdg-heading--xl tdg-space-bottom-md">
                     ${this.challenge?.headerText ?? ""}
                 </h3>
                 ${this.challenge?.permissions.length
                     ? html`
-                          <p class="pf-u-mb-md">
+                          <p class="tdg-space-bottom-md">
                               ${msg("Application requires following permissions:")}
                           </p>
-                          <ul class="pf-c-list" id="permissions">
+                          <ul class="tdg-list" id="permissions">
                               ${this.renderPermissions(this.challenge.permissions)}
                           </ul>
                       `
@@ -73,28 +59,28 @@ export class ConsentStage extends BaseStage<ConsentChallenge, ConsentChallengeRe
 
     renderAdditional(): TemplateResult {
         return html`
-            <div class="pf-c-form__group">
-                <h3 data-test-id="stage-heading" class="pf-c-title pf-m-xl pf-u-mb-md">
+            <div class="tdg-form__group">
+                <h3 data-test-id="stage-heading" class="tdg-heading tdg-heading--xl tdg-space-bottom-md">
                     ${this.challenge?.headerText ?? ""}
                 </h3>
                 ${this.challenge?.permissions.length
                     ? html`
-                          <p class="pf-u-mb-md">
+                          <p class="tdg-space-bottom-md">
                               ${msg("Application already has access to the following permissions:")}
                           </p>
-                          <ul class="pf-c-list" id="permissions">
+                          <ul class="tdg-list" id="permissions">
                               ${this.renderPermissions(this.challenge.permissions)}
                           </ul>
                       `
                     : nothing}
             </div>
-            <div class="pf-c-form__group">
+            <div class="tdg-form__group">
                 ${this.challenge?.additionalPermissions.length
                     ? html`
-                          <p class="pf-u-font-weight-bold pf-u-mb-md">
+                          <p class="tdg-text-bold tdg-space-bottom-md">
                               ${msg("Application requires following new permissions:")}
                           </p>
-                          <ul class="pf-c-list" id="permissions">
+                          <ul class="tdg-list" id="permissions">
                               ${this.renderPermissions(this.challenge.additionalPermissions)}
                           </ul>
                       `
@@ -110,7 +96,7 @@ export class ConsentStage extends BaseStage<ConsentChallenge, ConsentChallengeRe
 
         return html`<ak-flow-card .challenge=${this.challenge}>
             <form
-                class="pf-c-form"
+                class="tdg-form"
                 @submit=${(event: SubmitEvent) => {
                     if (!this.challenge) {
                         return;
@@ -126,12 +112,12 @@ export class ConsentStage extends BaseStage<ConsentChallenge, ConsentChallengeRe
                     ? this.renderAdditional()
                     : this.renderNoPrevious()}
 
-                <fieldset class="ak-c-fieldset pf-c-form__group pf-m-action">
+                <fieldset class="ak-c-fieldset tdg-form__group tdg-form__actions">
                     <legend class="sr-only">${msg("Form actions")}</legend>
                     <button
                         name="continue"
                         type="submit"
-                        class="pf-c-button pf-m-primary pf-m-block"
+                        class="tdg-button tdg-button--primary tdg-button--block"
                     >
                         ${msg("Continue")}
                     </button>

@@ -57,7 +57,7 @@ export const LocalePrompt: LitFC<LocalePromptProps> = ({
             );
 
             return html`<select
-                class="pf-c-form-control ak-m-capitalize"
+                class="tdg-control ak-m-capitalize"
                 id=${fieldId}
                 name=${prompt.fieldKey}
                 ?disabled=${disabled}

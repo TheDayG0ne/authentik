@@ -1,4 +1,3 @@
-import "@patternfly/patternfly/components/Login/login.css";
 import "#stories/flow-interface";
 import "#flow/stages/dummy/DummyStage";
 

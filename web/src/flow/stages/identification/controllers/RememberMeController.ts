@@ -54,8 +54,8 @@ export class RememberMeController implements ReactiveController {
         css`
             .remember-me-switch {
                 display: flex;
-                padding-top: var(--pf-global--spacer--sm);
-                gap: var(--pf-global--spacer--sm);
+                padding-top: 0.75rem;
+                gap: 0.75rem;
             }
         `,
     ];
@@ -214,20 +214,20 @@ export class RememberMeController implements ReactiveController {
     }
     public renderToggleInput = () => {
         return html`<label
-            class="pf-c-switch remember-me-switch"
+            class="tdg-switch remember-me-switch"
             for="authentik-remember-me"
             aria-description=${msg(
                 "When enabled, your username will be remembered on this device for future logins.",
             )}
         >
             <input
-                class="pf-c-switch__input"
+                class="tdg-switch__input"
                 type="checkbox"
                 id="authentik-remember-me"
                 @change=${this.toggleChangeListener}
                 ?checked=${this.defaultChecked}
             />
-            <span class="pf-c-form__label">${msg("Remember me on this device")}</span>
+            <span class="tdg-form__label">${msg("Remember me on this device")}</span>
         </label>`;
     };
 

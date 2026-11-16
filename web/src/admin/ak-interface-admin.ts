@@ -1,3 +1,4 @@
+import "#components/ak-nav-buttons";
 import "#elements/banner/BaseURLBanner";
 import "#elements/banner/EnterpriseStatusBanner";
 import "#elements/banner/VersionBanner";
@@ -15,6 +16,7 @@ import {
 } from "./navigation/sidebar.js";
 
 import { isAPIResultReady } from "#common/api/responses";
+import { globalAK } from "#common/global";
 import { isGuest } from "#common/users";
 import { WebsocketClient } from "#common/ws/WebSocketClient";
 
@@ -281,6 +283,13 @@ export class AdminInterface extends WithLicenseSummary(
                         ${this.renderCommandPaletteButton()}
                     </div>
                     ${renderSidebarItems(this.navigationEntries)}
+                    <div slot="account" class="admin-account">
+                        <a class="admin-user-interface" href="${globalAK().api.base}if/user/">
+                            <i class="fas fa-th" aria-hidden="true"></i>
+                            ${msg("User interface")}
+                        </a>
+                        <ak-nav-buttons></ak-nav-buttons>
+                    </div>
                 </ak-sidebar>
 
                 <button

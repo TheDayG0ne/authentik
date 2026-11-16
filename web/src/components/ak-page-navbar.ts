@@ -184,7 +184,7 @@ export class AKPageNavbar
                         <div class="logo">
                             ${ThemedImage({
                                 src: this.brandingLogo,
-                                alt: msg("authentik Logo"),
+                                alt: msg("TDG.id Logo"),
                                 theme: this.activeTheme,
                                 themedUrls: this.brandingLogoThemedUrls,
                             })}

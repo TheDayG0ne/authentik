@@ -17,12 +17,6 @@ import { CSSResult, html, nothing, TemplateResult } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { guard } from "lit/directives/guard.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFCard from "@patternfly/patternfly/components/Card/card.css";
-import PFDescriptionList from "@patternfly/patternfly/components/DescriptionList/description-list.css";
-import PFNotificationDrawer from "@patternfly/patternfly/components/NotificationDrawer/notification-drawer.css";
-import PFProgressStepper from "@patternfly/patternfly/components/ProgressStepper/progress-stepper.css";
-import PFStack from "@patternfly/patternfly/layouts/Stack/stack.css";
 
 function stringify(obj: unknown): string {
     return JSON.stringify(obj, null, 4);
@@ -31,12 +25,6 @@ function stringify(obj: unknown): string {
 @customElement("ak-flow-inspector")
 export class FlowInspector extends AKElement {
     static styles: CSSResult[] = [
-        PFButton,
-        PFStack,
-        PFCard,
-        PFNotificationDrawer,
-        PFDescriptionList,
-        PFProgressStepper,
         Styles,
     ];
 
@@ -92,7 +80,7 @@ export class FlowInspector extends AKElement {
                     <div class="pf-c-notification-drawer__header-action-close">
                         <button
                             @click=${AKFlowInspectorChangeEvent.dispatchClose}
-                            class="pf-c-button pf-m-plain"
+                            class="tdg-button tdg-button--plain"
                             type="button"
                             aria-label=${msg("Close flow inspector")}
                         >
@@ -107,7 +95,7 @@ export class FlowInspector extends AKElement {
     protected renderAccessDenied(): TemplateResult {
         return html`<aside
             aria-label=${msg("Flow inspector")}
-            class="pf-c-drawer__body pf-m-no-padding"
+            class="pf-c-drawer__body tdg-no-padding"
         >
             <div class="pf-c-notification-drawer">
                 ${this.renderHeader()}
@@ -187,54 +175,54 @@ ${stringify(this.getStage(currentPlan?.nextPlannedStage?.stageObj))}</pre
             <fieldset class="ak-c-fieldset">
                 <legend class="pf-c-card__title">${msg("Plan history")}</legend>
                 <div class="pf-c-card__body">
-                    <ol class="pf-c-progress-stepper pf-m-vertical">
+                    <ol class="tdg-progress-stepper pf-m-vertical">
                         ${plans.map((plan) => {
-                            return html`<li class="pf-c-progress-stepper__step pf-m-success">
-                                <div class="pf-c-progress-stepper__step-connector">
-                                    <span class="pf-c-progress-stepper__step-icon">
+                            return html`<li class="tdg-progress-stepper__step pf-m-success">
+                                <div class="tdg-progress-stepper__step-connector">
+                                    <span class="tdg-progress-stepper__step-icon">
                                         <i class="fas fa-check-circle" aria-hidden="true"></i>
                                     </span>
                                 </div>
-                                <div class="pf-c-progress-stepper__step-main">
-                                    <div class="pf-c-progress-stepper__step-title">
+                                <div class="tdg-progress-stepper__step-main">
+                                    <div class="tdg-progress-stepper__step-title">
                                         ${plan.currentStage.stageObj?.name}
                                     </div>
-                                    <div class="pf-c-progress-stepper__step-description">
+                                    <div class="tdg-progress-stepper__step-description">
                                         ${plan.currentStage.stageObj?.verboseName}
                                     </div>
                                 </div>
                             </li> `;
                         })}
                         ${currentPlan?.currentStage && !isCompleted
-                            ? html`<li class="pf-c-progress-stepper__step pf-m-current pf-m-info">
-                                  <div class="pf-c-progress-stepper__step-connector">
-                                      <span class="pf-c-progress-stepper__step-icon">
+                            ? html`<li class="tdg-progress-stepper__step pf-m-current pf-m-info">
+                                  <div class="tdg-progress-stepper__step-connector">
+                                      <span class="tdg-progress-stepper__step-icon">
                                           <i
                                               class="pficon pf-icon-resources-full"
                                               aria-hidden="true"
                                           ></i>
                                       </span>
                                   </div>
-                                  <div class="pf-c-progress-stepper__step-main">
-                                      <div class="pf-c-progress-stepper__step-title">
+                                  <div class="tdg-progress-stepper__step-main">
+                                      <div class="tdg-progress-stepper__step-title">
                                           ${currentPlan?.currentStage?.stageObj?.name}
                                       </div>
-                                      <div class="pf-c-progress-stepper__step-description">
+                                      <div class="tdg-progress-stepper__step-description">
                                           ${currentPlan?.currentStage?.stageObj?.verboseName}
                                       </div>
                                   </div>
                               </li>`
                             : nothing}
                         ${currentPlan?.nextPlannedStage && !isCompleted
-                            ? html`<li class="pf-c-progress-stepper__step pf-m-pending">
-                                  <div class="pf-c-progress-stepper__step-connector">
-                                      <span class="pf-c-progress-stepper__step-icon"></span>
+                            ? html`<li class="tdg-progress-stepper__step pf-m-pending">
+                                  <div class="tdg-progress-stepper__step-connector">
+                                      <span class="tdg-progress-stepper__step-icon"></span>
                                   </div>
-                                  <div class="pf-c-progress-stepper__step-main">
-                                      <div class="pf-c-progress-stepper__step-title">
+                                  <div class="tdg-progress-stepper__step-main">
+                                      <div class="tdg-progress-stepper__step-title">
                                           ${currentPlan.nextPlannedStage.stageObj?.name}
                                       </div>
-                                      <div class="pf-c-progress-stepper__step-description">
+                                      <div class="tdg-progress-stepper__step-description">
                                           ${currentPlan?.nextPlannedStage?.stageObj?.verboseName}
                                       </div>
                                   </div>
@@ -276,7 +264,7 @@ ${stringify(this.getStage(currentPlan?.nextPlannedStage?.stageObj))}</pre
             this.advanceHandler();
             return html`<aside
                 aria-label=${msg("Flow inspector loading")}
-                class="pf-c-drawer__body pf-m-no-padding"
+                class="pf-c-drawer__body tdg-no-padding"
             >
                 <div class="pf-c-notification-drawer">
                     ${this.renderHeader()}
@@ -288,7 +276,7 @@ ${stringify(this.getStage(currentPlan?.nextPlannedStage?.stageObj))}</pre
 
         return html`<aside
             aria-label=${msg("Flow inspector")}
-            class="pf-c-drawer__body pf-m-no-padding"
+            class="pf-c-drawer__body tdg-no-padding"
         >
             <div class="pf-c-notification-drawer">
                 ${this.renderHeader()}

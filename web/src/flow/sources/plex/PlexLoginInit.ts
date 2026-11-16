@@ -19,11 +19,6 @@ import { msg } from "@lit/localize";
 import { CSSResult, html, TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 @customElement("ak-flow-source-plex")
 export class PlexLoginInit extends BaseStage<
@@ -33,7 +28,7 @@ export class PlexLoginInit extends BaseStage<
     @state()
     authUrl?: string;
 
-    static styles: CSSResult[] = [PFLogin, PFForm, PFFormControl, PFButton, PFTitle];
+    static styles = [];
 
     async firstUpdated(): Promise<void> {
         const authInfo = await PlexAPIClient.getPin(this.challenge?.clientId || "");
@@ -64,14 +59,14 @@ export class PlexLoginInit extends BaseStage<
     render(): TemplateResult {
         return html`<ak-flow-card .challenge=${this.challenge}>
             <span slot="title">${msg("Authenticating with Plex...")}</span>
-            <form class="pf-c-form">
+            <form class="tdg-form">
                 <ak-empty-state loading
                     ><span>${msg("Waiting for authentication...")}></span>
                 </ak-empty-state>
                 <ak-divider></ak-divider>
                 <p>${msg("If no Plex popup opens, click the button below.")}</p>
                 <button
-                    class="pf-c-button pf-m-block pf-m-primary"
+                    class="tdg-button tdg-button--block tdg-button--primary"
                     type="button"
                     @click=${() => {
                         window.open(this.authUrl, "_blank");

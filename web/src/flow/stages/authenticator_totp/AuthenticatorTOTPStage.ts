@@ -12,6 +12,7 @@ import { AKLabel } from "#components/ak-label";
 
 import { FlowUserDetails } from "#flow/FormStatic";
 import { BaseStage } from "#flow/stages/base";
+import TDGControls from "#flow/stages/tdg-controls.css";
 
 import {
     AuthenticatorTOTPChallenge,
@@ -22,12 +23,6 @@ import { msg } from "@lit/localize";
 import { css, CSSResult, html, nothing } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFInputGroup from "@patternfly/patternfly/components/InputGroup/input-group.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 @customElement("ak-stage-authenticator-totp")
 export class AuthenticatorTOTPStage extends BaseStage<
@@ -35,12 +30,6 @@ export class AuthenticatorTOTPStage extends BaseStage<
     AuthenticatorTOTPChallengeResponseRequest
 > {
     static styles: CSSResult[] = [
-        PFLogin,
-        PFForm,
-        PFFormControl,
-        PFInputGroup,
-        PFTitle,
-        PFButton,
         css`
             .qr-container {
                 display: flex;
@@ -55,6 +44,7 @@ export class AuthenticatorTOTPStage extends BaseStage<
                 margin-top: 1rem;
             }
         `,
+        TDGControls,
     ];
 
     #copyTOTPToClipboard = (event: Event): void => {
@@ -106,12 +96,12 @@ export class AuthenticatorTOTPStage extends BaseStage<
         }
 
         return html`<ak-flow-card .challenge=${this.challenge}>
-            <form class="pf-c-form" @submit=${this.submitForm}>
+            <form class="tdg-form" @submit=${this.submitForm}>
                 ${FlowUserDetails({ challenge: this.challenge })}
 
                 <input type="hidden" name="otp_uri" value=${this.challenge.configUrl} />
 
-                <div class="pf-c-form__group">
+                <div class="tdg-form__group">
                     <div class="qr-container">
                         <qr-code
                             role="img"
@@ -122,22 +112,22 @@ export class AuthenticatorTOTPStage extends BaseStage<
                         <div class="qr-buttons">
                             <button
                                 type="button"
-                                class="pf-c-button pf-m-secondary pf-m-progress pf-m-in-progress"
+                                class="tdg-button tdg-button--secondary tdg-button--progress tdg-button--in-progress"
                                 aria-label=${msg("Copy time-based one-time password configuration")}
                                 @click=${this.#copyTOTPToClipboard}
                             >
-                                <span class="pf-c-button__progress"
+                                <span class="tdg-button__progress"
                                     ><i class="fas fa-code" aria-hidden="true"></i
                                 ></span>
                                 ${msg("Copy TOTP Config")}
                             </button>
                             <button
                                 type="button"
-                                class="pf-c-button pf-m-secondary pf-m-progress pf-m-in-progress"
+                                class="tdg-button tdg-button--secondary tdg-button--progress tdg-button--in-progress"
                                 aria-label=${msg("Copy time-based one-time password secret")}
                                 @click=${this.#copySecretToClipboard}
                             >
-                                <span class="pf-c-button__progress"
+                                <span class="tdg-button__progress"
                                     ><i class="fas fa-key" aria-hidden="true"></i
                                 ></span>
                                 ${msg("Copy Secret")}
@@ -150,7 +140,7 @@ export class AuthenticatorTOTPStage extends BaseStage<
                         "Please scan the QR code above using the Microsoft Authenticator, Google Authenticator, or other authenticator apps on your device, and enter the code the device displays below to finish setting up the MFA device.",
                     )}
                 </p>
-                <div class="pf-c-form__group">
+                <div class="tdg-form__group">
                     ${AKLabel(
                         {
                             "required": true,
@@ -168,19 +158,19 @@ export class AuthenticatorTOTPStage extends BaseStage<
                         placeholder="${msg("Type your TOTP code...")}"
                         aria-placeholder=${msg("Type your time-based one-time password code.")}
                         autocomplete="one-time-code"
-                        class="pf-c-form-control pf-m-monospace"
+                        class="tdg-control tdg-control--mono"
                         spellcheck="false"
                         required
                     />
                     ${AKFormErrors({ errors: this.challenge.responseErrors?.code })}
                 </div>
 
-                <fieldset class="ak-c-fieldset pf-c-form__group pf-m-action">
+                <fieldset class="ak-c-fieldset tdg-form__group tdg-form__actions">
                     <legend class="sr-only">${msg("Form actions")}</legend>
                     <button
                         name="continue"
                         type="submit"
-                        class="pf-c-button pf-m-primary pf-m-block"
+                        class="tdg-button tdg-button--primary tdg-button--block"
                     >
                         ${msg("Continue")}
                     </button>

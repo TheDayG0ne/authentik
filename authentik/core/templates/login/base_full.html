@@ -37,10 +37,10 @@
                             <div class="pf-c-login__main-header pf-c-brand">
                                 {% with themed=brand.branding_logo_themed_urls %}
                                 {% if themed %}
-                                <img class="branding-logo branding-logo--light" src="{{ themed.light }}" alt="authentik Logo" />
-                                <img class="branding-logo branding-logo--dark" src="{{ themed.dark }}" alt="authentik Logo" />
+                                <img class="branding-logo branding-logo--light" src="{{ themed.light }}" alt="TDG.id Logo" />
+                                <img class="branding-logo branding-logo--dark" src="{{ themed.dark }}" alt="TDG.id Logo" />
                                 {% else %}
-                                <img class="branding-logo" src="{{ brand.branding_logo_url }}" alt="authentik Logo" />
+                                <img class="branding-logo" src="{{ brand.branding_logo_url }}" alt="TDG.id Logo" />
                                 {% endif %}
                                 {% endwith %}
                             </div>
@@ -68,7 +68,7 @@
                                     {% endfor %}
                                     <li part="list-item">
                                         <span>
-                                            {% trans 'Powered by authentik' %}
+                                            {% trans 'TDG.id (powered by authentik)' %}
                                         </span>
                                     </li>
                                 </ul>

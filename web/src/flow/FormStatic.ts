@@ -12,11 +12,10 @@ import { CSSResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { guard } from "lit/directives/guard.js";
 
-import PFAvatar from "@patternfly/patternfly/components/Avatar/avatar.css";
 
 @customElement("ak-form-static")
 export class AKFormStatic extends AKElement {
-    static styles: CSSResult[] = [PFAvatar, Styles];
+    static styles: CSSResult[] = [Styles];
 
     public override role = "banner";
     public override ariaLabel = msg("User information");
@@ -35,7 +34,7 @@ export class AKFormStatic extends AKElement {
         return html`<div class="primary-content">
                 ${this.avatar && !isDefaultAvatar(this.avatar)
                     ? html`<img
-                          class="pf-c-avatar"
+                          class="tdg-avatar"
                           src=${this.avatar}
                           alt=${this.username
                               ? msg(str`Avatar for ${this.username}`, {

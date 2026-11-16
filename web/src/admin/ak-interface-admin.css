@@ -44,6 +44,34 @@ ak-sidebar-item:active ak-sidebar-item::part(list-item) {
     border-block-end: 1px solid #b780e933;
 }
 
+.admin-account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+    padding: 0.75rem;
+    border-block-start: 1px solid #b780e940;
+    color: #f8f4ff;
+}
+
+.admin-user-interface {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex: 1;
+    min-height: 44px;
+    padding: 0.5rem;
+    border-radius: 8px;
+    color: #f8f4ff;
+    text-decoration: none;
+}
+
+.admin-user-interface:hover, .admin-user-interface:focus-visible {
+    color: #e4ceff;
+    background: #b780e926;
+    outline-color: #d3afff;
+}
+
 .admin-sidebar-tools .sidebar-toggle {
     display: flex;
     align-items: center;
@@ -139,4 +167,75 @@ ak-sidebar-item:hover::part(list-item) {
     cursor: pointer;
 
     padding-inline-end: var(--pf-global--spacer--sm);
+}
+
+/* TDG.id admin shell: a calm, high-contrast control surface around the existing PF layout. */
+:host {
+    --tdgid-admin-ink: #f7f4ff;
+    --tdgid-admin-muted: #b9afc5;
+    --tdgid-admin-surface: #0d0913;
+    --tdgid-admin-border: #b780e940;
+    --tdgid-admin-accent: #d3afff;
+}
+
+.pf-c-page {
+    color: var(--tdgid-admin-ink);
+    background:
+        radial-gradient(circle at 82% 0%, #32134b 0, transparent 30rem),
+        radial-gradient(circle at 12% 100%, #1a0c28 0, transparent 28rem),
+        #050408;
+}
+
+.pf-c-page__main {
+    background: transparent;
+}
+
+.pf-c-page__main-section {
+    position: relative;
+    isolation: isolate;
+    background: linear-gradient(135deg, #100b16cc, #08060cd9);
+    border-block: 1px solid #ffffff0d;
+}
+
+.pf-c-page__main-section::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    opacity: 0.2;
+    background-image: radial-gradient(#d8b9ff 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, #000, transparent 72%);
+}
+
+.admin-sidebar-tools {
+    border-block-end-color: var(--tdgid-admin-border);
+    background: linear-gradient(90deg, #1d1028b8, transparent);
+}
+
+.admin-sidebar-tools .sidebar-toggle,
+.admin-sidebar-tools .command-palette-trigger {
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+
+.admin-sidebar-tools .sidebar-toggle:hover,
+.admin-sidebar-tools .command-palette-trigger:hover {
+    background: #b780e914;
+    border-color: #d3afff38;
+}
+
+.admin-sidebar-open {
+    border: 1px solid #d3afff66;
+    background: #1a0e28e8;
+    color: var(--tdgid-admin-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-sidebar-open,
+    .admin-sidebar-tools button,
+    ak-sidebar-item::part(list-item) {
+        transition: none;
+    }
 }

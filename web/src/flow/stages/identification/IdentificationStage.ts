@@ -20,6 +20,7 @@ import {
     createOrListFormatter,
     formatUIFieldLabel,
 } from "#flow/stages/identification/utils";
+import TDGControls from "#flow/stages/tdg-controls.css";
 
 import {
     FlowDesignationEnum,
@@ -38,13 +39,6 @@ import { ref } from "lit-html/directives/ref.js";
 import { customElement, property } from "lit/decorators.js";
 import { repeat } from "lit/directives/repeat.js";
 
-import PFAlert from "@patternfly/patternfly/components/Alert/alert.css";
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFInputGroup from "@patternfly/patternfly/components/InputGroup/input-group.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 type IdentificationFooter = Partial<Pick<IdentificationChallenge, "enrollUrl" | "recoveryUrl">>;
 
@@ -61,15 +55,9 @@ export class IdentificationStage extends BaseStage<
     IdentificationChallengeResponseRequest
 > {
     static styles = [
-        PFAlert,
-        PFInputGroup,
-        PFLogin,
-        PFForm,
-        PFFormControl,
-        PFTitle,
-        PFButton,
         ...RememberMeController.styles,
         Styles,
+        TDGControls,
     ];
 
     /**
@@ -307,7 +295,7 @@ export class IdentificationStage extends BaseStage<
             inputmode=${type === "email" ? "email" : "text"}
             autocapitalize="none"
             enterkeyhint=${passwordFields ? "next" : "go"}
-            class="pf-c-form-control"
+            class="tdg-control"
             value=${initialUserIdentification ?? ""}
             required
         />`;
@@ -319,7 +307,7 @@ export class IdentificationStage extends BaseStage<
             .inputRef=${this.secondaryFocusTarget.reference}
             label=${msg("Password")}
             input-id="ak-stage-identification-password"
-            class="pf-c-form__group"
+            class="tdg-form__group"
             .errors=${challenge.responseErrors?.password}
             ?allow-show-password=${allowShowPassword}
             prefill=${PasswordManagerPrefill.password ?? ""}
@@ -352,7 +340,7 @@ export class IdentificationStage extends BaseStage<
 
         // prettier-ignore
         return html`${offerRecovery ? this.renderRecoveryMessage() : nothing}
-            <div class="pf-c-form__group">
+            <div class="tdg-form__group">
                 ${AKLabel({ required: true, htmlFor: inputID }, label)}
                 ${this.renderUidField(inputID, type, label, initialUserIdentification, passwordFields)}
                 ${rememberMeController?.renderToggleInput() ?? null}
@@ -361,11 +349,11 @@ export class IdentificationStage extends BaseStage<
             ${passwordFields ? this.renderPasswordFields(challenge) : nothing}
             ${this.renderNonFieldErrors()}
             ${this.#captcha.render()}
-            <div class="pf-c-form__group ${this.#captcha.live ? "" : "pf-m-action"}">
+            <div class="tdg-form__group ${this.#captcha.live ? "" : "tdg-form__actions"}">
                 <button
                     ?disabled=${this.#captcha.pending}
                     type="submit"
-                    class="pf-c-button pf-m-primary pf-m-block"
+                    class="tdg-button tdg-button--primary tdg-button--block"
                 >
                     ${primaryAction}
                 </button>
@@ -380,7 +368,7 @@ export class IdentificationStage extends BaseStage<
     protected renderPasswordlessUrl(url: string) {
         return html`<a
             href=${url}
-            class="pf-c-button pf-m-secondary pf-m-block"
+            class="tdg-button tdg-button--secondary tdg-button--block"
             data-ouia-component-id="passwordless"
         >
             ${msg("Use a security key")}
@@ -397,10 +385,10 @@ export class IdentificationStage extends BaseStage<
             @click=${() => this.#dispatchChallengeToHost(challenge)}
             part="source-item"
             name=${`source-${kebabCase(name)}`}
-            class="pf-c-button source-button"
+            class="tdg-button source-button"
             aria-label=${msg(str`Continue with ${name}`)}
         >
-            <span class="pf-c-button__icon pf-m-start">${icon}</span>
+            <span class="tdg-button__icon tdg-button__icon--start">${icon}</span>
             ${showLabels ? name : ""}
         </button>`;
     }
@@ -413,7 +401,7 @@ export class IdentificationStage extends BaseStage<
             @click=${() => this.#dispatchChallengeToHost(challenge)}
             part="source-item source-item-promoted"
             name=${`source-${kebabCase(name)}`}
-            class="pf-c-button pf-m-primary pf-m-block source-button source-button-promoted"
+            class="tdg-button tdg-button--primary tdg-button--block source-button source-button-promoted"
             aria-label=${msg(str`Continue with ${name}`)}
         >
             ${msg(str`Continue with ${name}`)}
@@ -431,7 +419,7 @@ export class IdentificationStage extends BaseStage<
             slot="footer"
             part="source-list"
             name="login-sources"
-            class="ak-c-fieldset pf-c-form__group"
+            class="ak-c-fieldset tdg-form__group"
         >
             <legend class="sr-only">${msg("Login sources")}</legend>
             ${repeat(
@@ -446,7 +434,7 @@ export class IdentificationStage extends BaseStage<
         const { applicationPre, passwordlessUrl, showSourceLabels, sources = [] } = challenge;
 
         return html`
-            <form class="pf-c-form" @submit=${this.submitForm}>
+            <form class="tdg-form" @submit=${this.submitForm}>
                 ${applicationPre ? this.renderPrelude(applicationPre) : nothing}
                 ${this.renderInput(challenge)}
                 ${passwordlessUrl ? this.renderPasswordlessUrl(passwordlessUrl) : nothing}
@@ -464,17 +452,17 @@ export class IdentificationStage extends BaseStage<
             slot="footer-band"
             part="additional-actions"
             name="additional-actions"
-            class="ak-c-fieldset pf-c-login__main-footer-band"
+            class="tdgid-flow-actions"
         >
             <legend class="sr-only">${msg("Additional actions")}</legend>
             ${enrollUrl
-                ? html`<div class="pf-c-login__main-footer-band-item">
+                ? html`<div class="tdgid-flow-actions__item">
                       ${msg("Need an account?")}
                       <a href="${enrollUrl}" data-ouia-component-id="enroll">${msg("Sign up.")}</a>
                   </div>`
                 : nothing}
             ${recoveryUrl
-                ? html`<div class="pf-c-login__main-footer-band-item">
+                ? html`<div class="tdgid-flow-actions__item">
                       <a href="${recoveryUrl}" data-ouia-component-id="recovery"
                           >${msg("Forgot username or password?")}</a
                       >

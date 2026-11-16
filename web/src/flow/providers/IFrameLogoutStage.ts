@@ -13,12 +13,6 @@ import { msg } from "@lit/localize";
 import { css, CSSResult, html, nothing, PropertyValues, TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFProgress from "@patternfly/patternfly/components/Progress/progress.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 enum LogoutStatusStatus {
     Pending = "pending",
@@ -34,7 +28,7 @@ interface LogoutStatus {
 function renderStatusIcon(status: LogoutStatusStatus): TemplateResult | typeof nothing {
     switch (status) {
         case LogoutStatusStatus.Pending:
-            return html`<i class="fas fa-spinner pf-c-spinner status-icon status-pending"></i>`;
+            return html`<i class="fas fa-spinner tdg-spinner status-icon status-pending"></i>`;
         case LogoutStatusStatus.Success:
             return html`<i class="fas fa-check-circle status-icon status-success"></i>`;
         case LogoutStatusStatus.Error:
@@ -65,12 +59,6 @@ export class IFrameLogoutStage extends BaseStage<
     }
 
     public static styles: CSSResult[] = [
-        PFLogin,
-        PFForm,
-        PFButton,
-        PFFormControl,
-        PFTitle,
-        PFProgress,
         css`
             .provider-status {
                 margin-bottom: 1rem;
@@ -83,7 +71,7 @@ export class IFrameLogoutStage extends BaseStage<
                 height: 1.5rem;
             }
             .status-pending {
-                color: var(--pf-c-spinner--Color);
+                color: var(--tdg-spinner--Color);
             }
             .status-success {
                 color: var(--pf-global--success-color--100);
@@ -91,7 +79,7 @@ export class IFrameLogoutStage extends BaseStage<
             .status-error {
                 color: var(--pf-global--danger-color--100);
             }
-            .pf-c-spinner {
+            .tdg-spinner {
                 animation: spin 1s linear infinite;
             }
             @keyframes spin {
@@ -237,19 +225,19 @@ export class IFrameLogoutStage extends BaseStage<
         const percentage = total > 0 ? Math.round((this.completedCount / total) * 100) : 0;
 
         return html`
-            <div class="pf-c-progress">
-                <div class="pf-c-progress__description">${msg("Logging out of providers...")}</div>
-                <div class="pf-c-progress__status">
-                    <span class="pf-c-progress__measure">${this.completedCount} / ${total}</span>
+            <div class="tdg-progress">
+                <div class="tdg-progress__description">${msg("Logging out of providers...")}</div>
+                <div class="tdg-progress__status">
+                    <span class="tdg-progress__measure">${this.completedCount} / ${total}</span>
                 </div>
                 <div
-                    class="pf-c-progress__bar"
+                    class="tdg-progress__bar"
                     role="progressbar"
                     aria-valuemin="0"
                     aria-valuemax="100"
                     aria-valuenow="${percentage}"
                 >
-                    <div class="pf-c-progress__indicator" style="width: ${percentage}%;"></div>
+                    <div class="tdg-progress__indicator" style="width: ${percentage}%;"></div>
                 </div>
             </div>
         `;
@@ -265,9 +253,9 @@ export class IFrameLogoutStage extends BaseStage<
 
         return html`<ak-flow-card .challenge=${this.challenge}>
             <span slot="title">${msg("Single Logout")}</span>
-            <form class="pf-c-form">
-                <div class="pf-c-form__group">${this.renderProgress()}</div>
-                <div class="pf-c-form__group">
+            <form class="tdg-form">
+                <div class="tdg-form__group">${this.renderProgress()}</div>
+                <div class="tdg-form__group">
                     ${this.logoutStatuses.map(
                         (status) => html`
                             <div class="provider-status">

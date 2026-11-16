@@ -12,11 +12,6 @@ import { CSSResult, html, TemplateResult } from "lit";
 import { customElement } from "lit/decorators.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 @customElement("ak-flow-source-telegram")
 export class TelegramLogin extends BaseStage<
@@ -25,11 +20,6 @@ export class TelegramLogin extends BaseStage<
 > {
     static styles: CSSResult[] = [
         // ---
-        PFLogin,
-        PFForm,
-        PFFormControl,
-        PFButton,
-        PFTitle,
     ];
 
     btnRef = createRef();
@@ -61,7 +51,7 @@ export class TelegramLogin extends BaseStage<
     render(): TemplateResult {
         return html` <ak-flow-card .challenge=${this.challenge}>
             <span slot="title">${msg("Authenticating with Telegram...")}</span>
-            <form class="pf-c-form">
+            <form class="tdg-form">
                 <ak-divider></ak-divider>
                 <p>${msg("Click the button below to start.")}</p>
 

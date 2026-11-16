@@ -23,7 +23,7 @@ class Command(TenantCommand):
                 return
             stage = stages.first()
         message = TemplateEmailMessage(
-            subject="authentik Test-Email",
+            subject="TDG.id Test Email",
             to=[("", options["to"])],
             template_name="email/setup.html",
             template_context={},

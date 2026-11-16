@@ -13,6 +13,7 @@ import {
 
 import { FlowUserDetails } from "#flow/FormStatic";
 import { BaseStage } from "#flow/stages/base";
+import TDGControls from "#flow/stages/tdg-controls.css";
 
 import {
     AuthenticatorWebAuthnChallenge,
@@ -23,11 +24,6 @@ import { msg } from "@lit/localize";
 import { CSSResult, html, nothing, PropertyValues, TemplateResult } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import PFButton from "@patternfly/patternfly/components/Button/button.css";
-import PFForm from "@patternfly/patternfly/components/Form/form.css";
-import PFFormControl from "@patternfly/patternfly/components/FormControl/form-control.css";
-import PFLogin from "@patternfly/patternfly/components/Login/login.css";
-import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 export interface WebAuthnAuthenticatorRegisterChallengeResponse {
     response: Assertion;
@@ -38,7 +34,9 @@ export class WebAuthnAuthenticatorRegisterStage extends BaseStage<
     AuthenticatorWebAuthnChallenge,
     AuthenticatorWebAuthnChallengeResponseRequest
 > {
-    static styles: CSSResult[] = [PFLogin, PFFormControl, PFForm, PFTitle, PFButton];
+    static styles: CSSResult[] = [
+        TDGControls,
+    ];
 
     @property({ type: Boolean })
     public registerRunning = false;
@@ -140,7 +138,7 @@ export class WebAuthnAuthenticatorRegisterStage extends BaseStage<
 
     render(): TemplateResult {
         return html`<ak-flow-card .challenge=${this.challenge}>
-            <form class="pf-c-form">
+            <form class="tdg-form">
                 ${FlowUserDetails({ challenge: this.challenge })}
 
                 <ak-empty-state ?loading="${this.registerRunning}" icon="fa-times">
@@ -153,11 +151,11 @@ export class WebAuthnAuthenticatorRegisterStage extends BaseStage<
                 ${this.challenge?.responseErrors
                     ? html`<p>${this.challenge.responseErrors.response[0].string}</p>`
                     : nothing}
-                <fieldset class="ak-c-fieldset pf-c-form__group pf-m-action">
+                <fieldset class="ak-c-fieldset tdg-form__group tdg-form__actions">
                     <legend class="sr-only">${msg("Form actions")}</legend>
                     ${!this.registerRunning
                         ? html` <button
-                              class="pf-c-button pf-m-primary pf-m-block"
+                              class="tdg-button tdg-button--primary tdg-button--block"
                               @click=${() => {
                                   this.tryRegister();
                               }}
