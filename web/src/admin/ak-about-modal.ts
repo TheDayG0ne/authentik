@@ -8,7 +8,7 @@ import { AKModal } from "#elements/dialogs/ak-modal";
 import { WithBrandConfig } from "#elements/mixins/branding";
 import { WithLicenseSummary } from "#elements/mixins/license";
 import { SlottedTemplateResult } from "#elements/types";
-import { ThemedImage } from "#elements/utils/images";
+import { DefaultFlowBackground, ThemedImage } from "#elements/utils/images";
 
 import {
     AdminApi,
@@ -39,8 +39,10 @@ export class AboutModal extends WithLicenseSummary(WithBrandConfig(AKModal)) {
         ...AKModal.hostStyles,
         css`
             .ak-c-dialog:has(ak-about-modal) {
-                --ak-c-dialog--BackgroundColor: var(--pf-global--palette--black-900);
-                --ak-c-dialog--BorderColor: var(--pf-global--palette--black-600);
+                --ak-c-dialog--BackgroundColor: transparent;
+                --ak-c-dialog--BorderColor: transparent;
+                border-radius: 24px;
+                overflow: hidden;
             }
         `,
     ];
@@ -48,7 +50,9 @@ export class AboutModal extends WithLicenseSummary(WithBrandConfig(AKModal)) {
     public static styles = [
         ...AKModal.styles,
         css`
-            .tdg-about { position: relative; overflow: auto; max-height: 90vh; padding: clamp(1.5rem, 5vw, 3rem); background: radial-gradient(circle at 90% 0%, #44215e 0, transparent 45%), #100b19; color: #f7f4ff; font-family: Manrope, sans-serif; }
+            .tdg-about { position: relative; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(13rem, .9fr); width: min(56rem, 90vw); max-height: 88vh; overflow: auto; border: 1px solid #b99bd145; border-radius: 24px; background: rgba(9, 8, 13, .94); color: #f7f4ff; font-family: Manrope, sans-serif; box-shadow: 0 24px 80px #000a; }
+            .tdg-about__main { min-width: 0; padding: clamp(1.5rem, 4vw, 3rem); }
+            .tdg-about__art { min-height: 28rem; background-color: #090810; background-position: center; background-size: cover; border-left: 1px solid #ffffff18; }
             .tdg-about__close { position: absolute; inset: 1rem 1rem auto auto; border: 1px solid #ac83ca55; border-radius: .75rem; color: inherit; background: #ffffff0a; font-size: 1.5rem; cursor: pointer; width: 2.75rem; height: 2.75rem; }
             .tdg-about__close:focus-visible { outline: 2px solid #d7a9ff; outline-offset: 3px; }
             .tdg-about__brand { display: flex; align-items: center; gap: 1rem; padding-right: 3rem; }
@@ -59,6 +63,7 @@ export class AboutModal extends WithLicenseSummary(WithBrandConfig(AKModal)) {
             dl { display: grid; grid-template-columns: minmax(8rem, 1fr) minmax(0, 1.4fr); gap: .8rem 1rem; margin: 0; }
             dt { color: #baaacb; } dd { margin: 0; overflow-wrap: anywhere; font-family: 'Space Mono', monospace; font-size: .85rem; }
             details { margin-top: 1rem; } summary { cursor: pointer; color: #dfc4f5; } details dl { margin-top: 1rem; }
+            @media (max-width: 42rem) { .tdg-about { grid-template-columns: 1fr; width: min(34rem, 92vw); } .tdg-about__art { min-height: 10rem; border-left: 0; border-top: 1px solid #ffffff18; order: 2; } }
             @media (max-width: 35rem) { dl { grid-template-columns: 1fr; gap: .3rem; } dd { margin-bottom: .7rem; } }
         `,
     ];
@@ -163,21 +168,24 @@ export class AboutModal extends WithLicenseSummary(WithBrandConfig(AKModal)) {
         }
 
         return html`<div ${ref(this.scrollContainerRef)} class="tdg-about" part="box">
-            <button class="tdg-about__close" type="button" @click=${this.closeListener} aria-label=${msg("Close dialog")}>&times;</button>
-            ${this.renderLoadingBar()}
-            <div class="tdg-about__brand" part="brand">
-                ${ThemedImage({
-                    src: this.brandingFavicon,
-                    alt: msg("TDG.id Logo"),
-                    theme: this.activeTheme,
-                    themedUrls: this.brandingFaviconThemedUrls,
-                })}
-                <div><div class="tdg-about__eyebrow">${msg("About TDG.id")}</div><h1 id="modal-title" part="title">${product}</h1></div>
-            </div>
-            <div class="tdg-about__panel">
-                <dl><dt>${msg("UI Version")}</dt><dd>${import.meta.env.AK_VERSION}</dd>${until(this.refreshPromise?.then(this.renderVersionInfo), this.renderVersionInfo())}</dl>
-                <details><summary>${msg("System information")}</summary><dl>${until(this.refreshPromise?.then(this.renderSystemInfo), this.renderSystemInfo())}</dl></details>
-            </div>
+            <section class="tdg-about__main">
+                <button class="tdg-about__close" type="button" @click=${this.closeListener} aria-label=${msg("Close dialog")}>&times;</button>
+                ${this.renderLoadingBar()}
+                <div class="tdg-about__brand" part="brand">
+                    ${ThemedImage({
+                        src: this.brandingFavicon,
+                        alt: msg("TDG.id Logo"),
+                        theme: this.activeTheme,
+                        themedUrls: this.brandingFaviconThemedUrls,
+                    })}
+                    <div><div class="tdg-about__eyebrow">${msg("About TDG.id")}</div><h1 id="modal-title" part="title">${product}</h1></div>
+                </div>
+                <div class="tdg-about__panel">
+                    <dl><dt>${msg("UI Version")}</dt><dd>${import.meta.env.AK_VERSION}</dd>${until(this.refreshPromise?.then(this.renderVersionInfo), this.renderVersionInfo())}</dl>
+                    <details><summary>${msg("System information")}</summary><dl>${until(this.refreshPromise?.then(this.renderSystemInfo), this.renderSystemInfo())}</dl></details>
+                </div>
+            </section>
+            <aside class="tdg-about__art" aria-label=${msg("TDG.id background")} style=${`background-image: url(${DefaultFlowBackground})`}></aside>
         </div>`;
     }
 

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="TDG.id space background">
+<rect width="900" height="1200" fill="#080611"/>
+<g fill="#f4eaff">
+<circle cx="94" cy="112" r="2"/><circle cx="224" cy="184" r="1.5"/><circle cx="418" cy="96" r="2"/><circle cx="705" cy="145" r="1.5"/><circle cx="812" cy="284" r="2"/><circle cx="132" cy="408" r="1.5"/><circle cx="324" cy="342" r="2"/><circle cx="588" cy="390" r="1.5"/><circle cx="760" cy="512" r="2"/><circle cx="78" cy="666" r="1.5"/><circle cx="244" cy="758" r="2"/><circle cx="512" cy="626" r="1.5"/><circle cx="690" cy="742" r="2"/><circle cx="846" cy="864" r="1.5"/><circle cx="128" cy="1010" r="2"/><circle cx="394" cy="930" r="1.5"/><circle cx="612" cy="1080" r="2"/><circle cx="784" cy="1012" r="1.5"/>
+</g>
+<g fill="none" stroke="#9e6dcc" stroke-width="2" opacity=".55">
+<path d="M-80 870 210 580 430 800 760 470 980 690"/><path d="M40 1120 330 830 530 1030 900 660"/><path d="M500 0 500 1200" opacity=".18"/><path d="M0 520 900 520" opacity=".14"/>
+</g>
+<g fill="#b98be8" opacity=".7"><path d="m610 220 10 20 20 10-20 10-10 20-10-20-20-10 20-10z"/><path d="m300 540 7 14 14 7-14 7-7 14-7-14-14-7 14-7z"/><path d="m700 930 8 16 16 8-16 8-8 16-8-16-16-8 16-8z"/></g>
+</svg>
