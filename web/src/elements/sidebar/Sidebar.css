@@ -1,6 +1,6 @@
 :host {
     z-index: 100;
-    --pf-c-page__sidebar--Transition: 0 !important;
+    --pf-c-page__sidebar--Transition: transform var(--tdgid-motion-spring), opacity var(--tdgid-motion-standard) !important;
     --tdgid-sidebar-border: #b780e94d;
     --tdgid-sidebar-surface: #0b0710f7;
     background:
@@ -9,6 +9,7 @@
     border-inline-end: 1px solid var(--tdgid-sidebar-border);
     box-shadow: 14px 0 44px #0000002e;
     backdrop-filter: blur(20px);
+    transition: transform var(--tdgid-motion-spring), opacity var(--tdgid-motion-standard), box-shadow var(--tdgid-motion-standard);
 }
 
 :host::before {

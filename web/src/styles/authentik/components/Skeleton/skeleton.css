@@ -11,9 +11,6 @@
     --ak-c-skeleton--ShimmerSpeed: 1.25s;
     --ak-c-skeleton--FadeInDelay: 0.5s;
 
-    @media (prefers-reduced-motion: reduce) {
-        --ak-c-skeleton--ShimmerSpeed: 2s;
-    }
 }
 
 /** #endregion */

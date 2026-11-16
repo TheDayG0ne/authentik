@@ -171,6 +171,7 @@ ak-sidebar-item:hover::part(list-item) {
 
 /* TDG.id admin shell: a calm, high-contrast control surface around the existing PF layout. */
 :host {
+    display: block;
     --tdgid-admin-ink: #f7f4ff;
     --tdgid-admin-muted: #b9afc5;
     --tdgid-admin-surface: #0d0913;
@@ -193,8 +194,18 @@ ak-sidebar-item:hover::part(list-item) {
 .pf-c-page__main-section {
     position: relative;
     isolation: isolate;
-    background: linear-gradient(135deg, #100b16cc, #08060cd9);
+    background: #0d0913d9;
     border-block: 1px solid #ffffff0d;
+    animation: tdgid-content-in var(--tdgid-motion-spring) both;
+}
+
+.pf-c-page__main-section > * {
+    animation: tdgid-content-in var(--tdgid-motion-spring) both;
+}
+
+@keyframes tdgid-content-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .pf-c-page__main-section::before {
@@ -211,7 +222,8 @@ ak-sidebar-item:hover::part(list-item) {
 
 .admin-sidebar-tools {
     border-block-end-color: var(--tdgid-admin-border);
-    background: linear-gradient(90deg, #1d1028b8, transparent);
+    background: #1d1028b8;
+    animation: tdgid-content-in var(--tdgid-motion-standard) both;
 }
 
 .admin-sidebar-tools .sidebar-toggle,
@@ -230,12 +242,4 @@ ak-sidebar-item:hover::part(list-item) {
     border: 1px solid #d3afff66;
     background: #1a0e28e8;
     color: var(--tdgid-admin-accent);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .admin-sidebar-open,
-    .admin-sidebar-tools button,
-    ak-sidebar-item::part(list-item) {
-        transition: none;
-    }
 }

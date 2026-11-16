@@ -226,8 +226,4 @@
     .tdgid-auth-layout__main { padding: 1.15rem; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .tdgid-auth-layout__branding .branding-logo { transition: none; }
-}
-
 @media (forced-colors: active) { .tdgid-auth-layout__main { border: 1px solid CanvasText; box-shadow: none; } }

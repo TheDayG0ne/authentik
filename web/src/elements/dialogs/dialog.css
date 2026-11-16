@@ -59,7 +59,14 @@
     border-color: var(--ak-c-dialog--BorderColor);
 
     transform: translate3d(0, 0, 0);
-    will-change: transform;
+    opacity: 1;
+    will-change: transform, opacity;
+    transition: transform var(--tdgid-motion-spring), opacity var(--tdgid-motion-standard), display var(--ak-c-dialog--TransitionDuration--Display) allow-discrete;
+
+    @starting-style {
+        transform: translate3d(0, 12px, 0) scale(0.98);
+        opacity: 0;
+    }
 
     &:focus-visible {
         outline: none;
