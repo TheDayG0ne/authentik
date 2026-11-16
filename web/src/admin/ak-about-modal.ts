@@ -8,7 +8,7 @@ import { AKModal } from "#elements/dialogs/ak-modal";
 import { WithBrandConfig } from "#elements/mixins/branding";
 import { WithLicenseSummary } from "#elements/mixins/license";
 import { SlottedTemplateResult } from "#elements/types";
-import { DefaultFlowBackground, ThemedImage } from "#elements/utils/images";
+import { ThemedImage } from "#elements/utils/images";
 
 import {
     AdminApi,
@@ -185,7 +185,7 @@ export class AboutModal extends WithLicenseSummary(WithBrandConfig(AKModal)) {
                     <details><summary>${msg("System information")}</summary><dl>${until(this.refreshPromise?.then(this.renderSystemInfo), this.renderSystemInfo())}</dl></details>
                 </div>
             </section>
-            <aside class="tdg-about__art" aria-label=${msg("TDG.id background")} style=${`background-image: url(${DefaultFlowBackground})`}></aside>
+            <aside class="tdg-about__art" aria-label=${msg("TDG.id background")} style="background-image: url('/static/dist/assets/tdgid/space.svg')"></aside>
         </div>`;
     }
 
