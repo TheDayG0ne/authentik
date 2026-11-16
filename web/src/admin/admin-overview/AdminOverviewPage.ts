@@ -45,13 +45,25 @@ export class AdminOverviewPage extends AdminOverviewBase {
                 padding: clamp(1rem, 2.5vw, 2.5rem);
             }
             .overview-intro {
+                position: relative;
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+                align-items: end;
+                gap: 1.5rem;
                 margin-bottom: 1.5rem;
                 padding: clamp(1.25rem, 3vw, 2.5rem);
                 border: 1px solid #c99bff40;
-                border-radius: 20px;
-                background: radial-gradient(ellipse at 90% 0%, #63329155, transparent 55%),
-                    linear-gradient(120deg, #1b1028, #0d0914);
+                border-radius: 24px;
+                background: #160d21;
                 color: #f8f4ff;
+                overflow: hidden;
+            }
+
+            .overview-intro::after {
+                content: "01";
+                color: #d3afff;
+                font: 700 clamp(3rem, 9vw, 7rem)/0.8 "Space Mono", monospace;
+                opacity: 0.2;
             }
             .overview-intro span {
                 color: #c99bff;
@@ -59,7 +71,17 @@ export class AdminOverviewPage extends AdminOverviewBase {
                 letter-spacing: 0.16em;
             }
             .overview-intro h1 { margin: 0.65rem 0 0.35rem; font-size: clamp(1.5rem, 3vw, 2.2rem); }
-            .overview-intro p { color: #c3b7d0; }
+            .overview-intro p { color: #c3b7d0; max-width: 42rem; }
+            .pf-l-grid__item {
+                animation: tdgid-overview-card-in 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+            }
+            .pf-l-grid__item:nth-child(2) { animation-delay: 50ms; }
+            .pf-l-grid__item:nth-child(3) { animation-delay: 100ms; }
+            .pf-l-grid__item:nth-child(4) { animation-delay: 150ms; }
+            @keyframes tdgid-overview-card-in {
+                from { opacity: 0; transform: translateY(14px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
             .pf-l-grid__item {
                 height: 100%;
             }
@@ -77,6 +99,10 @@ export class AdminOverviewPage extends AdminOverviewBase {
             }
             .card-container {
                 max-height: 10em;
+            }
+            @media (max-width: 700px) {
+                .overview-intro { grid-template-columns: 1fr; }
+                .overview-intro::after { display: none; }
             }
             .ak-external-link {
                 display: inline-block;

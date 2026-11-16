@@ -32,6 +32,78 @@ ak-sidebar-item:active ak-sidebar-item::part(list-item) {
     background-color: transparent !important;
 }
 
+.tdg-admin-workspace {
+    min-width: 0;
+    background: transparent;
+}
+
+.tdg-admin-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 5.5rem;
+    padding: 1rem clamp(1rem, 3vw, 2.5rem);
+    border-block-end: 1px solid #b780e933;
+    background: #09060de8;
+    backdrop-filter: blur(18px);
+}
+
+.tdg-admin-topbar__identity {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.tdg-admin-topbar__eyebrow {
+    color: #b9afc5;
+    font: 700 0.68rem/1.2 "Space Mono", monospace;
+    letter-spacing: 0.12em;
+}
+
+.tdg-admin-topbar__identity strong {
+    color: #f7f4ff;
+    font-size: clamp(1.05rem, 2vw, 1.4rem);
+}
+
+.tdg-admin-topbar__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.tdg-admin-topbar__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: #c7f7dc;
+    font: 700 0.72rem "Space Mono", monospace;
+}
+
+.tdg-admin-topbar__status i {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #74e0a0;
+    box-shadow: 0 0 0 4px #74e0a022, 0 0 16px #74e0a0;
+    animation: tdgid-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes tdgid-pulse {
+    50% { opacity: 0.5; transform: scale(0.75); }
+}
+
+.tdg-admin-topbar .command-palette-trigger {
+    min-height: 2.5rem;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #b780e940;
+    border-radius: 0.75rem;
+    background: #b780e914;
+}
+
+.tdg-admin-topbar ak-nav-buttons {
+    display: inline-flex;
+}
+
 .pf-c-page__main-section {
     padding-block: 1.5rem;
 }
@@ -150,6 +222,21 @@ ak-sidebar-item:hover::part(list-item) {
 }
 
 @media (width <= 720px) {
+    .tdg-admin-topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1rem 0.75rem;
+    }
+
+    .tdg-admin-topbar__actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .tdg-admin-topbar__status {
+        margin-inline-end: auto;
+    }
+
     .pf-c-page__main-section {
         padding-inline: 0.75rem;
     }

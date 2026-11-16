@@ -302,7 +302,17 @@ export class AdminInterface extends WithLicenseSummary(
                     <i aria-hidden="true" class="fas fa-bars"></i>
                 </button>
 
-                <div class="pf-c-page__drawer">
+                <div class="pf-c-page__drawer tdg-admin-workspace">
+                    <div class="tdg-admin-topbar">
+                        <div class="tdg-admin-topbar__identity">
+                            <span class="tdg-admin-topbar__eyebrow">TDG.ID / ADMIN CONSOLE</span>
+                            <strong>${msg("Control center")}</strong>
+                        </div>
+                        <div class="tdg-admin-topbar__actions">
+                            <span class="tdg-admin-topbar__status"><i aria-hidden="true"></i>${msg("System online")}</span>
+                            ${this.renderCommandPaletteButton()}
+                        </div>
+                    </div>
                     <div class="pf-c-drawer ${classMap(drawerClasses)}">
                         <div class="pf-c-drawer__main">
                             <div class="pf-c-drawer__content">
